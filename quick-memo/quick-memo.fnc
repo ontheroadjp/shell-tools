@@ -1,3 +1,5 @@
+SELF=$(cd $(dirname $0); pwd)
+
 function _send_mail_quick_memo() {
     [ -z $1 ] && echo "need e-mail address to send email." && return
 
@@ -13,7 +15,7 @@ function _quick_memo() {
         return
     fi
 
-    local quick_memo_dir="${HOME}/.quick-memo"
+    local quick_memo_dir="${HOME}/dotfiles/.quick-memo"
     mkdir -p ${quick_memo_dir}
 
     #header="## =====> $(date '+%Y%m%d %H:%M:%S') <=====\n\n"
