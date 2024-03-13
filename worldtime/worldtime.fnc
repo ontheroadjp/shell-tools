@@ -27,3 +27,4 @@ function _show_world_time() {
     }
 }
 alias worldtime='_show_world_time'
+alias wt='_show_world_time'
