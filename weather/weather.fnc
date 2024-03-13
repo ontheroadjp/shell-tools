@@ -3,4 +3,5 @@ function _display_weather() {
     curl -s wttr.in/${1:-Tokyo} | head -n 7
 }
 
-alias wttr="_display_weather"
+alias weather="_display_weather"
+alias today="_display_weather"
