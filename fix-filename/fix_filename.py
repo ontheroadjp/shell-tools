@@ -12,10 +12,13 @@ SELF = os.path.basename(__file__)
 def _init():
     parser = argparse.ArgumentParser(
         prog = SELF
-        , usage='python ' + SELF +  '<dir>'
-        , description = 'This script fix filename.'
+        , usage='python ' + SELF +  ' <file extention>' + ' [-d directory]'
+        , description = 'This script is going to unicode normarize file name.'
         , epilog='end'
         , add_help=True
+    )
+    parser.add_argument('extension'
+        , help = 'Target file extention'
     )
     parser.add_argument('-d', '--directory'
         , type = Path
@@ -31,7 +34,8 @@ def normalize(filename):
 
 def main(ini):
     dir_path = ini.directory
-    files = glob.glob(os.path.join(dir_path, "*.jpg"))
+    target_file_type = "*." + ini.extension
+    files = glob.glob(os.path.join(dir_path, target_file_type))
     for file in files:
         old = os.path.basename(file)
         new = normalize(old)
