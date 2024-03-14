@@ -4,4 +4,3 @@ function _display_weather() {
 }
 
 alias weather="_display_weather"
-alias today="_display_weather"

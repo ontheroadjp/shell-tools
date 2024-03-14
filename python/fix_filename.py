@@ -1,1 +1,1 @@
-../fix-filename/fix_filename.py
+../python-fix-filename/fix_filename.py
