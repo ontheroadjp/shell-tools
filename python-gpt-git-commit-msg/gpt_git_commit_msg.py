@@ -1,4 +1,4 @@
-#!/usr/local/var/pyenv/shims/python
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import argparse
@@ -25,7 +25,8 @@ def _init():
 
 
 def _shell_command(command):
-    process = (subprocess.Popen(command,
+    cmd = command + ' --cached'
+    process = (subprocess.Popen(cmd,
                 stdout=subprocess.PIPE
                 , shell=True).communicate()[0]).decode('utf-8')
     return '### result of ' + command + '\n' + process
