@@ -1,4 +1,4 @@
-#!/usr/local/var/pyenv/shims/python
+#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import argparse
