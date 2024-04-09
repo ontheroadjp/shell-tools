@@ -1,13 +1,18 @@
 #!/bin/bash
+
 # @(#)Commandline timer with notification center
 # @(#)Usage: $0 [-h] <time h/m/s>
 function _timer() {
-    readonly SCRIPTNAME="$(basename "$0")"
     export sec=0
     for arg in "$@"; do
         if [[ "$arg" =~ ([0-9]+)([hms]) ]];then
-            num=${BASH_REMATCH[1]}
-            unit=${BASH_REMATCH[2]}
+            if [[ ${SHELL} = '/bin/bash' ]]; then
+                num=${BASH_REMATCH[1]}
+                unit=${BASH_REMATCH[2]}
+            elif [[ ${SHELL} = '/bin/zsh' ]]; then
+                num=${match[1]}
+                unit=${match[2]}
+            fi
             case "$unit" in
                 h)
                     sec=$((sec += num * 3600))
@@ -21,8 +26,8 @@ function _timer() {
             esac
         fi
     done
-    echo "$SCRIPTNAME: After $sec sec"
+    echo "After $sec sec"
     sleep "$sec"
-    osascript -e "display notification \"$sec sec elapsed.\" with title \"$SCRIPTNAME\""
+    osascript -e "display notification \"$sec sec elapsed.\" with title \"Timer: \""
 }
-alias timer="_timer"
+alias timer='_timer'
