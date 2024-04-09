@@ -7,6 +7,12 @@ function _create_backup_file() {
     echo "backed up. ($1 >>> ${bk_name})"
 }
 
+function _create_backou_file_and_remove_original() {
+    _create_backup_file $@ && {
+        rm -rf $@
+    }
+}
+
 function _restore_backup_file() {
     local strip=$(echo $1 | sed -e 's/\.tar\.gz$//g')
 
@@ -17,5 +23,14 @@ function _restore_backup_file() {
     tar xzf ${strip}.tar.gz
     echo "Restored. ($1)"
 }
+
+function _restore_backup_file_and_remove_original() {
+    _restore_backup_file $@ && {
+        rm -rf $@
+    }
+}
+
 alias bk='_create_backup_file'
-alias restore='_restore_backup_file'
+alias bkr='_create_backou_file_and_remove_original'
+alias kb='_restore_backup_file'
+alias kbr='_restore_backup_file_and_remove_original'

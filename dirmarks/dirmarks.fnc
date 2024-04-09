@@ -1,5 +1,5 @@
 function _dirmarks() {
-    dirmarks="${HOME}/.data"
+    dirmarks="${HOME}/dotfiles/.dirmarks"
     mkdir -p ${dirmarks}
 
     case $1 in
@@ -24,6 +24,6 @@ alias ii='_dirmarks mark i'
 alias oo='_dirmarks mark o'
 
 alias m='_dirmarks jump m'
-alias nn='_dirmarks jump n'
-alias ii='_dirmarks jump i'
-alias oo='_dirmarks jump o'
+alias n='_dirmarks jump n'
+alias i='_dirmarks jump i'
+alias o='_dirmarks jump o'
