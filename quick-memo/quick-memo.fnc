@@ -1,4 +1,14 @@
 SELF=$(cd $(dirname $0); pwd)
+QUICK_MEMO_DIR="${HOME}/dotfiles/.quick-memo"
+
+function _init() {
+    if ! type gsed > /dev/null 2>&1; then
+        echo "error: you need to install gsed (gnu-sed)"
+        echo "install: brew install gnu-sed"
+        return
+    fi
+    mkdir -p ${QUICK_MEMO_DIR}
+}
 
 function _send_mail_quick_memo() {
     [ -z $1 ] && echo "need e-mail address to send email." && return
@@ -9,19 +19,29 @@ function _send_mail_quick_memo() {
 }
 
 function _quick_memo() {
-    if ! type gsed > /dev/null 2>&1; then
-        echo "error: you need to install gsed (gnu-sed)"
-        echo "install: brew install gnu-sed"
-        return
-    fi
-
-    local quick_memo_dir="${HOME}/dotfiles/.quick-memo"
-    mkdir -p ${quick_memo_dir}
-
-    #header="## =====> $(date '+%Y%m%d %H:%M:%S') <=====\n\n"
+    _init
+    # header="## =====> $(date '+%Y%m%d %H:%M:%S') <=====\n\n"
     header="## =====> $(date) <=====\n\n"
-    gsed -i -e "1s/^/${header}/" ${quick_memo_dir}/quick_memo.md
-    vim ${quick_memo_dir}/quick_memo.md
+    gsed -i -e "1s/^/${header}/" ${QUICK_MEMO_DIR}/quick_memo.md
+    vim ${QUICK_MEMO_DIR}/QUICK_memo.md
 }
-alias qm='_quick_memo'
+
+function _quick_memo_todo() {
+    _init
+    if [ -z $1 ]; then
+        less ${QUICK_MEMO_DIR}/quick_memo.md | rg '\[ \]'
+    else
+        contents="## =====> $(date) <=====\n"
+        todo=''
+        for i in $@; do
+            todo+="[ ] ${i}\n"
+            echo "add todo: $i"
+        done
+        contents+="${todo}\n"
+        gsed -i -e "1s/^/${contents}/" ${QUICK_MEMO_DIR}/quick_memo.md
+    fi
+}
 alias qmmail='_send_mail_quick_memo'
+alias qm='_quick_memo'
+alias todo='_quick_memo_todo' $@
+
