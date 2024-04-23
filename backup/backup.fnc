@@ -31,6 +31,6 @@ function _restore_backup_file_and_remove_original() {
 }
 
 alias bk='_create_backup_file'
-alias bkr='_create_backou_file_and_remove_original'
+alias bkrm='_create_backou_file_and_remove_original'
 alias kb='_restore_backup_file'
-alias kbr='_restore_backup_file_and_remove_original'
+alias kbrm='_restore_backup_file_and_remove_original'
