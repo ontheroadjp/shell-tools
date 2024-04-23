@@ -116,7 +116,7 @@ function _display_radio_info() {
     echo
 }
 
-alias internetinfo='_display_internet_info'
+alias inetinfo='_display_internet_info'
 alias wifiinfo='_display_wifi_info'
 alias radioinfo='_display_radio_info'
 alias wificheck='_display_internet_info && _display_wifi_info && _display_radio_info'
