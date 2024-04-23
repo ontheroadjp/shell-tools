@@ -23,4 +23,12 @@ function _show_holiday_jp() {
          '                                   |
     sort                                     # 日付順にソートして出力
 }
-alias holiday='_show_holiday_jp'
+
+function _print_holiday() {
+    if [ ! -z ${1} ]; then
+        _show_holiday_jp | grep ${1}
+    else
+        _show_holiday_jp
+    fi
+}
+alias holiday='_print_holiday' $@

@@ -34,5 +34,5 @@ function _display_colors() {
     \033[37m 白(またはグレー) 37 \033[00m \033[47m 47 \033[00m \033[30;47m 30;47 \033[00m \033[31;04;47m 31;04;47 \033[00m
     "
 }
-alias 256cpalet='_display_256_colors'
-alias cpalet='_display_colors'
+alias 256color='_display_256_colors'
+alias color='_display_colors'
