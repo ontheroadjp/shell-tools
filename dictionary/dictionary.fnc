@@ -3,7 +3,7 @@ function _dict-word-example() {
 }
 
 function _run_dictionary() {
-    ${TOOLSPATH}/lib/dictionary.swift ${1}
+    ${TOOLSPATH}/dictionary/lib/dictionary.swift ${1}
     _dict-word-example ${1}
 }
 
