@@ -1,0 +1,27 @@
+{
+    "name": "dammy",
+    "version": "1.0.0",
+    "description": "This script generates dammy file.",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "docs:dev": "vuepress dev docs",
+        "docs:build": "vuepress build docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ontheroadjp/dammy.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ontheroadjp/dammy/issues"
+    },
+    "homepage": "https://github.com/ontheroadjp/dammy#readme",
+    "devDependencies": {
+        "vuepress": "^2.0.0-beta.27"
+    }
+}

@@ -1,0 +1,95 @@
+_display_colors() {
+    echo -e "
+    # Attribute codes:
+    # 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+    # Text color codes:
+    # 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+    # Background color codes:
+    # 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+
+    状態番号
+    \033[00m デフォルト状態 00 \033[00m
+    \033[01m 強調           01 \033[00m
+    \033[04m 下線           04 \033[00m
+    \033[05m 点滅           05 \033[00m
+    \033[07m 色反転         07 \033[00m
+    \033[08m 塗りつぶし     08 \033[00m(塗りつぶし     08)
+
+    色番号
+    \033[30m 黒               30 \033[00m \033[40m 40 \033[00m \033[31;40m 31;40 \033[00m \033[32;00;40m 32;00;40 \033[00m
+    \033[31m 赤               31 \033[00m \033[41m 41 \033[00m \033[32;41m 32;41 \033[00m \033[33;01;41m 33;01;41 \033[00m
+    \033[32m 緑               32 \033[00m \033[42m 42 \033[00m \033[33;42m 33;42 \033[00m \033[34;04;42m 34;04;42 \033[00m
+    \033[33m 黄(または茶)     33 \033[00m \033[43m 43 \033[00m \033[34;43m 34;43 \033[00m \033[35;05;43m 35;05;43 \033[00m
+    \033[34m 青               34 \033[00m \033[44m 44 \033[00m \033[35;44m 35;44 \033[00m \033[36;07;44m 36;07;44 \033[00m
+    \033[35m 紫               35 \033[00m \033[45m 45 \033[00m \033[36;45m 36;45 \033[00m \033[37;00;45m 37;00;45 \033[00m
+    \033[36m シアン           36 \033[00m \033[46m 46 \033[00m \033[37;46m 37;46 \033[00m \033[30;01;46m 30;01;46 \033[00m
+    \033[37m 白(またはグレー) 37 \033[00m \033[47m 47 \033[00m \033[30;47m 30;47 \033[00m \033[31;04;47m 31;04;47 \033[00m
+    "
+}
+
+_display_256_colors() {
+    for c in {000..255}; do
+        echo -n "\e[38;5;${c}m $c"
+        [ $(($c%16)) -eq 15 ] && echo
+    done
+    echo
+}
+
+_display_256_hex() {
+    local mode="fg"  # default foreground
+    [ "$1" = "--bg" ] && mode="bg"
+
+    for c in {0..255}; do
+        # xterm256 index → RGB
+        if [ $c -lt 16 ]; then
+            case $c in
+                0)  r=0;   g=0;   b=0 ;;
+                1)  r=128; g=0;   b=0 ;;
+                2)  r=0;   g=128; b=0 ;;
+                3)  r=128; g=128; b=0 ;;
+                4)  r=0;   g=0;   b=128 ;;
+                5)  r=128; g=0;   b=128 ;;
+                6)  r=0;   g=128; b=128 ;;
+                7)  r=192; g=192; b=192 ;;
+                8)  r=128; g=128; b=128 ;;
+                9)  r=255; g=0;   b=0 ;;
+                10) r=0;   g=255; b=0 ;;
+                11) r=255; g=255; b=0 ;;
+                12) r=0;   g=0;   b=255 ;;
+                13) r=255; g=0;   b=255 ;;
+                14) r=0;   g=255; b=255 ;;
+                15) r=255; g=255; b=255 ;;
+            esac
+        elif [ $c -le 231 ]; then
+            idx=$((c-16))
+            r=$(( (idx/36)%6 ))
+            g=$(( (idx/6)%6  ))
+            b=$((  idx%6 ))
+            r=$(( r==0 ? 0 : r*40+55 ))
+            g=$(( g==0 ? 0 : g*40+55 ))
+            b=$(( b==0 ? 0 : b*40+55 ))
+        else
+            gray=$(( (c-232)*10 + 8 ))
+            r=$gray; g=$gray; b=$gray
+        fi
+
+        hex=$(printf "#%02x%02x%02x" $r $g $b)
+
+        # Mode switch: FG default, BG with option
+        if [ "$mode" = "fg" ]; then
+            printf "\e[48;5;0m\e[38;5;%sm %s \e[0m" "$c" "$hex"
+        else
+            printf "\e[48;5;%sm\e[38;5;15m %s \e[0m" "$c" "$hex"
+        fi
+
+        (( c % 8 == 7 )) && printf "\n"
+    done
+
+    printf "\n"
+}
+
+alias 256colors='_display_256_colors'
+alias colors256hex='_display_256_hex'
+alias colors256hexbg='_display_256_hex --bg'
+alias colors256='_display_256_colors'
+alias colors='_display_colors'
