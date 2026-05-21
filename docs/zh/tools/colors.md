@@ -1,4 +1,4 @@
-# colors
+# 🎨 colors
 
 在终端中显示 ANSI 颜色代码和 xterm 256 色表。
 

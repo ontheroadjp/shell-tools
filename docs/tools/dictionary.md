@@ -1,4 +1,4 @@
-# dictionary
+# 📖 dictionary
 
 Look up English words using weblio, showing definitions and usage examples.
 

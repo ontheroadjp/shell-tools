@@ -1,4 +1,4 @@
-# quick-memo
+# 📝 quick-memo
 
 Quickly manage memos and TODOs from the terminal. Notes are stored in a Markdown file.
 

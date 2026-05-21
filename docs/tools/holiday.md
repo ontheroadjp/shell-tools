@@ -1,4 +1,4 @@
-# holiday
+# 🎌 holiday
 
 Fetches Japanese public holidays from Google Calendar's ICS feed and displays them in date order.
 

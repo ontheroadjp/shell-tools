@@ -1,4 +1,4 @@
-# weather
+# 🌤️ weather
 
 通过 [wttr.in](https://wttr.in) API 获取当前天气信息。
 

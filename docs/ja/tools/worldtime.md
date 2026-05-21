@@ -1,4 +1,4 @@
-# worldtime
+# 🌍 worldtime
 
 Sydney / Tokyo / Shanghai / London / New York / Los Angeles の現在時刻を一覧表示します。タイムゾーン一覧から `peco` でインタラクティブに選択することもできます。
 

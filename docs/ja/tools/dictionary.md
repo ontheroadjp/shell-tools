@@ -1,4 +1,4 @@
-# dictionary
+# 📖 dictionary
 
 英単語を weblio で検索し、定義と用例を表示します。
 

@@ -1,4 +1,4 @@
-# quick-memo
+# 📝 quick-memo
 
 ターミナルからすばやくメモや TODO を管理します。メモは Markdown ファイルに保存されます。
 

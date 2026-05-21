@@ -1,4 +1,4 @@
-# today
+# ☀️ today
 
 A daily summary showing today's date in Japanese era, weather, and world time.
 

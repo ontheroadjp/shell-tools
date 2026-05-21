@@ -1,4 +1,4 @@
-# movie-converter
+# 🎬 movie-converter
 
 MP4 ファイルを MP3 に変換します。ファイル単体・ディレクトリ一括・標準入力のいずれにも対応します。
 

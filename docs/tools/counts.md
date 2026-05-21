@@ -1,4 +1,4 @@
-# counts
+# 📊 counts
 
 Count and analyze files and directories by size or type.
 

@@ -1,4 +1,4 @@
-# dictionary
+# 📖 dictionary
 
 通过 weblio 查询英文单词，显示释义和用法示例。
 

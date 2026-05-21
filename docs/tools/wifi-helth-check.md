@@ -1,4 +1,4 @@
-# wifi-helth-check
+# 📶 wifi-helth-check
 
 Diagnose WiFi signal strength, connection speed, and internet connectivity with color-coded output.
 

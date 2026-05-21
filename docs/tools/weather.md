@@ -1,4 +1,4 @@
-# weather
+# 🌤️ weather
 
 Fetch current weather using the [wttr.in](https://wttr.in) API.
 

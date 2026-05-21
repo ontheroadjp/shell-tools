@@ -1,4 +1,4 @@
-# yubin
+# 📮 yubin
 
 Interactively search Japanese postal codes using `fzf-tmux` with data from Japan Post.
 

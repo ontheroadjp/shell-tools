@@ -1,4 +1,4 @@
-# colors
+# 🎨 colors
 
 ANSI カラーコードと xterm 256色テーブルをターミナルに表示します。
 

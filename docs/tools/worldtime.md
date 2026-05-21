@@ -1,4 +1,4 @@
-# worldtime
+# 🌍 worldtime
 
 Display the current time in Sydney, Tokyo, Shanghai, London, New York, and Los Angeles. Supports interactive timezone selection via `peco`.
 

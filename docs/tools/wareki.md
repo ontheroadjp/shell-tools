@@ -1,4 +1,4 @@
-# wareki
+# 📜 wareki
 
 Converts between Western years and Japanese era years (Meiji 1868 – Reiwa 2028).
 

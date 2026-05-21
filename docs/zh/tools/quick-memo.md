@@ -1,4 +1,4 @@
-# quick-memo
+# 📝 quick-memo
 
 从终端快速管理备忘录和待办事项，笔记以 Markdown 文件形式保存。
 

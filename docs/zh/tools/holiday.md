@@ -1,4 +1,4 @@
-# holiday
+# 🎌 holiday
 
 从 Google 日历的 ICS 数据源获取日本法定节假日，并按日期顺序显示。
 

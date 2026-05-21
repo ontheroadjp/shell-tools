@@ -1,4 +1,4 @@
-# colors
+# 🎨 colors
 
 Displays ANSI color codes and xterm 256-color tables in your terminal.
 

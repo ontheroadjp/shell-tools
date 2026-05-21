@@ -1,4 +1,4 @@
-# yubin
+# 📮 yubin
 
 使用 `fzf-tmux` 交互式搜索日本邮政编码数据库。
 
