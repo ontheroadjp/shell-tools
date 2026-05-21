@@ -1,6 +1,6 @@
 # dictionary
 
-英単語を weblio で検索し、定義と用例を表示します。
+Look up English words using weblio, showing definitions and usage examples.
 
 ## Requirements
 
@@ -25,5 +25,5 @@ dictionary appreciate
 
 ## Notes
 
-- Swift 製のネイティブ辞書検索 (`lib/dictionary.swift`) と、weblio の用例検索を組み合わせて表示します。
-- ネットワーク接続が必要です。
+- Combines a native Swift dictionary lookup (`lib/dictionary.swift`) with weblio usage examples.
+- Requires a network connection.

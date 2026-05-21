@@ -1,6 +1,6 @@
 # colors
 
-ANSI カラーコードと xterm 256色テーブルをターミナルに表示します。
+Displays ANSI color codes and xterm 256-color tables in your terminal.
 
 ## Usage
 
@@ -10,27 +10,20 @@ colors [subcommand]
 
 | Subcommand | Description |
 |---|---|
-| `colors` (省略可) | ANSI 基本カラーコード一覧 |
-| `256` | xterm 256色を番号付きで表示 |
-| `256hex` | 256色を HEX カラーコード付きで表示（前景色） |
-| `256hexbg` | 256色を HEX カラーコード付きで表示（背景色） |
+| `colors` (default) | Show ANSI basic color code reference |
+| `256` | Show all 256 xterm colors with index numbers |
+| `256hex` | Show 256 colors with HEX codes (foreground) |
+| `256hexbg` | Show 256 colors with HEX codes (background) |
 
 ## Examples
 
 ```bash
-# 基本カラーコードを表示
 colors
-
-# 256色を番号付きで表示
 colors 256
-
-# 256色を HEX 付きで表示
 colors 256hex
-
-# 背景色として HEX 付きで表示
 colors 256hexbg
 ```
 
 ## Notes
 
-- シェルスクリプトやプロンプトのカスタマイズ時にカラーコード番号を確認するのに便利です。
+- Useful for customizing shell prompts or scripts where you need to look up color codes.

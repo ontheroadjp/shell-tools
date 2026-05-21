@@ -1,6 +1,6 @@
 # movie-converter
 
-MP4 ファイルを MP3 に変換します。ファイル単体・ディレクトリ一括・標準入力のいずれにも対応します。
+Converts MP4 files to MP3. Supports single files, directories, and stdin.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ brew install ffmpeg
 mp4_to_mp3 <file_or_dir> [...]
 ```
 
-標準入力からファイルパスを受け取ることもできます:
+You can also pipe file paths via stdin:
 
 ```bash
 find . -name "*.mp4" | mp4_to_mp3
@@ -25,20 +25,13 @@ find . -name "*.mp4" | mp4_to_mp3
 ## Examples
 
 ```bash
-# 単一ファイルを変換
 mp4_to_mp3 video.mp4
-
-# ディレクトリ内の全 MP4 を変換
 mp4_to_mp3 ~/Movies/
-
-# 複数ファイルを指定
 mp4_to_mp3 a.mp4 b.mp4 c.mp4
-
-# find と組み合わせて再帰変換
 find ~/Downloads -name "*.mp4" | mp4_to_mp3
 ```
 
 ## Notes
 
-- 出力ファイルは入力ファイルと同じディレクトリに、同じベース名で `.mp3` として保存されます。
-- 既存の `.mp3` ファイルは上書きされます。
+- Output files are saved in the same directory as the input, with `.mp3` extension.
+- Existing `.mp3` files will be overwritten.

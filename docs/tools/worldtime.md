@@ -1,10 +1,10 @@
 # worldtime
 
-Sydney / Tokyo / Shanghai / London / New York / Los Angeles の現在時刻を一覧表示します。タイムゾーン一覧から `peco` でインタラクティブに選択することもできます。
+Display the current time in Sydney, Tokyo, Shanghai, London, New York, and Los Angeles. Supports interactive timezone selection via `peco`.
 
 ## Requirements
 
-- `peco` (`tz` サブコマンドで都市を選択する場合)
+- `peco` (for `tz` subcommand)
 
 ## Usage
 
@@ -13,26 +13,19 @@ worldtime [keyword]
 worldtime tz [timezone]
 ```
 
-| 呼び方 | Description |
+| Usage | Description |
 |---|---|
-| `worldtime` | 6都市の現在時刻を表示 |
-| `worldtime <keyword>` | キーワードでフィルタして表示 |
-| `worldtime tz` | peco でタイムゾーンを選択して表示 |
-| `worldtime tz <timezone>` | 指定タイムゾーンの時刻を表示 |
+| `worldtime` | Show time in 6 cities |
+| `worldtime <keyword>` | Filter output by keyword |
+| `worldtime tz` | Select timezone interactively with `peco` |
+| `worldtime tz <timezone>` | Show time for a specific timezone |
 
 ## Examples
 
 ```bash
-# 全都市を表示
 worldtime
-
-# "Tokyo" を含む行だけ表示
 worldtime Tokyo
-
-# peco でタイムゾーンを選択
 worldtime tz
-
-# タイムゾーンを直接指定
 worldtime tz Asia/Seoul
 ```
 

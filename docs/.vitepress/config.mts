@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
-const toolsSidebarJa = [
+const toolsSidebarEn = [
   {
-    text: 'ツール',
+    text: 'Tools',
     items: [
       { text: 'colors', link: '/tools/colors' },
       { text: 'counts', link: '/tools/counts' },
@@ -23,25 +23,25 @@ const toolsSidebarJa = [
   },
 ]
 
-const toolsSidebarEn = [
+const toolsSidebarJa = [
   {
-    text: 'Tools',
+    text: 'ツール',
     items: [
-      { text: 'colors', link: '/en/tools/colors' },
-      { text: 'counts', link: '/en/tools/counts' },
-      { text: 'dictionary', link: '/en/tools/dictionary' },
-      { text: 'holiday', link: '/en/tools/holiday' },
-      { text: 'movie-converter', link: '/en/tools/movie-converter' },
-      { text: 'numstats', link: '/en/tools/numstats' },
-      { text: 'quick-memo', link: '/en/tools/quick-memo' },
-      { text: 'stock-jp', link: '/en/tools/stock-jp' },
-      { text: 'timer', link: '/en/tools/timer' },
-      { text: 'today', link: '/en/tools/today' },
-      { text: 'wareki', link: '/en/tools/wareki' },
-      { text: 'weather', link: '/en/tools/weather' },
-      { text: 'wifi-helth-check', link: '/en/tools/wifi-helth-check' },
-      { text: 'worldtime', link: '/en/tools/worldtime' },
-      { text: 'yubin', link: '/en/tools/yubin' },
+      { text: 'colors', link: '/ja/tools/colors' },
+      { text: 'counts', link: '/ja/tools/counts' },
+      { text: 'dictionary', link: '/ja/tools/dictionary' },
+      { text: 'holiday', link: '/ja/tools/holiday' },
+      { text: 'movie-converter', link: '/ja/tools/movie-converter' },
+      { text: 'numstats', link: '/ja/tools/numstats' },
+      { text: 'quick-memo', link: '/ja/tools/quick-memo' },
+      { text: 'stock-jp', link: '/ja/tools/stock-jp' },
+      { text: 'timer', link: '/ja/tools/timer' },
+      { text: 'today', link: '/ja/tools/today' },
+      { text: 'wareki', link: '/ja/tools/wareki' },
+      { text: 'weather', link: '/ja/tools/weather' },
+      { text: 'wifi-helth-check', link: '/ja/tools/wifi-helth-check' },
+      { text: 'worldtime', link: '/ja/tools/worldtime' },
+      { text: 'yubin', link: '/ja/tools/yubin' },
     ],
   },
 ]
@@ -76,44 +76,44 @@ export default defineConfig({
 
   locales: {
     root: {
-      label: '日本語',
-      lang: 'ja',
-      themeConfig: {
-        nav: [
-          { text: 'ホーム', link: '/' },
-          { text: 'セットアップ', link: '/setup' },
-          { text: 'ツール', link: '/tools/colors' },
-        ],
-        sidebar: [
-          {
-            text: 'はじめに',
-            items: [
-              { text: '概要', link: '/' },
-              { text: 'セットアップ', link: '/setup' },
-            ],
-          },
-          ...toolsSidebarJa,
-        ],
-      },
-    },
-    en: {
       label: 'English',
       lang: 'en',
       themeConfig: {
         nav: [
-          { text: 'Home', link: '/en/' },
-          { text: 'Setup', link: '/en/setup' },
-          { text: 'Tools', link: '/en/tools/colors' },
+          { text: 'Home', link: '/' },
+          { text: 'Setup', link: '/setup' },
+          { text: 'Tools', link: '/tools/colors' },
         ],
         sidebar: [
           {
             text: 'Getting Started',
             items: [
-              { text: 'Overview', link: '/en/' },
-              { text: 'Setup', link: '/en/setup' },
+              { text: 'Overview', link: '/' },
+              { text: 'Setup', link: '/setup' },
             ],
           },
           ...toolsSidebarEn,
+        ],
+      },
+    },
+    ja: {
+      label: '日本語',
+      lang: 'ja',
+      themeConfig: {
+        nav: [
+          { text: 'ホーム', link: '/ja/' },
+          { text: 'セットアップ', link: '/ja/setup' },
+          { text: 'ツール', link: '/ja/tools/colors' },
+        ],
+        sidebar: [
+          {
+            text: 'はじめに',
+            items: [
+              { text: '概要', link: '/ja/' },
+              { text: 'セットアップ', link: '/ja/setup' },
+            ],
+          },
+          ...toolsSidebarJa,
         ],
       },
     },

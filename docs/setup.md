@@ -4,10 +4,10 @@
 
 - macOS
 - Bash 4.0+
-- Common dependencies: `curl`, `fzf`
+- Common: `curl`, `fzf`
 - Some tools additionally require: `peco`, `nkf`, `w3m`, `gsed`, `ffmpeg`, `rg`
 
-Homebrew でまとめてインストールする場合:
+Install all dependencies via Homebrew:
 
 ```bash
 brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
@@ -15,20 +15,20 @@ brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
 
 ## Installation
 
-### 1. リポジトリをクローン
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/ontheroadjp/shell-tools.git ~/shell-tools
 ```
 
-### 2. `~/dotfiles/bin` にシンボリックリンクを作成
+### 2. Create symlinks in `~/dotfiles/bin`
 
 ```bash
 cd ~/shell-tools
 ./install.sh
 ```
 
-`~/dotfiles/bin` 以下に各スクリプトへのシンボリックリンクが作成されます。
+This creates symlinks for each script under `~/dotfiles/bin`:
 
 ```
 ~/dotfiles/bin/
@@ -37,15 +37,15 @@ cd ~/shell-tools
   ...
 ```
 
-### 3. PATH に追加
+### 3. Add to PATH
 
-`~/.zshrc` または `~/.bashrc` に追記:
+Add to `~/.zshrc` or `~/.bashrc`:
 
 ```bash
 export PATH="$HOME/dotfiles/bin:$PATH"
 ```
 
-設定を反映:
+Reload:
 
 ```bash
 source ~/.zshrc
@@ -57,4 +57,4 @@ source ~/.zshrc
 timer 10s
 ```
 
-10秒後に macOS 通知が表示されれば完了です。
+You should receive a macOS notification after 10 seconds.

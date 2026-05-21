@@ -1,6 +1,6 @@
 # stock-jp
 
-東証上場銘柄を `peco` でインタラクティブに検索し、選択した証券会社・情報サイトをブラウザで開きます。
+Interactively search Tokyo Stock Exchange securities with `peco` and open them in your browser.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ brew install peco nkf
 
 ## Setup
 
-銘柄データ CSV (`stock.csv`) を `shell_scripts/stock-jp/data/` に配置する必要があります。初回または更新時は `--update` オプションで JPX から取得できます。
+Place the stock data CSV (`stock.csv`) in `shell_scripts/stock-jp/data/`. On first run or to update:
 
 ```bash
 stock-jp --update
@@ -27,31 +27,21 @@ stock-jp [options]
 
 | Option | Description |
 |---|---|
-| `--update` | JPX から銘柄データをダウンロード |
-| `-h, --help` | ヘルプを表示 |
-| `-v, --version` | バージョンを表示 |
+| `--update` | Download stock data from JPX |
+| `-h, --help` | Show help |
+| `-v, --version` | Show version |
 
 ## Flow
 
-1. `stock-jp` を実行すると peco が起動し、銘柄名・コードでインクリメンタル検索
-2. 銘柄を選択すると、参照先サイトを peco で選択
-3. 選択したサイトをブラウザで開く
+1. `peco` launches for incremental search by name or code
+2. Select a security → choose a site via `peco`
+3. Opens the selected site in your browser
 
-**対応サイト:**
-
-- Yahoo! Finance
-- Google
-- SBI証券
-- Quick（株価 / 適時開示）
-- 会社四季報
-- 日経（株価 / 適時開示）
+**Supported sites:** Yahoo! Finance, Google, SBI Securities, Quick, 会社四季報, 日経
 
 ## Examples
 
 ```bash
-# インタラクティブ検索
 stock-jp
-
-# 銘柄データを更新してから検索
 stock-jp --update && stock-jp
 ```

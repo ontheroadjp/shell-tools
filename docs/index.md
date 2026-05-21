@@ -4,59 +4,59 @@ layout: home
 hero:
   name: Shell Tools
   text: Standalone shell scripts for everyday terminal operations
-  tagline: macOS向けの便利なシェルスクリプト集
+  tagline: A curated collection of macOS shell utilities
   actions:
     - theme: brand
       text: Get Started
-      link: /setup
+      link: /en/setup
     - theme: alt
       text: View on GitHub
       link: https://github.com/ontheroadjp/shell-tools
 
 features:
   - title: colors
-    details: ANSI カラーコードと 256色テーブルを表示
-    link: /tools/colors
+    details: Display ANSI color codes and 256-color tables
+    link: /en/tools/colors
   - title: counts
-    details: ファイル・ディレクトリをサイズや種類で集計
-    link: /tools/counts
+    details: Analyze files and directories by size or type
+    link: /en/tools/counts
   - title: dictionary
-    details: weblio 経由で英単語を検索
-    link: /tools/dictionary
+    details: Look up English words via weblio
+    link: /en/tools/dictionary
   - title: holiday
-    details: 日本の祝日を一覧表示
-    link: /tools/holiday
+    details: List Japanese public holidays
+    link: /en/tools/holiday
   - title: movie-converter
-    details: MP4 ファイルを MP3 に変換
-    link: /tools/movie-converter
+    details: Convert MP4 files to MP3
+    link: /en/tools/movie-converter
   - title: numstats
-    details: 数値リストの統計（最小・最大・平均・件数）を計算
-    link: /tools/numstats
+    details: Compute min, max, avg, and count for a list of numbers
+    link: /en/tools/numstats
   - title: quick-memo
-    details: ターミナルからすばやくメモや TODO を管理
-    link: /tools/quick-memo
+    details: Quickly manage memos and TODOs from the terminal
+    link: /en/tools/quick-memo
   - title: stock-jp
-    details: 東証銘柄をインタラクティブに検索して各サイトで表示
-    link: /tools/stock-jp
+    details: Interactively search Tokyo Stock Exchange securities
+    link: /en/tools/stock-jp
   - title: timer
-    details: 指定時間後に macOS 通知で知らせるカウントダウンタイマー
-    link: /tools/timer
+    details: Countdown timer with macOS notification
+    link: /en/tools/timer
   - title: today
-    details: 日付・天気・世界時計をまとめて表示するデイリーサマリー
-    link: /tools/today
+    details: Daily summary of date, weather, and world time
+    link: /en/tools/today
   - title: wareki
-    details: 西暦と和暦を相互変換
-    link: /tools/wareki
+    details: Convert between Western and Japanese era years
+    link: /en/tools/wareki
   - title: weather
-    details: wttr.in API で現在の天気を取得
-    link: /tools/weather
+    details: Fetch current weather via wttr.in
+    link: /en/tools/weather
   - title: wifi-helth-check
-    details: WiFi の電波強度・速度・インターネット接続を診断
-    link: /tools/wifi-helth-check
+    details: Diagnose WiFi signal strength and internet connectivity
+    link: /en/tools/wifi-helth-check
   - title: worldtime
-    details: 主要都市の現在時刻を一覧表示
-    link: /tools/worldtime
+    details: Display current time in major cities worldwide
+    link: /en/tools/worldtime
   - title: yubin
-    details: 日本郵便の郵便番号データベースをインタラクティブに検索
-    link: /tools/yubin
+    details: Interactively search Japanese postal codes
+    link: /en/tools/yubin
 ---

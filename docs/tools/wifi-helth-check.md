@@ -1,11 +1,10 @@
 # wifi-helth-check
 
-WiFi の電波強度・接続速度・インターネット接続をまとめて診断します。値の良否をカラーで視覚的に表示します。
+Diagnose WiFi signal strength, connection speed, and internet connectivity with color-coded output.
 
 ## Requirements
 
-- macOS (airport コマンド、osascript を使用)
-- `bc`, `perl` (標準インストール済み)
+- macOS (`airport` command, `bc`, `perl`)
 
 ## Usage
 
@@ -15,21 +14,16 @@ wifi-helth-check [subcommand]
 
 | Subcommand | Description |
 |---|---|
-| (なし) または `wificheck` | 全診断を実行 |
-| `inetinfo` | インターネット接続診断のみ |
-| `wifiinfo` | WiFi 接続情報のみ |
-| `radioinfo` | 電波強度・速度情報のみ |
+| (none) or `wificheck` | Run all diagnostics |
+| `inetinfo` | Internet connectivity only |
+| `wifiinfo` | WiFi connection info only |
+| `radioinfo` | Signal strength and speed only |
 
 ## Examples
 
 ```bash
-# 全診断を実行
 wifi-helth-check
-
-# インターネット接続だけ確認
 wifi-helth-check inetinfo
-
-# 電波強度だけ確認
 wifi-helth-check radioinfo
 ```
 
@@ -54,6 +48,6 @@ MCS:     15
 
 | Color | Meaning |
 |---|---|
-| 緑 | 良好 |
-| 黄 | 注意 |
-| 赤 | 問題あり |
+| Green | Good |
+| Yellow | Warning |
+| Red | Problem |

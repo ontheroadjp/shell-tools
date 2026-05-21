@@ -1,11 +1,11 @@
 # weather
 
-[wttr.in](https://wttr.in) API を使って現在の天気を取得します。
+Fetch current weather using the [wttr.in](https://wttr.in) API.
 
 ## Requirements
 
 - `curl`
-- `peco` (都市をインタラクティブに選択する場合)
+- `peco` (for interactive city selection)
 
 ## Usage
 
@@ -13,21 +13,17 @@
 weather [city]
 ```
 
-| 引数 | Description |
+| Argument | Description |
 |---|---|
-| (なし) | `peco` で都市を選択 |
-| `city` | 指定した都市の天気を表示 |
+| (none) | Select a city interactively with `peco` |
+| `city` | Show weather for the specified city |
 
 ## Examples
 
 ```bash
-# peco で都市を選択
 weather
-
-# 都市を直接指定
 weather Tokyo
 weather Osaka
-weather Sapporo
 ```
 
 ## Output
@@ -36,7 +32,7 @@ weather Sapporo
 Tokyo: ⛅️ +18°C 65% 0.0mm 🌘 25
 ```
 
-出力フォーマット: `都市名: 天気アイコン 気温 湿度 降水量 月相 月齢`
+Format: `city: icon temperature humidity precipitation moon-phase moon-age`
 
 ## Preset Cities
 
@@ -44,4 +40,4 @@ Sapporo / Sendai / Fukushima / Tokyo / Shizuoka / Niigata / Fukui / Kanazawa / N
 
 ## Notes
 
-- ネットワーク接続が必要です。
+- Requires a network connection.
