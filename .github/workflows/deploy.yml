@@ -37,6 +37,16 @@ jobs:
       - name: Build docs
         run: npm run docs:build
 
+      - name: Restructure HTML for GitHub Pages clean URLs
+        run: |
+          find docs/.vitepress/dist -name "*.html" \
+            ! -name "index.html" \
+            ! -name "404.html" | while read f; do
+            dir="${f%.html}"
+            mkdir -p "$dir"
+            mv "$f" "$dir/index.html"
+          done
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
