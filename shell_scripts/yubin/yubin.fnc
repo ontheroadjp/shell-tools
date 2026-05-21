@@ -2,7 +2,7 @@
 # Search Yubin bangou
 #-------------------------------------------------
 function _search_yubin_bangou() {
-    mkdir -p ${YUBIN_DATA_DIR}
+    mkdir -p ${YUBIN_DATA_DIR:-${HOME}/.yubin-data}
     YUBIN_DATA_URL='https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip'
     YUBIN_DATA_ZIP="${YUBIN_DATA_DIR}/ken_all.zip"
     YUBIN_DATA_CSV="${YUBIN_DATA_DIR}/KEN_ALL.CSV"
