@@ -73,6 +73,7 @@ export default defineConfig({
   title: 'Shell Tools',
   description: 'A collection of standalone shell scripts for everyday terminal operations.',
   base: '/shell-tools/',
+  cleanUrls: true,
 
   locales: {
     root: {
