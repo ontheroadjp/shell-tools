@@ -30,15 +30,21 @@ _link_one() {
     local name; name="$(_tool_name "$script")"
     local link="${BIN_DIR}/${name}"
 
-    if [ -L "${link}" ]; then
-        echo "skip:   ${name}"
+    if [ -L "${link}" ] && [ ! -e "${link}" ]; then
+        # dangling symlink (e.g. after directory reorganization) → update
+        rm "${link}"
+        ln -s "${script}" "${link}"
+        echo "updated: ${name}"
+        return 0
+    elif [ -L "${link}" ] && [ -e "${link}" ]; then
+        echo "skip:    ${name}"
         return 2
     elif [ -e "${link}" ]; then
-        echo "error:  ${name} (file already exists, not a symlink)"
+        echo "error:   ${name} (file already exists, not a symlink)"
         return 1
     else
         ln -s "${script}" "${link}"
-        echo "linked: ${name}"
+        echo "linked:  ${name}"
         return 0
     fi
 }
