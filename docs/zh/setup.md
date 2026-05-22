@@ -2,15 +2,15 @@
 
 ## 环境要求
 
-- macOS
+- macOS 或 Linux
 - Bash 4.0+
-- 常用依赖：`curl`、`fzf`
-- 部分工具还需要：`peco`、`nkf`、`w3m`、`gsed`、`ffmpeg`、`rg`
+- 常用工具：`curl`、`fzf`
+- 部分工具还需要：`peco`、`nkf`、`ffmpeg`、`rg`
 
-通过 Homebrew 一次性安装所有依赖：
+通过 Homebrew 安装依赖（macOS）：
 
 ```bash
-brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
+brew install fzf peco nkf ffmpeg ripgrep
 ```
 
 ## 安装步骤
@@ -19,22 +19,32 @@ brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
 
 ```bash
 git clone https://github.com/ontheroadjp/shell-tools.git ~/shell-tools
+cd ~/shell-tools
 ```
 
-### 2. 在 `~/dotfiles/bin` 中创建符号链接
+### 2. 安装符号链接
 
 ```bash
-cd ~/shell-tools
+# 安装所有工具
 ./install.sh
+
+# 仅安装指定工具
+./install.sh timer weather yubin
+
+# 查看可用工具列表
+./install.sh list
+
+# 卸载所有工具
+./install.sh uninstall
+
+# 卸载指定工具
+./install.sh uninstall timer weather
 ```
 
-将在 `~/dotfiles/bin` 下为每个脚本创建符号链接：
+符号链接默认创建在 `~/dotfiles/bin`。可通过 `BIN_DIR` 覆盖：
 
-```
-~/dotfiles/bin/
-  colors -> ~/shell-tools/shell_scripts/colors/colors.sh
-  counts -> ~/shell-tools/shell_scripts/counts/counts.sh
-  ...
+```bash
+BIN_DIR=~/.local/bin ./install.sh
 ```
 
 ### 3. 添加到 PATH
@@ -54,7 +64,5 @@ source ~/.zshrc
 ## 验证
 
 ```bash
-timer 10s
+./install.sh list
 ```
-
-10 秒后收到 macOS 通知即表示安装成功。

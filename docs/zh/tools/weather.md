@@ -1,4 +1,4 @@
-# 🌤️ weather <Badge type="tip" text="Shell" />
+# 🌤️ weather <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 通过 [wttr.in](https://wttr.in) API 获取当前天气信息。
 
@@ -21,18 +21,33 @@ weather [城市]
 ## 示例
 
 ```bash
-weather
+# 显示东京的天气
 weather Tokyo
-weather Osaka
 ```
 
-## 输出示例
-
 ```
-Tokyo: ⛅️ +18°C 65% 0.0mm 🌘 25
+Tokyo: ⛅️ +22°C 60% 0.0mm 🌔 18
 ```
 
-格式：`城市: 天气图标 气温 湿度 降水量 月相 月龄`
+```bash
+# 通过 peco 交互选择城市
+weather
+```
+
+```
+[peco city selection interface]
+> Sapporo
+  Sendai
+  Tokyo
+  Osaka
+  ...
+```
+
+输出格式：
+
+```
+city: icon temperature humidity precipitation moon-phase moon-age
+```
 
 ## 预设城市
 

@@ -1,4 +1,4 @@
-# 🔧 fix_filename <Badge type="tip" text="Shell" />
+# 🔧 fix_filename <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 通过配置文件中定义的模式/替换规则重命名文件，支持批量重命名、目录递归和 stdin 管道。
 
@@ -31,7 +31,40 @@ old_word,new_word
 ## 示例
 
 ```bash
-fix_filename -c zenkaku_to_hankaku.conf ./files
-fix_filename -c space_to_underbar.conf -c specific_words.conf ./docs
-find . -name "*.md" | fix_filename -c zenkaku_to_hankaku.conf
+# 将文件名中的全角字符转为半角
+fix_filename -c zenkaku_to_hankaku.conf ./files/
+```
+
+```
+./files/ABC_test.txt
+./files/report_2025.pdf
+```
+
+```bash
+# 将空格替换为下划线
+fix_filename -c space_to_underbar.conf "my document.txt"
+```
+
+```
+my_document.txt
+```
+
+```bash
+# 同时应用多个规则
+fix_filename -c zenkaku_to_hankaku.conf -c space_to_underbar.conf ./docs/
+```
+
+```
+./docs/ABC_report_2025.txt
+./docs/project_notes.md
+```
+
+```bash
+# 通过 stdin 与 find 配合使用
+find . -name "*.txt" | fix_filename -c zenkaku_to_hankaku.conf
+```
+
+```
+./ABC_test.txt
+./report_2025.txt
 ```

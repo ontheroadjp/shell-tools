@@ -1,4 +1,4 @@
-# 📊 counts <Badge type="tip" text="Shell" />
+# 📊 counts <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 按大小或类型统计并分析文件和目录。
 
@@ -23,8 +23,45 @@ counts <子命令> [路径]
 ## 示例
 
 ```bash
+# 显示当前目录的总大小
 counts dirsize
+```
+
+```
+/Users/user/project		142M
+```
+
+```bash
+# 显示目录中最大的 10 个文件
 counts fatf ~/Downloads
-counts cimg
+```
+
+```
+1.2G  /Users/user/Downloads/video.mp4
+450M  /Users/user/Downloads/archive.zip
+ 98M  /Users/user/Downloads/dataset.tar.gz
+```
+
+```bash
+# 统计当前目录中的图片文件
+counts cimg .
+```
+
+```
+./photo1.jpg
+./photo2.png
+./photo3.jpg
+------------------
+3 files.
+```
+
+```bash
+# 显示子目录大小前 10 名
 counts subdirsize ~/Documents
+```
+
+```
+ 85M  /Users/user/Documents/Projects
+ 42M  /Users/user/Documents/Archive
+ 18M  /Users/user/Documents/Books
 ```

@@ -1,4 +1,4 @@
-# 🎨 colors <Badge type="tip" text="Shell" />
+# 🎨 colors <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 在终端中显示 ANSI 颜色代码和 xterm 256 色表。
 
@@ -18,10 +18,21 @@ colors [子命令]
 ## 示例
 
 ```bash
+# 显示所有 ANSI 基本颜色
 colors
+```
+
+```
+[displays colored terminal output with ANSI color codes and names]
+```
+
+```bash
+# 显示 256 色表
 colors 256
-colors 256hex
-colors 256hexbg
+```
+
+```
+[displays 256-color table with color indices]
 ```
 
 ## 说明

@@ -1,4 +1,4 @@
-# 📮 yubin <Badge type="tip" text="Shell" />
+# 📮 yubin <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Interactively search Japanese postal codes using `fzf-tmux` with data from Japan Post.
 
@@ -29,13 +29,21 @@ Opens an interactive `fzf-tmux` search. You can search by postal code, prefectur
 ## Examples
 
 ```bash
+# Launch interactive postal code search
 yubin
 ```
 
-After launching, type to search:
-- `渋谷` → Find postal codes in Shibuya
-- `1500001` → Search by postal code
-- `北海道` → Filter by Hokkaido
+```
+[fzf-tmux search interface opens]
+  150-0001  東京都  渋谷区  神宮前
+  150-0002  東京都  渋谷区  渋谷
+  ...
+```
+
+Type to filter:
+- `渋谷` → filter by Shibuya area
+- `1500001` → search by postal code directly
+- `北海道` → filter by Hokkaido
 
 ## Notes
 

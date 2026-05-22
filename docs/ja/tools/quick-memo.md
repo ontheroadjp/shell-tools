@@ -1,4 +1,4 @@
-# 📝 quick-memo <Badge type="tip" text="Shell" />
+# 📝 quick-memo <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 ターミナルからすばやくメモや TODO を管理します。メモは Markdown ファイルに保存されます。
 
@@ -35,17 +35,43 @@ quick-memo [subcommand]
 ## Examples
 
 ```bash
-# メモを開く（vim が起動）
+# メモファイルを vim で開く
 quick-memo
+```
 
+```
+[opens ~/.local/share/quick-memo/quick_memo.md in vim]
+```
+
+```bash
 # TODO を追加
-quick-memo todo "企画書を書く" "MTG 資料を準備する"
+quick-memo todo "Review pull request"
+```
 
+```
+add todo: Review pull request
+```
+
+```bash
+# 複数の TODO を一度に追加
+quick-memo todo "Fix bug #42" "Write tests" "Update docs"
+```
+
+```
+add todo: Fix bug #42
+add todo: Write tests
+add todo: Update docs
+```
+
+```bash
 # 未完了の TODO を一覧表示
 quick-memo todo
+```
 
-# メモをメールで送信
-quick-memo mail you@example.com
+```
+- [ ] Fix bug #42
+- [ ] Write tests
+- [ ] Update docs
 ```
 
 ## Notes

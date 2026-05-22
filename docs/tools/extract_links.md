@@ -1,4 +1,4 @@
-# 🔗 extract_links <Badge type="info" text="Python" />
+# 🔗 extract_links <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Scrape a web page and extract all links matching specified file extensions.
 
@@ -16,14 +16,34 @@ extract_links <url> [-e ext ...] [-o output_file]
 ## Examples
 
 ```bash
-# Extract all PDF links
+# Extract all PDF links from a page
 extract_links https://example.com -e pdf
+```
 
-# Extract PDF and image links
+```
+https://example.com/doc/manual.pdf
+https://example.com/doc/guide.pdf
+https://example.com/doc/report.pdf
+```
+
+```bash
+# Extract multiple file types
 extract_links https://example.com -e pdf jpg png
+```
 
-# Save to file
+```
+https://example.com/docs/manual.pdf
+https://example.com/images/logo.png
+https://example.com/images/banner.jpg
+```
+
+```bash
+# Save extracted URLs to a file
 extract_links https://example.com -e pdf -o urls.txt
+```
+
+```
+✅ 3 links saved to urls.txt
 ```
 
 ## Notes

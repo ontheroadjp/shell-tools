@@ -1,4 +1,4 @@
-# 📈 numstats <Badge type="tip" text="Shell" />
+# 📈 numstats <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Computes basic statistics (min, max, avg, count) for a list of numbers. Accepts numbers as arguments or via stdin.
 
@@ -21,15 +21,38 @@ If no options are specified, all statistics are shown.
 ## Examples
 
 ```bash
+# Compute stats for numbers passed as arguments
 numstats 10 20 30 40 50
-# → min=10, max=50, avg=30.000000, count=5
+```
 
-numstats -Ma 10 20 30
+```
+min=10, max=50, avg=30.000000, count=5
+```
 
-echo -e "5\n10\n15" | numstats
+```bash
+# Pipe numbers from stdin
+echo -e "3.5\n7.2\n1.8\n9.4" | numstats
+```
 
-cat scores.txt | numstats -a
+```
+min=1.8, max=9.4, avg=5.475000, count=4
+```
 
-numstats -mq 10 20 30
-# → 10
+```bash
+# Show only minimum and maximum
+numstats -m -M 5 10 15 20 25
+```
+
+```
+min=5, max=25
+```
+
+```bash
+# Quiet mode (values only, no labels)
+numstats -q -m -M 10 20 30
+```
+
+```
+10
+30
 ```

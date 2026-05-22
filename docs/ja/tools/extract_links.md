@@ -1,4 +1,4 @@
-# 🔗 extract_links <Badge type="info" text="Python" />
+# 🔗 extract_links <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 ウェブページをスクレイピングし、指定した拡張子に一致するリンクをすべて抽出します。
 
@@ -16,14 +16,34 @@ extract_links <url> [-e ext ...] [-o output_file]
 ## 例
 
 ```bash
-# PDF リンクをすべて抽出
+# ページから PDF リンクをすべて抽出
 extract_links https://example.com -e pdf
+```
 
-# PDF と画像リンクを抽出
+```
+https://example.com/doc/manual.pdf
+https://example.com/doc/guide.pdf
+https://example.com/doc/report.pdf
+```
+
+```bash
+# 複数のファイル形式を抽出
 extract_links https://example.com -e pdf jpg png
+```
 
-# ファイルに保存
+```
+https://example.com/docs/manual.pdf
+https://example.com/images/logo.png
+https://example.com/images/banner.jpg
+```
+
+```bash
+# 抽出した URL をファイルに保存
 extract_links https://example.com -e pdf -o urls.txt
+```
+
+```
+✅ 3 links saved to urls.txt
 ```
 
 ## 備考

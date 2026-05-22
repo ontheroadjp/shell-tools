@@ -1,4 +1,4 @@
-# 🌍 worldtime <Badge type="tip" text="Shell" />
+# 🌍 worldtime <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Display the current time in Sydney, Tokyo, Shanghai, London, New York, and Los Angeles. Supports interactive timezone selection via `peco`.
 
@@ -23,19 +23,33 @@ worldtime tz [timezone]
 ## Examples
 
 ```bash
+# Show current time in 6 major cities
 worldtime
+```
+
+```
+Sydney:         [ 8:00 AM] Friday, May 23, 2026
+Tokyo:          [ 7:00 AM] Friday, May 23, 2026
+Shanghai:       [ 6:00 AM] Friday, May 23, 2026
+London:         [11:00 PM] Thursday, May 22, 2026
+New York:       [ 6:00 PM] Thursday, May 22, 2026
+Los Angeles:    [ 3:00 PM] Thursday, May 22, 2026
+```
+
+```bash
+# Filter by city name
 worldtime Tokyo
-worldtime tz
+```
+
+```
+Tokyo:          [ 7:00 AM] Friday, May 23, 2026
+```
+
+```bash
+# Show time for a specific timezone
 worldtime tz Asia/Seoul
 ```
 
-## Output
-
 ```
-Sydney:         [ 8:00 AM] Wednesday, May 21, 2025
-Tokyo:          [ 7:00 AM] Wednesday, May 21, 2025
-Shanghai:       [ 6:00 AM] Wednesday, May 21, 2025
-London:         [11:00 PM] Tuesday, May 20, 2025
-New York:       [ 6:00 PM] Tuesday, May 20, 2025
-Los Angeles:    [ 3:00 PM] Tuesday, May 20, 2025
+Asia/Seoul: Fri May 23 07:00:00 KST 2026
 ```

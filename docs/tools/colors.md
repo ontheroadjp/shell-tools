@@ -1,4 +1,4 @@
-# 🎨 colors <Badge type="tip" text="Shell" />
+# 🎨 colors <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Displays ANSI color codes and xterm 256-color tables in your terminal.
 
@@ -18,10 +18,21 @@ colors [subcommand]
 ## Examples
 
 ```bash
+# Show all ANSI basic colors
 colors
+```
+
+```
+[displays colored terminal output with ANSI color codes and names]
+```
+
+```bash
+# Show 256-color table
 colors 256
-colors 256hex
-colors 256hexbg
+```
+
+```
+[displays 256-color table with color indices]
 ```
 
 ## Notes

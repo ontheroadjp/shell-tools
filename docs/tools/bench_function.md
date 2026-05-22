@@ -1,4 +1,4 @@
-# 📊 bench_function <Badge type="tip" text="Shell" />
+# 📊 bench_function <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Source a Zsh file and benchmark the execution time of a specified function over multiple runs.
 
@@ -14,17 +14,14 @@ bench_function <function-file> <function-name> [count=100] [args...]
 
 ## Examples
 
-```zsh
-bench_function ~/.zshrc __git_ps1_update_fast 100
-bench_function ./myfunc.zsh myfunc 50 arg1 arg2
+```bash
+# Benchmark a Zsh function 10 times
+bench_function my_func
 ```
 
-## Output
-
 ```
-📊 function: myfunc
-🔁 times: 50
-⏱️ average: 0.002345s
-⚡ Shortest: 0.001900s
-🐢 longest: 0.005100s
+Benchmark: my_func (10 runs)
+  min:  0.012s
+  max:  0.025s
+  avg:  0.018s
 ```

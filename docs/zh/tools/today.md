@@ -1,4 +1,4 @@
-# ☀️ today <Badge type="tip" text="Shell" />
+# ☀️ today <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 显示今日日期（含日本年号）、天气和世界时间的每日摘要。
 
@@ -12,16 +12,21 @@
 today
 ```
 
-## 输出示例
+## 示例
+
+```bash
+# 显示每日摘要
+today
+```
 
 ```
-令和7年,2025 05月 21日 Tokyo: ⛅️ +18°C 65% 0.0mm 🌘 25
-Sydney:         [ 8:00 AM] Wednesday, May 21, 2025
-Tokyo:          [ 7:00 AM] Wednesday, May 21, 2025
-Shanghai:       [ 6:00 AM] Wednesday, May 21, 2025
-London:         [11:00 PM] Tuesday, May 20, 2025
-New York:       [ 6:00 PM] Tuesday, May 20, 2025
-Los Angeles:    [ 3:00 PM] Tuesday, May 20, 2025
+令和8年 05月 23日 ⛅️ +22°C 60%
+Sydney:      [ 8:00 AM] Friday, May 23, 2026
+Tokyo:       [ 7:00 AM] Friday, May 23, 2026
+Shanghai:    [ 6:00 AM] Friday, May 23, 2026
+London:      [11:00 PM] Thursday, May 22, 2026
+New York:    [ 6:00 PM] Thursday, May 22, 2026
+Los Angeles: [ 3:00 PM] Thursday, May 22, 2026
 enjyo! :-)
 ```
 

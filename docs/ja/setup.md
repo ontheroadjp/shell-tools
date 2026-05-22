@@ -1,40 +1,50 @@
-# Setup
+# セットアップ
 
-## Requirements
+## 必要環境
 
-- macOS
+- macOS または Linux
 - Bash 4.0+
-- Common dependencies: `curl`, `fzf`
-- Some tools additionally require: `peco`, `nkf`, `w3m`, `gsed`, `ffmpeg`, `rg`
+- 共通ツール: `curl`、`fzf`
+- 一部のツールにはさらに必要: `peco`、`nkf`、`ffmpeg`、`rg`
 
-Homebrew でまとめてインストールする場合:
+依存パッケージのインストール（macOS / Homebrew）:
 
 ```bash
-brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
+brew install fzf peco nkf ffmpeg ripgrep
 ```
 
-## Installation
+## インストール手順
 
 ### 1. リポジトリをクローン
 
 ```bash
 git clone https://github.com/ontheroadjp/shell-tools.git ~/shell-tools
+cd ~/shell-tools
 ```
 
-### 2. `~/dotfiles/bin` にシンボリックリンクを作成
+### 2. シンボリックリンクを作成
 
 ```bash
-cd ~/shell-tools
+# 全ツールをインストール
 ./install.sh
+
+# 特定のツールのみインストール
+./install.sh timer weather yubin
+
+# 利用可能なツールを確認
+./install.sh list
+
+# 全ツールをアンインストール
+./install.sh uninstall
+
+# 特定のツールをアンインストール
+./install.sh uninstall timer weather
 ```
 
-`~/dotfiles/bin` 以下に各スクリプトへのシンボリックリンクが作成されます。
+シンボリックリンクはデフォルトで `~/dotfiles/bin` に作成されます。`BIN_DIR` で変更可能です:
 
-```
-~/dotfiles/bin/
-  colors -> ~/shell-tools/shell_scripts/colors/colors.sh
-  counts -> ~/shell-tools/shell_scripts/counts/counts.sh
-  ...
+```bash
+BIN_DIR=~/.local/bin ./install.sh
 ```
 
 ### 3. PATH に追加
@@ -51,10 +61,8 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 source ~/.zshrc
 ```
 
-## Verify
+## 確認
 
 ```bash
-timer 10s
+./install.sh list
 ```
-
-10秒後に macOS 通知が表示されれば完了です。

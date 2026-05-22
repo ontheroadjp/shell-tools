@@ -1,4 +1,4 @@
-# 📶 wifi-helth-check <Badge type="tip" text="Shell" />
+# 📶 wifi-helth-check <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 WiFi の電波強度・接続速度・インターネット接続をまとめて診断します。値の良否をカラーで視覚的に表示します。
 
@@ -23,31 +23,46 @@ wifi-helth-check [subcommand]
 ## Examples
 
 ```bash
-# 全診断を実行
+# WiFi とインターネットの全診断を実行（デフォルト）
 wifi-helth-check
-
-# インターネット接続だけ確認
-wifi-helth-check inetinfo
-
-# 電波強度だけ確認
-wifi-helth-check radioinfo
 ```
 
-## Output
-
 ```
-Address: 192.168.1.10
+Address: 192.168.1.42
 Gateway: 192.168.1.1
-Ping:    1.2 ms (100% packets transmitted)
-DNS:     OK
+Ping: 2.3 ms (100% packets transmitted)
+DNS:   OK
 
-SSID:    MyNetwork
+SSID:    MyHomeWifi
 BSSID:   aa:bb:cc:dd:ee:ff
 CHANNEL: 6ch: 2.4GHz
 
-RSSI:    -55 / -95  (S/N: 40)
-Rate:    130 / 300
-MCS:     15
+RSSI:  -55 / -95  (S/N: 40)
+Rate:  130 / 144
+MCS:   7
+```
+
+```bash
+# インターネット接続情報のみ表示
+wifi-helth-check inetinfo
+```
+
+```
+Address: 192.168.1.42
+Gateway: 192.168.1.1
+Ping: 2.3 ms (100% packets transmitted)
+DNS:   OK
+```
+
+```bash
+# WiFi 電波強度情報のみ表示
+wifi-helth-check radioinfo
+```
+
+```
+RSSI:  -55 / -95  (S/N: 40)
+Rate:  130 / 144
+MCS:   7
 ```
 
 ## Color Indicators

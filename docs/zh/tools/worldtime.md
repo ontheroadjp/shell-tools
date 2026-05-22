@@ -1,4 +1,4 @@
-# 🌍 worldtime <Badge type="tip" text="Shell" />
+# 🌍 worldtime <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 显示悉尼、东京、上海、伦敦、纽约、洛杉矶的当前时间，也可通过 `peco` 交互选择时区。
 
@@ -23,19 +23,33 @@ worldtime tz [时区]
 ## 示例
 
 ```bash
+# 显示 6 个主要城市的当前时间
 worldtime
+```
+
+```
+Sydney:         [ 8:00 AM] Friday, May 23, 2026
+Tokyo:          [ 7:00 AM] Friday, May 23, 2026
+Shanghai:       [ 6:00 AM] Friday, May 23, 2026
+London:         [11:00 PM] Thursday, May 22, 2026
+New York:       [ 6:00 PM] Thursday, May 22, 2026
+Los Angeles:    [ 3:00 PM] Thursday, May 22, 2026
+```
+
+```bash
+# 按城市名过滤
 worldtime Tokyo
-worldtime tz
+```
+
+```
+Tokyo:          [ 7:00 AM] Friday, May 23, 2026
+```
+
+```bash
+# 显示指定时区的时间
 worldtime tz Asia/Seoul
 ```
 
-## 输出示例
-
 ```
-Sydney:         [ 8:00 AM] Wednesday, May 21, 2025
-Tokyo:          [ 7:00 AM] Wednesday, May 21, 2025
-Shanghai:       [ 6:00 AM] Wednesday, May 21, 2025
-London:         [11:00 PM] Tuesday, May 20, 2025
-New York:       [ 6:00 PM] Tuesday, May 20, 2025
-Los Angeles:    [ 3:00 PM] Tuesday, May 20, 2025
+Asia/Seoul: Fri May 23 07:00:00 KST 2026
 ```

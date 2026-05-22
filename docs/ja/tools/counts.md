@@ -1,4 +1,4 @@
-# 📊 counts <Badge type="tip" text="Shell" />
+# 📊 counts <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 ディレクトリやファイルをサイズ・種類で集計します。
 
@@ -23,15 +23,45 @@ counts <subcommand> [path]
 ## Examples
 
 ```bash
-# カレントディレクトリのサイズ
+# カレントディレクトリの合計サイズを表示
 counts dirsize
+```
 
-# ~/Downloads の大きいファイル上位10件
+```
+/Users/user/project		142M
+```
+
+```bash
+# ~/Downloads の大きいファイル上位10件を表示
 counts fatf ~/Downloads
+```
 
-# カレントディレクトリの画像ファイル数
-counts cimg
+```
+1.2G  /Users/user/Downloads/video.mp4
+450M  /Users/user/Downloads/archive.zip
+ 98M  /Users/user/Downloads/dataset.tar.gz
+```
 
-# 指定ディレクトリのサブディレクトリサイズ
+```bash
+# カレントディレクトリの画像ファイルをカウント
+counts cimg .
+```
+
+```
+./photo1.jpg
+./photo2.png
+./photo3.jpg
+------------------
+3 files.
+```
+
+```bash
+# 指定ディレクトリのサブディレクトリサイズ上位10件を表示
 counts subdirsize ~/Documents
+```
+
+```
+ 85M  /Users/user/Documents/Projects
+ 42M  /Users/user/Documents/Archive
+ 18M  /Users/user/Documents/Books
 ```

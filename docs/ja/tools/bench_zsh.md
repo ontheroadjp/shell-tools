@@ -1,4 +1,4 @@
-# 🚀 bench_zsh <Badge type="tip" text="Shell" />
+# 🚀 bench_zsh <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 `zsh -l` のログインシェル起動時間を複数回計測し、平均・最短・最長を報告します。
 
@@ -14,14 +14,16 @@ bench_zsh
 
 計測回数はスクリプト内の `N=10` を編集して変更できます。
 
-## 出力例
+## 例
+
+```bash
+# Zsh の起動時間を計測（10回）
+bench_zsh
+```
 
 ```
-Run 1: 0.312s
-Run 2: 0.298s
-...
-----------------------------
-Average start time: 0.305s (10 runs)
-Minimum: 0.290s
-Maximum: 0.330s
+Zsh startup time (10 runs):
+  min:  0.124s
+  max:  0.201s
+  avg:  0.158s
 ```

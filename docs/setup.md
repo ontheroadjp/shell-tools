@@ -2,15 +2,15 @@
 
 ## Requirements
 
-- macOS
+- macOS or Linux
 - Bash 4.0+
-- Common: `curl`, `fzf`
-- Some tools additionally require: `peco`, `nkf`, `w3m`, `gsed`, `ffmpeg`, `rg`
+- Common tools: `curl`, `fzf`
+- Some tools additionally require: `peco`, `nkf`, `ffmpeg`, `rg`
 
-Install all dependencies via Homebrew:
+Install dependencies (macOS via Homebrew):
 
 ```bash
-brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
+brew install fzf peco nkf ffmpeg ripgrep
 ```
 
 ## Installation
@@ -19,22 +19,32 @@ brew install fzf peco nkf w3m gnu-sed ffmpeg ripgrep
 
 ```bash
 git clone https://github.com/ontheroadjp/shell-tools.git ~/shell-tools
+cd ~/shell-tools
 ```
 
-### 2. Create symlinks in `~/dotfiles/bin`
+### 2. Install symlinks
 
 ```bash
-cd ~/shell-tools
+# Install all tools
 ./install.sh
+
+# Install specific tools only
+./install.sh timer weather yubin
+
+# Show available tools
+./install.sh list
+
+# Uninstall all tools
+./install.sh uninstall
+
+# Uninstall specific tools
+./install.sh uninstall timer weather
 ```
 
-This creates symlinks for each script under `~/dotfiles/bin`:
+Symlinks are created in `~/dotfiles/bin` by default. Override with `BIN_DIR`:
 
-```
-~/dotfiles/bin/
-  colors -> ~/shell-tools/shell_scripts/colors/colors.sh
-  counts -> ~/shell-tools/shell_scripts/counts/counts.sh
-  ...
+```bash
+BIN_DIR=~/.local/bin ./install.sh
 ```
 
 ### 3. Add to PATH
@@ -45,7 +55,7 @@ Add to `~/.zshrc` or `~/.bashrc`:
 export PATH="$HOME/dotfiles/bin:$PATH"
 ```
 
-Reload:
+Then reload:
 
 ```bash
 source ~/.zshrc
@@ -54,7 +64,5 @@ source ~/.zshrc
 ## Verify
 
 ```bash
-timer 10s
+./install.sh list
 ```
-
-You should receive a macOS notification after 10 seconds.

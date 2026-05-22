@@ -1,4 +1,4 @@
-# 📊 bench_function <Badge type="tip" text="Shell" />
+# 📊 bench_function <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 加载 Zsh 文件并对指定函数进行多次执行时间基准测试。
 
@@ -14,17 +14,14 @@ bench_function <函数文件> <函数名> [次数=100] [参数...]
 
 ## 示例
 
-```zsh
-bench_function ~/.zshrc __git_ps1_update_fast 100
-bench_function ./myfunc.zsh myfunc 50 arg1 arg2
+```bash
+# 对 Zsh 函数进行 10 次基准测试
+bench_function my_func
 ```
 
-## 输出示例
-
 ```
-📊 function: myfunc
-🔁 times: 50
-⏱️ average: 0.002345s
-⚡ 最短: 0.001900s
-🐢 最长: 0.005100s
+Benchmark: my_func (10 runs)
+  min:  0.012s
+  max:  0.025s
+  avg:  0.018s
 ```

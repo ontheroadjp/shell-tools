@@ -1,4 +1,4 @@
-# 📈 numstats <Badge type="tip" text="Shell" />
+# 📈 numstats <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 计算数字列表的统计信息（最小值、最大值、平均值、数量）。可通过参数或标准输入传入数字。
 
@@ -21,15 +21,38 @@ numstats [选项] [数字...]
 ## 示例
 
 ```bash
+# 计算通过参数传入的数字统计信息
 numstats 10 20 30 40 50
-# → min=10, max=50, avg=30.000000, count=5
+```
 
-numstats -Ma 10 20 30
+```
+min=10, max=50, avg=30.000000, count=5
+```
 
-echo -e "5\n10\n15" | numstats
+```bash
+# 通过管道传入数字
+echo -e "3.5\n7.2\n1.8\n9.4" | numstats
+```
 
-cat scores.txt | numstats -a
+```
+min=1.8, max=9.4, avg=5.475000, count=4
+```
 
-numstats -mq 10 20 30
-# → 10
+```bash
+# 仅显示最小值和最大值
+numstats -m -M 5 10 15 20 25
+```
+
+```
+min=5, max=25
+```
+
+```bash
+# 静默模式（仅输出数值，不显示标签）
+numstats -q -m -M 10 20 30
+```
+
+```
+10
+30
 ```

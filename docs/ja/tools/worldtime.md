@@ -1,4 +1,4 @@
-# 🌍 worldtime <Badge type="tip" text="Shell" />
+# 🌍 worldtime <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Sydney / Tokyo / Shanghai / London / New York / Los Angeles の現在時刻を一覧表示します。タイムゾーン一覧から `peco` でインタラクティブに選択することもできます。
 
@@ -23,26 +23,33 @@ worldtime tz [timezone]
 ## Examples
 
 ```bash
-# 全都市を表示
+# 主要6都市の現在時刻を表示
 worldtime
+```
 
-# "Tokyo" を含む行だけ表示
+```
+Sydney:         [ 8:00 AM] Friday, May 23, 2026
+Tokyo:          [ 7:00 AM] Friday, May 23, 2026
+Shanghai:       [ 6:00 AM] Friday, May 23, 2026
+London:         [11:00 PM] Thursday, May 22, 2026
+New York:       [ 6:00 PM] Thursday, May 22, 2026
+Los Angeles:    [ 3:00 PM] Thursday, May 22, 2026
+```
+
+```bash
+# 都市名でフィルタ
 worldtime Tokyo
+```
 
-# peco でタイムゾーンを選択
-worldtime tz
+```
+Tokyo:          [ 7:00 AM] Friday, May 23, 2026
+```
 
+```bash
 # タイムゾーンを直接指定
 worldtime tz Asia/Seoul
 ```
 
-## Output
-
 ```
-Sydney:         [ 8:00 AM] Wednesday, May 21, 2025
-Tokyo:          [ 7:00 AM] Wednesday, May 21, 2025
-Shanghai:       [ 6:00 AM] Wednesday, May 21, 2025
-London:         [11:00 PM] Tuesday, May 20, 2025
-New York:       [ 6:00 PM] Tuesday, May 20, 2025
-Los Angeles:    [ 3:00 PM] Tuesday, May 20, 2025
+Asia/Seoul: Fri May 23 07:00:00 KST 2026
 ```

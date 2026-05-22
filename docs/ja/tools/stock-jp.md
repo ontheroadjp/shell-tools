@@ -1,4 +1,4 @@
-# 💹 stock-jp <Badge type="tip" text="Shell" />
+# 💹 stock-jp <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 東証上場銘柄を `peco` でインタラクティブに検索し、選択した証券会社・情報サイトをブラウザで開きます。
 
@@ -52,9 +52,35 @@ stock-jp [options]
 ## Examples
 
 ```bash
-# インタラクティブ検索
+# インタラクティブな銘柄検索を起動
 stock-jp
+```
 
-# 銘柄データを更新してから検索
-stock-jp --update && stock-jp
+```
+[displays fzf search interface]
+Stock JP > _
+  9984  ソフトバンクグループ  情報・通信業
+  7203  トヨタ自動車          輸送用機器
+  6758  ソニーグループ        電気機器
+  ...
+```
+
+銘柄を選択すると、参照先サイトを選ぶ画面が表示されます:
+
+```
+Yahoo! Finance
+Google
+SBI証券
+Quick（株価）
+...
+```
+
+```bash
+# 銘柄データをダウンロード・更新
+stock-jp --update
+```
+
+```
+  % Total    % Received % Xferd ...
+updated!
 ```

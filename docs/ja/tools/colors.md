@@ -1,4 +1,4 @@
-# 🎨 colors <Badge type="tip" text="Shell" />
+# 🎨 colors <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 ANSI カラーコードと xterm 256色テーブルをターミナルに表示します。
 
@@ -18,17 +18,21 @@ colors [subcommand]
 ## Examples
 
 ```bash
-# 基本カラーコードを表示
+# ANSI 基本カラーをすべて表示
 colors
+```
 
-# 256色を番号付きで表示
+```
+[displays colored terminal output with ANSI color codes and names]
+```
+
+```bash
+# 256色テーブルを表示
 colors 256
+```
 
-# 256色を HEX 付きで表示
-colors 256hex
-
-# 背景色として HEX 付きで表示
-colors 256hexbg
+```
+[displays 256-color table with color indices]
 ```
 
 ## Notes

@@ -1,4 +1,4 @@
-# 📝 quick-memo <Badge type="tip" text="Shell" />
+# 📝 quick-memo <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 从终端快速管理备忘录和待办事项，笔记以 Markdown 文件形式保存。
 
@@ -35,10 +35,43 @@ quick-memo [子命令]
 ## 示例
 
 ```bash
+# 用 vim 打开备忘录文件
 quick-memo
-quick-memo todo "撰写方案" "准备会议材料"
+```
+
+```
+[opens ~/.local/share/quick-memo/quick_memo.md in vim]
+```
+
+```bash
+# 添加一个待办事项
+quick-memo todo "Review pull request"
+```
+
+```
+add todo: Review pull request
+```
+
+```bash
+# 一次添加多个待办事项
+quick-memo todo "Fix bug #42" "Write tests" "Update docs"
+```
+
+```
+add todo: Fix bug #42
+add todo: Write tests
+add todo: Update docs
+```
+
+```bash
+# 显示所有未完成的待办事项
 quick-memo todo
-quick-memo mail you@example.com
+```
+
+```
+- [ ] Fix bug #42
+- [ ] Write tests
+- [ ] Update docs
 ```
 
 ## 说明

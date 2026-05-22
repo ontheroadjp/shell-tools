@@ -1,4 +1,4 @@
-# 📶 wifi-helth-check <Badge type="tip" text="Shell" />
+# 📶 wifi-helth-check <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 诊断 WiFi 信号强度、连接速度和互联网连接状态，以彩色显示检测结果。
 
@@ -22,26 +22,46 @@ wifi-helth-check [子命令]
 ## 示例
 
 ```bash
+# 完整的 WiFi 和互联网诊断（默认）
 wifi-helth-check
-wifi-helth-check inetinfo
-wifi-helth-check radioinfo
 ```
 
-## 输出示例
-
 ```
-Address: 192.168.1.10
+Address: 192.168.1.42
 Gateway: 192.168.1.1
-Ping:    1.2 ms (100% packets transmitted)
-DNS:     OK
+Ping: 2.3 ms (100% packets transmitted)
+DNS:   OK
 
-SSID:    MyNetwork
+SSID:    MyHomeWifi
 BSSID:   aa:bb:cc:dd:ee:ff
 CHANNEL: 6ch: 2.4GHz
 
-RSSI:    -55 / -95  (S/N: 40)
-Rate:    130 / 300
-MCS:     15
+RSSI:  -55 / -95  (S/N: 40)
+Rate:  130 / 144
+MCS:   7
+```
+
+```bash
+# 仅显示互联网信息
+wifi-helth-check inetinfo
+```
+
+```
+Address: 192.168.1.42
+Gateway: 192.168.1.1
+Ping: 2.3 ms (100% packets transmitted)
+DNS:   OK
+```
+
+```bash
+# 仅显示 WiFi 信号信息
+wifi-helth-check radioinfo
+```
+
+```
+RSSI:  -55 / -95  (S/N: 40)
+Rate:  130 / 144
+MCS:   7
 ```
 
 ## 颜色说明

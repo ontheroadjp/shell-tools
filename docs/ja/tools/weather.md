@@ -1,4 +1,4 @@
-# 🌤️ weather <Badge type="tip" text="Shell" />
+# 🌤️ weather <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 [wttr.in](https://wttr.in) API を使って現在の天気を取得します。
 
@@ -21,22 +21,33 @@ weather [city]
 ## Examples
 
 ```bash
-# peco で都市を選択
-weather
-
-# 都市を直接指定
+# 東京の天気を表示
 weather Tokyo
-weather Osaka
-weather Sapporo
 ```
 
-## Output
-
 ```
-Tokyo: ⛅️ +18°C 65% 0.0mm 🌘 25
+Tokyo: ⛅️ +22°C 60% 0.0mm 🌔 18
 ```
 
-出力フォーマット: `都市名: 天気アイコン 気温 湿度 降水量 月相 月齢`
+```bash
+# peco でインタラクティブに都市を選択
+weather
+```
+
+```
+[peco city selection interface]
+> Sapporo
+  Sendai
+  Tokyo
+  Osaka
+  ...
+```
+
+出力フォーマット:
+
+```
+city: icon temperature humidity precipitation moon-phase moon-age
+```
 
 ## Preset Cities
 

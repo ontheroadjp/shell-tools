@@ -1,4 +1,4 @@
-# 📮 yubin <Badge type="tip" text="Shell" />
+# 📮 yubin <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 使用 `fzf-tmux` 交互式搜索日本邮政编码数据库。
 
@@ -29,7 +29,15 @@ yubin
 ## 示例
 
 ```bash
+# 启动交互式邮政编码搜索
 yubin
+```
+
+```
+[fzf-tmux search interface opens]
+  150-0001  東京都  渋谷区  神宮前
+  150-0002  東京都  渋谷区  渋谷
+  ...
 ```
 
 启动后输入关键词搜索：

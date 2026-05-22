@@ -1,4 +1,4 @@
-# ⏱️ timer <Badge type="tip" text="Shell" />
+# ⏱️ timer <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 指定した時間が経過すると macOS の通知センターに通知を出し、サウンドを鳴らすカウントダウンタイマーです。
 
@@ -17,17 +17,41 @@ timer <time>
 ## Examples
 
 ```bash
-# 30分後に通知
+# 30分タイマーをセット
 timer 30m
+```
 
-# 1時間30分後に通知
+```
+After 1800 sec
+[macOS notification / Linux notify-send after 30 minutes]
+```
+
+```bash
+# 1時間30分タイマーをセット
 timer 1h30m
+```
 
-# 90秒後に通知
+```
+After 5400 sec
+```
+
+```bash
+# 90秒タイマーをセット
 timer 90s
+```
 
-# 組み合わせ
-timer 2h15m30s
+```
+After 90 sec
+```
+
+```bash
+# バックグラウンドで実行
+timer 25m &
+```
+
+```
+[1] 12345
+After 1500 sec
 ```
 
 ## Notes

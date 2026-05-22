@@ -1,4 +1,4 @@
-# 🔗 extract_links <Badge type="info" text="Python" />
+# 🔗 extract_links <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 爬取网页并提取所有与指定文件扩展名匹配的链接。
 
@@ -16,14 +16,34 @@ extract_links <url> [-e ext ...] [-o output_file]
 ## 示例
 
 ```bash
-# 提取所有 PDF 链接
+# 提取页面中所有 PDF 链接
 extract_links https://example.com -e pdf
+```
 
-# 提取 PDF 和图片链接
+```
+https://example.com/doc/manual.pdf
+https://example.com/doc/guide.pdf
+https://example.com/doc/report.pdf
+```
+
+```bash
+# 提取多种文件类型
 extract_links https://example.com -e pdf jpg png
+```
 
-# 保存到文件
+```
+https://example.com/docs/manual.pdf
+https://example.com/images/logo.png
+https://example.com/images/banner.jpg
+```
+
+```bash
+# 将提取的 URL 保存到文件
 extract_links https://example.com -e pdf -o urls.txt
+```
+
+```
+✅ 3 links saved to urls.txt
 ```
 
 ## 说明

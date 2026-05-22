@@ -1,4 +1,4 @@
-# 💻 bench_command <Badge type="tip" text="Shell" />
+# 💻 bench_command <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 任意のシェルコマンドを複数回実行し、平均・最短・最長の実行時間を計測します。
 
@@ -14,17 +14,26 @@ bench_command <コマンド> [回数=100]
 
 ## 例
 
-```zsh
-bench_command "git status --porcelain" 50
-bench_command "ls -l" 100
+```bash
+# コマンドを10回計測（デフォルト）
+bench_command ls
 ```
 
-## 出力例
+```
+Benchmark: ls (10 runs)
+  min:  0.003s
+  max:  0.008s
+  avg:  0.005s
+```
+
+```bash
+# 計測回数を指定して実行
+bench_command -n 50 "echo hello"
+```
 
 ```
-💻 コマンド: git status --porcelain
-🔁 回数: 50
-⏱️ 平均: 0.012345s
-⚡ 最短: 0.010123s
-🐢 最長: 0.018456s
+Benchmark: echo hello (50 runs)
+  min:  0.001s
+  max:  0.003s
+  avg:  0.002s
 ```

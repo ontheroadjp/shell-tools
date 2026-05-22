@@ -1,4 +1,4 @@
-# 🔧 fix_filename <Badge type="tip" text="Shell" />
+# 🔧 fix_filename <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 設定ファイルに定義されたパターン/置換ルールを適用してファイルをリネームします。一括リネーム、ディレクトリの再帰処理、stdin パイプをサポートします。
 
@@ -31,7 +31,40 @@ old_word,new_word
 ## 例
 
 ```bash
-fix_filename -c zenkaku_to_hankaku.conf ./files
-fix_filename -c space_to_underbar.conf -c specific_words.conf ./docs
-find . -name "*.md" | fix_filename -c zenkaku_to_hankaku.conf
+# ファイル名の全角文字を半角に変換
+fix_filename -c zenkaku_to_hankaku.conf ./files/
+```
+
+```
+./files/ABC_test.txt
+./files/report_2025.pdf
+```
+
+```bash
+# スペースをアンダースコアに変換
+fix_filename -c space_to_underbar.conf "my document.txt"
+```
+
+```
+my_document.txt
+```
+
+```bash
+# 複数のルールを同時に適用
+fix_filename -c zenkaku_to_hankaku.conf -c space_to_underbar.conf ./docs/
+```
+
+```
+./docs/ABC_report_2025.txt
+./docs/project_notes.md
+```
+
+```bash
+# find との組み合わせで stdin から使用
+find . -name "*.txt" | fix_filename -c zenkaku_to_hankaku.conf
+```
+
+```
+./ABC_test.txt
+./report_2025.txt
 ```

@@ -1,4 +1,4 @@
-# 🔤 text_converter <Badge type="tip" text="Shell" />
+# 🔤 text_converter <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 在全角（全角）和半角（半角）字符之间相互转换。
 
@@ -20,11 +20,28 @@ to_zenkaku [file ...]
 ## 示例
 
 ```bash
-echo "ＡＢＣＤ１２３４" | to_hankaku
-# → ABCD1234
+# 将全角字符转为半角
+echo "ＡＢＣＤ　１２３４" | to_hankaku
+```
 
-echo "ABCD1234" | to_zenkaku
-# → ＡＢＣＤ１２３４
+```
+ABCD 1234
+```
 
+```bash
+# 将半角字符转为全角
+echo "ABCD 1234" | to_zenkaku
+```
+
+```
+ＡＢＣＤ　１２３４
+```
+
+```bash
+# 转换文件内容
 to_hankaku input.txt
+```
+
+```
+[converted content printed to stdout]
 ```

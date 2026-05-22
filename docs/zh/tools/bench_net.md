@@ -1,4 +1,4 @@
-# 🌐 bench_net <Badge type="tip" text="Shell" />
+# 🌐 bench_net <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 通过 speedtest.net 测量网络下载和上传速度。
 
@@ -10,6 +10,18 @@
 
 ```bash
 bench_net
+```
+
+## 示例
+
+```bash
+# 通过 speedtest.net 测量网速
+bench_net
+```
+
+```
+Download: 487.32 Mbps
+Upload:   198.54 Mbps
 ```
 
 ## 说明

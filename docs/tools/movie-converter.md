@@ -1,4 +1,4 @@
-# 🎬 movie-converter <Badge type="tip" text="Shell" />
+# 🎬 movie-converter <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Converts MP4 files to MP3. Supports single files, directories, and stdin.
 
@@ -25,10 +25,35 @@ find . -name "*.mp4" | mp4_to_mp3
 ## Examples
 
 ```bash
+# Convert a single MP4 file to MP3
 mp4_to_mp3 video.mp4
-mp4_to_mp3 ~/Movies/
-mp4_to_mp3 a.mp4 b.mp4 c.mp4
-find ~/Downloads -name "*.mp4" | mp4_to_mp3
+```
+
+```
+ffmpeg version 6.0 ...
+[conversion progress]
+video.mp4
+```
+
+```bash
+# Convert all MP4 files in a directory
+mp4_to_mp3 ./videos/
+```
+
+```
+./videos/lecture1.mp4
+./videos/lecture2.mp4
+./videos/interview.mp4
+```
+
+```bash
+# Use with find via stdin
+find ~/Movies -name "*.mp4" | mp4_to_mp3
+```
+
+```
+/Users/user/Movies/clip1.mp4
+/Users/user/Movies/clip2.mp4
 ```
 
 ## Notes

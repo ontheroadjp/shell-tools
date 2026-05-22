@@ -1,4 +1,4 @@
-# ⏱️ timer <Badge type="tip" text="Shell" />
+# ⏱️ timer <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 倒计时器，时间到后发送 macOS 通知并播放提示音。
 
@@ -17,10 +17,41 @@ timer <时间>
 ## 示例
 
 ```bash
+# 设置 30 分钟定时器
 timer 30m
+```
+
+```
+After 1800 sec
+[macOS notification / Linux notify-send after 30 minutes]
+```
+
+```bash
+# 设置 1 小时 30 分钟定时器
 timer 1h30m
+```
+
+```
+After 5400 sec
+```
+
+```bash
+# 设置 90 秒定时器
 timer 90s
-timer 2h15m30s
+```
+
+```
+After 90 sec
+```
+
+```bash
+# 在后台运行
+timer 25m &
+```
+
+```
+[1] 12345
+After 1500 sec
 ```
 
 ## 说明

@@ -1,4 +1,4 @@
-# 📮 yubin <Badge type="tip" text="Shell" />
+# 📮 yubin <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 日本郵便の郵便番号データベースを `fzf-tmux` でインタラクティブに検索します。
 
@@ -32,8 +32,15 @@ yubin
 ## Examples
 
 ```bash
-# 検索画面を起動
+# インタラクティブな郵便番号検索を起動
 yubin
+```
+
+```
+[fzf-tmux search interface opens]
+  150-0001  東京都  渋谷区  神宮前
+  150-0002  東京都  渋谷区  渋谷
+  ...
 ```
 
 起動後、キーボードで検索:

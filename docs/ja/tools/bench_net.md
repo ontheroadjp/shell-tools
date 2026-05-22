@@ -1,4 +1,4 @@
-# 🌐 bench_net <Badge type="tip" text="Shell" />
+# 🌐 bench_net <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 speedtest.net を使ってネットワークのダウンロード・アップロード速度を計測します。
 
@@ -10,6 +10,18 @@ speedtest.net を使ってネットワークのダウンロード・アップロ
 
 ```bash
 bench_net
+```
+
+## 例
+
+```bash
+# speedtest.net でネットワーク速度を計測
+bench_net
+```
+
+```
+Download: 487.32 Mbps
+Upload:   198.54 Mbps
 ```
 
 ## メモ

@@ -1,4 +1,4 @@
-# 💹 stock-jp <Badge type="tip" text="Shell" />
+# 💹 stock-jp <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Interactively search Tokyo Stock Exchange securities with `peco` and open them in your browser.
 
@@ -45,6 +45,35 @@ stock-jp [options]
 ## Examples
 
 ```bash
+# Launch interactive stock search
 stock-jp
-stock-jp --update && stock-jp
+```
+
+```
+[displays fzf search interface]
+Stock JP > _
+  9984  ソフトバンクグループ  情報・通信業
+  7203  トヨタ自動車          輸送用機器
+  6758  ソニーグループ        電気機器
+  ...
+```
+
+After selecting a stock, choose a site to open:
+
+```
+Yahoo! Finance
+Google
+SBI証券
+Quick（株価）
+...
+```
+
+```bash
+# Download/update stock data
+stock-jp --update
+```
+
+```
+  % Total    % Received % Xferd ...
+updated!
 ```

@@ -1,4 +1,4 @@
-# 📈 numstats <Badge type="tip" text="Shell" />
+# 📈 numstats <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 数値リストの統計（最小値・最大値・平均値・件数）を計算します。引数または標準入力から数値を受け取ります。
 
@@ -21,20 +21,38 @@ numstats [options] [numbers...]
 ## Examples
 
 ```bash
-# 引数で指定
+# 引数として渡した数値の統計を計算
 numstats 10 20 30 40 50
-# → min=10, max=50, avg=30.000000, count=5
+```
 
-# 最大値と平均値だけ表示
-numstats -Ma 10 20 30
+```
+min=10, max=50, avg=30.000000, count=5
+```
 
-# 標準入力から読み込み
-echo -e "5\n10\n15" | numstats
+```bash
+# 標準入力から数値をパイプ
+echo -e "3.5\n7.2\n1.8\n9.4" | numstats
+```
 
-# パイプと組み合わせ
-cat scores.txt | numstats -a
+```
+min=1.8, max=9.4, avg=5.475000, count=4
+```
 
-# ラベルなしで値だけ出力（スクリプト組み込み用）
-numstats -mq 10 20 30
-# → 10
+```bash
+# 最小値と最大値だけ表示
+numstats -m -M 5 10 15 20 25
+```
+
+```
+min=5, max=25
+```
+
+```bash
+# 静粛モード（ラベルなしで値のみ出力）
+numstats -q -m -M 10 20 30
+```
+
+```
+10
+30
 ```

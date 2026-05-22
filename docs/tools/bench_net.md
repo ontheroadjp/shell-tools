@@ -1,4 +1,4 @@
-# 🌐 bench_net <Badge type="tip" text="Shell" />
+# 🌐 bench_net <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Measure network download and upload speed using speedtest.net.
 
@@ -10,6 +10,18 @@ Measure network download and upload speed using speedtest.net.
 
 ```bash
 bench_net
+```
+
+## Examples
+
+```bash
+# Measure network speed via speedtest.net
+bench_net
+```
+
+```
+Download: 487.32 Mbps
+Upload:   198.54 Mbps
 ```
 
 ## Notes

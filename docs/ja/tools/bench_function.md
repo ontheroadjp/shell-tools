@@ -1,4 +1,4 @@
-# 📊 bench_function <Badge type="tip" text="Shell" />
+# 📊 bench_function <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Zsh ファイルをソースして、指定した関数の実行時間を複数回計測します。
 
@@ -14,17 +14,14 @@ bench_function <関数ファイル> <関数名> [回数=100] [引数...]
 
 ## 例
 
-```zsh
-bench_function ~/.zshrc __git_ps1_update_fast 100
-bench_function ./myfunc.zsh myfunc 50 arg1 arg2
+```bash
+# Zsh 関数を10回計測
+bench_function my_func
 ```
 
-## 出力例
-
 ```
-📊 function: myfunc
-🔁 times: 50
-⏱️ average: 0.002345s
-⚡ Shortest: 0.001900s
-🐢 longest: 0.005100s
+Benchmark: my_func (10 runs)
+  min:  0.012s
+  max:  0.025s
+  avg:  0.018s
 ```

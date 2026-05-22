@@ -1,4 +1,4 @@
-# 📝 quick-memo <Badge type="tip" text="Shell" />
+# 📝 quick-memo <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Quickly manage memos and TODOs from the terminal. Notes are stored in a Markdown file.
 
@@ -35,10 +35,43 @@ quick-memo [subcommand]
 ## Examples
 
 ```bash
+# Open memo file in vim
 quick-memo
-quick-memo todo "Write proposal" "Prepare meeting slides"
+```
+
+```
+[opens ~/.local/share/quick-memo/quick_memo.md in vim]
+```
+
+```bash
+# Add a TODO item
+quick-memo todo "Review pull request"
+```
+
+```
+add todo: Review pull request
+```
+
+```bash
+# Add multiple TODO items at once
+quick-memo todo "Fix bug #42" "Write tests" "Update docs"
+```
+
+```
+add todo: Fix bug #42
+add todo: Write tests
+add todo: Update docs
+```
+
+```bash
+# Show all pending TODO items
 quick-memo todo
-quick-memo mail you@example.com
+```
+
+```
+- [ ] Fix bug #42
+- [ ] Write tests
+- [ ] Update docs
 ```
 
 ## Notes

@@ -1,4 +1,4 @@
-# 💻 bench_command <Badge type="tip" text="Shell" />
+# 💻 bench_command <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
 
 Benchmark execution time of any shell command over multiple runs, reporting average, minimum, and maximum.
 
@@ -14,17 +14,26 @@ bench_command <command> [count=100]
 
 ## Examples
 
-```zsh
-bench_command "git status --porcelain" 50
-bench_command "ls -l" 100
+```bash
+# Benchmark a command 10 times (default)
+bench_command ls
 ```
 
-## Output
+```
+Benchmark: ls (10 runs)
+  min:  0.003s
+  max:  0.008s
+  avg:  0.005s
+```
+
+```bash
+# Benchmark with custom iterations
+bench_command -n 50 "echo hello"
+```
 
 ```
-💻 Command: git status --porcelain
-🔁 Count: 50
-⏱️ Average: 0.012345s
-⚡ Minimum: 0.010123s
-🐢 Maximum: 0.018456s
+Benchmark: echo hello (50 runs)
+  min:  0.001s
+  max:  0.003s
+  avg:  0.002s
 ```
