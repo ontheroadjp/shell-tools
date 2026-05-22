@@ -41,10 +41,15 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
-| `extract_links` | Extract file links from a web page by extension |
-| `list_downloader` | Batch download files from a list of URLs |
 | `to_hankaku` | Convert full-width characters to half-width |
 | `to_zenkaku` | Convert half-width characters to full-width |
+
+### network
+
+| Script | Description |
+|---|---|
+| `extract_links` | Extract file links from a web page by extension |
+| `list_downloader` | Batch download files from a list of URLs |
 
 ### mini_apps
 
