@@ -51,8 +51,7 @@ OPT_C=false
 IS_FLAG_P=false
 IS_FLAG_Z=false
 
-# STOCK_SEARCH_DIR="${HOME}/.stock-jp"
-STOCK_SEARCH_DIR="${SELF}/data/"
+STOCK_SEARCH_DIR="${STOCK_SEARCH_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/stock-jp}"
 STOCK_DATA_FILE="stock.csv"
 
 

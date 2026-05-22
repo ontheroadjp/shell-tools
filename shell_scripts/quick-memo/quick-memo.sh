@@ -1,5 +1,6 @@
 #!/bin/bash
 
+QUICK_MEMO_DATA_DIR="${QUICK_MEMO_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/quick-memo}"
 QUICK_MEMO_MARKDOWN="${QUICK_MEMO_DATA_DIR}/quick_memo.md"
 
 _init() {
