@@ -95,8 +95,76 @@ _install_named() {
     echo "done.    linked=${linked} skipped=${skipped} errors=${errors} not_found=${notfound}"
 }
 
+_unlink_one() {
+    local name="$1"
+    local link="${BIN_DIR}/${name}"
+
+    if [ -L "${link}" ]; then
+        local target; target="$(readlink "${link}")"
+        if [[ "${target}" == "${REPO_ROOT}"* ]]; then
+            rm "${link}"
+            echo "removed: ${name}"
+            return 0
+        else
+            echo "skip:    ${name} (symlink points outside this repo)"
+            return 2
+        fi
+    elif [ -e "${link}" ]; then
+        echo "error:   ${name} (not a symlink, skipping)"
+        return 1
+    else
+        echo "skip:    ${name} (not installed)"
+        return 2
+    fi
+}
+
+_uninstall_all() {
+    local removed=0 skipped=0 errors=0
+
+    while IFS= read -r script; do
+        _unlink_one "$(_tool_name "$script")"
+        case $? in
+            0) (( removed++  )) ;;
+            1) (( errors++   )) ;;
+            2) (( skipped++  )) ;;
+        esac
+    done < <(_find_scripts)
+
+    echo ""
+    echo "BIN_DIR: ${BIN_DIR}"
+    echo "done.    removed=${removed} skipped=${skipped} errors=${errors}"
+}
+
+_uninstall_named() {
+    local removed=0 skipped=0 errors=0 notfound=0
+
+    for name in "$@"; do
+        local found=false
+        while IFS= read -r s; do
+            [ "$(_tool_name "$s")" = "$name" ] && found=true && break
+        done < <(_find_scripts)
+
+        if ! $found; then
+            echo "error:   ${name} (not found — run './install.sh list' to see available tools)"
+            (( notfound++ ))
+        else
+            _unlink_one "$name"
+            case $? in
+                0) (( removed++  )) ;;
+                1) (( errors++   )) ;;
+                2) (( skipped++  )) ;;
+            esac
+        fi
+    done
+
+    echo ""
+    echo "BIN_DIR: ${BIN_DIR}"
+    echo "done.    removed=${removed} skipped=${skipped} errors=${errors} not_found=${notfound}"
+}
+
 case "${1:-}" in
-    list) _list ;;
-    "")   _install_all ;;
-    *)    _install_named "$@" ;;
+    list)      _list ;;
+    uninstall) shift; [ $# -eq 0 ] && _uninstall_all || _uninstall_named "$@" ;;
+    "")        _install_all ;;
+    *)         _install_named "$@" ;;
 esac
