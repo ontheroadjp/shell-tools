@@ -1,27 +1,43 @@
 # !/bin/sh
 
-airport_path="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+is_mac()   { echo "$OSTYPE" | grep -qi 'darwin'; }
+is_linux() { echo "$OSTYPE" | grep -qi 'linux'; }
 
-if air_info=($(eval "$airport_path" -I | grep -E "^ *(agrCtlRSSI|state|SSID):" | awk '{print $2}')) ; then
+_get_ssid_mac() {
+    local airport_path="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+    if [ ! -f "$airport_path" ]; then echo ""; return 1; fi
 
-    rssi=${air_info[0]}
-    state=${air_info[1]}
-    ssid=${air_info[2]}
+    local air_info rssi state ssid
+    rssi=$(  "$airport_path" -I | awk '/agrCtlRSSI/{print $2}')
+    state=$( "$airport_path" -I | awk '/state/{print $2}')
+    ssid=$(  "$airport_path" -I | awk '/ SSID/{print $2}')
 
     case "$state" in
-        "running" )
-            signals=(▁ ▂ ▄ ▆ █)
-            signal=""
-            rssi_=$(expr 5 - ${rssi} / -20)
-            for ((i=0; i < $rssi_; i++ )); do
-                signal="${signal}${signals[$i]}"
-            done
-            airport_=" #[underscore]${ssid}#[default] | ${signal} "
+        "running")
+            signals="▁▂▄▆█"
+            rssi_=$(( 5 - rssi / -20 ))
+            [ "$rssi_" -lt 0 ] && rssi_=0
+            [ "$rssi_" -gt 5 ] && rssi_=5
+            signal=$(echo "$signals" | cut -c1-"$rssi_")
+            echo "#[bold]|#[default] #[underscore]${ssid}#[default] | ${signal} #[fg=colour014]|#[default] "
             ;;
-        "init"    ) airport_="#[fg=yellow] ... " ;;
-        *         ) airport_="#[fg=red] ✘  " ;;
+        "init") echo "#[fg=yellow] ... " ;;
+        *)      echo "#[fg=red] ✘  " ;;
     esac
-    echo "#[bold]|#[default]${airport_}#[fg=colour014]|#[default] "
+}
+
+_get_ssid_linux() {
+    local ssid state
+    ssid=$(iwgetid -r 2>/dev/null) || ssid=$(nmcli -t -f active,ssid dev wifi 2>/dev/null | grep '^yes' | cut -d: -f2)
+    if [ -z "$ssid" ]; then
+        echo "#[fg=red] ✘  "
+    else
+        echo "#[bold]|#[default] #[underscore]${ssid}#[default] #[fg=colour014]|#[default] "
+    fi
+}
+
+if is_mac; then
+    _get_ssid_mac
+elif is_linux; then
+    _get_ssid_linux
 fi
-
-

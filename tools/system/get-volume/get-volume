@@ -1,25 +1,45 @@
 #!/bin/zsh
 
-if sound_info=$(osascript -e 'get volume settings') ; then
-  if [[ "$(echo $sound_info | awk '{print $8}')" = "muted:false" ]]; then
-    # AppleScript から取得される出力例:
-    # output volume:50, input volume:75, alert volume:100, output muted:false
-    volume=$(echo "$sound_info" | awk -F'[,: ]+' '{print $3}')  # output volume 値 (0〜100)
+is_mac()   { [[ "$OSTYPE" =~ 'darwin' ]]; }
+is_linux() { [[ "$OSTYPE" =~ 'linux' ]]; }
 
-    # 全体を 16 セルに正規化
-    max_cells=16
-    sound_volume=$(( volume * max_cells / 100 ))
+_volume_bar() {
+    local volume=$1
+    local max_cells=16
+    local filled=$(( volume * max_cells / 100 ))
+    local str=""
+    local i=0
+    while (( i < filled ));     do str+="■"; (( i++ )); done
+    while (( i < max_cells )); do str+=" "; (( i++ )); done
+    echo "#[bold][${str}]#[default] "
+}
 
-    str=""
-    for ((i=0; i<sound_volume; i++)); do
-      str+="■"
-    done
-    for ((i=sound_volume; i<max_cells; i++)); do
-      str+=" "
-    done
-    sound="#[bold][${str}]#[default] "
-  else
-    sound="#[bold][   mute   ]#[default] "
-  fi
-  echo "$sound"
+if is_mac; then
+    if sound_info=$(osascript -e 'get volume settings'); then
+        if [[ "$(echo $sound_info | awk '{print $8}')" = "muted:false" ]]; then
+            volume=$(echo "$sound_info" | awk -F'[,: ]+' '{print $3}')
+            _volume_bar "$volume"
+        else
+            echo "#[bold][   mute   ]#[default] "
+        fi
+    fi
+elif is_linux; then
+    if command -v pactl >/dev/null 2>&1; then
+        info=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null)
+        muted=$(pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null | awk '{print $2}')
+        if [[ "$muted" == "yes" ]]; then
+            echo "#[bold][   mute   ]#[default] "
+        else
+            volume=$(echo "$info" | grep -oP '\d+(?=%)' | head -1)
+            _volume_bar "${volume:-0}"
+        fi
+    elif command -v amixer >/dev/null 2>&1; then
+        info=$(amixer get Master 2>/dev/null)
+        if echo "$info" | grep -q '\[off\]'; then
+            echo "#[bold][   mute   ]#[default] "
+        else
+            volume=$(echo "$info" | grep -oP '\d+(?=%)' | head -1)
+            _volume_bar "${volume:-0}"
+        fi
+    fi
 fi

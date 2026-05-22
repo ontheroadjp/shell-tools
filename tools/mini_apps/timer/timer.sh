@@ -21,7 +21,31 @@ fi
 
 echo "After $sec sec"
 sleep "$sec"
-osascript -e "display notification \"${sec} seconds elapsed.\" with title \"Timer\""
-afplay /System/Library/Sounds/Glass.aiff
-afplay /System/Library/Sounds/Submarine.aiff
-afplay /System/Library/Sounds/Ping.aiff
+
+_notify() {
+    local msg="$1"
+    if command -v osascript >/dev/null 2>&1; then
+        osascript -e "display notification \"${msg}\" with title \"Timer\""
+    elif command -v notify-send >/dev/null 2>&1; then
+        notify-send "Timer" "$msg"
+    else
+        echo "Timer: $msg"
+    fi
+}
+
+_play() {
+    if command -v afplay >/dev/null 2>&1; then
+        afplay /System/Library/Sounds/Glass.aiff
+        afplay /System/Library/Sounds/Submarine.aiff
+        afplay /System/Library/Sounds/Ping.aiff
+    elif command -v paplay >/dev/null 2>&1; then
+        sound=/usr/share/sounds/freedesktop/stereo/complete.oga
+        [ -f "$sound" ] && paplay "$sound" && paplay "$sound" && paplay "$sound"
+    elif command -v aplay >/dev/null 2>&1; then
+        sound=/usr/share/sounds/alsa/Front_Center.wav
+        [ -f "$sound" ] && aplay "$sound" && aplay "$sound" && aplay "$sound"
+    fi
+}
+
+_notify "${sec} seconds elapsed."
+_play

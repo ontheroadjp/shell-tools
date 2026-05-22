@@ -140,7 +140,11 @@ function _jp_stock_search() {
                 url="https://www.nikkei.com/nkd/company/disclose/?scode=${security_code}"
                 ;;
         esac
-        open ${url}
+        if command -v xdg-open >/dev/null 2>&1; then
+            xdg-open "${url}"
+        else
+            open "${url}"
+        fi
     }
 }
 

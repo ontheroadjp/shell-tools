@@ -105,7 +105,6 @@ function get_battery_initialize()
     fi
 
     if shell_is_linux; then
-        return 1
         case "$SHELL_PLATFORM" in
             "linux")
                 BATPATH=/sys/class/power_supply/BAT0
