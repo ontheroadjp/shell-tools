@@ -1,4 +1,4 @@
-# 🚀 bench_zsh
+# 🚀 bench_zsh <Badge type="tip" text="Shell" />
 
 多次测量 `zsh -l` 登录 Shell 的启动时间，并报告平均、最短和最长耗时。
 

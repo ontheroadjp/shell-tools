@@ -1,4 +1,4 @@
-# 🎌 holiday
+# 🎌 holiday <Badge type="tip" text="Shell" />
 
 Google カレンダーの ICS フィードから日本の祝日を取得して一覧表示します。
 

@@ -1,4 +1,4 @@
-# 💹 stock-jp
+# 💹 stock-jp <Badge type="tip" text="Shell" />
 
 通过 `peco` 交互式搜索东京证券交易所上市证券，并在浏览器中打开所选网站。
 

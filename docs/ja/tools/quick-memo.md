@@ -1,4 +1,4 @@
-# 📝 quick-memo
+# 📝 quick-memo <Badge type="tip" text="Shell" />
 
 ターミナルからすばやくメモや TODO を管理します。メモは Markdown ファイルに保存されます。
 

@@ -1,4 +1,4 @@
-# 📈 numstats
+# 📈 numstats <Badge type="tip" text="Shell" />
 
 Computes basic statistics (min, max, avg, count) for a list of numbers. Accepts numbers as arguments or via stdin.
 

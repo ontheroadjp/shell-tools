@@ -1,4 +1,4 @@
-# ☀️ today
+# ☀️ today <Badge type="tip" text="Shell" />
 
 今日の日付・天気・世界時計をまとめて表示するデイリーサマリーです。
 

@@ -1,4 +1,4 @@
-# ⏱️ timer
+# ⏱️ timer <Badge type="tip" text="Shell" />
 
 倒计时器，时间到后发送 macOS 通知并播放提示音。
 

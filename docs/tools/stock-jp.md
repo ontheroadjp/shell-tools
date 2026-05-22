@@ -1,4 +1,4 @@
-# 💹 stock-jp
+# 💹 stock-jp <Badge type="tip" text="Shell" />
 
 Interactively search Tokyo Stock Exchange securities with `peco` and open them in your browser.
 

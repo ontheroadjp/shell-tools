@@ -1,4 +1,4 @@
-# 💻 bench_command
+# 💻 bench_command <Badge type="tip" text="Shell" />
 
 多次执行任意 Shell 命令，统计平均、最短和最长执行时间。
 

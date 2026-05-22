@@ -1,4 +1,4 @@
-# 📊 bench_function
+# 📊 bench_function <Badge type="tip" text="Shell" />
 
 Source a Zsh file and benchmark the execution time of a specified function over multiple runs.
 

@@ -1,4 +1,4 @@
-# ⏱️ timer
+# ⏱️ timer <Badge type="tip" text="Shell" />
 
 A countdown timer that sends a macOS notification and plays sounds when time is up.
 

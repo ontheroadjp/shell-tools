@@ -1,4 +1,4 @@
-# 💻 bench_command
+# 💻 bench_command <Badge type="tip" text="Shell" />
 
 任意のシェルコマンドを複数回実行し、平均・最短・最長の実行時間を計測します。
 

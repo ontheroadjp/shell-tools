@@ -1,4 +1,4 @@
-# 📊 bench_function
+# 📊 bench_function <Badge type="tip" text="Shell" />
 
 Zsh ファイルをソースして、指定した関数の実行時間を複数回計測します。
 

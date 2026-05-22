@@ -1,4 +1,4 @@
-# ☀️ today
+# ☀️ today <Badge type="tip" text="Shell" />
 
 A daily summary showing today's date in Japanese era, weather, and world time.
 

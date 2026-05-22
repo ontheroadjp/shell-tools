@@ -1,29 +1,21 @@
-# 📖 dictionary
+# 📖 dictionary <Badge type="info" text="Python" />
 
-英単語を weblio で検索し、定義と用例を表示します。
+macOS 組み込みの DictionaryServices フレームワークを使って単語を検索します。英日・日英の相互検索とフォーマット済み出力をサポートします。
 
-## Requirements
+## 必要環境
 
-- `w3m`
+- Python 3
+- macOS
 
-```bash
-brew install w3m
-```
-
-## Usage
+## 使い方
 
 ```bash
-dictionary <word>
+dictionary <単語>
 ```
 
-## Examples
+## 例
 
 ```bash
 dictionary serendipity
 dictionary appreciate
 ```
-
-## Notes
-
-- Swift 製のネイティブ辞書検索 (`lib/dictionary.swift`) と、weblio の用例検索を組み合わせて表示します。
-- ネットワーク接続が必要です。

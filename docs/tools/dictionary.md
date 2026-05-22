@@ -1,14 +1,11 @@
-# 📖 dictionary
+# 📖 dictionary <Badge type="info" text="Python" />
 
-Look up English words using weblio, showing definitions and usage examples.
+Look up words using macOS built-in Dictionary via DictionaryServices framework. Supports English↔Japanese lookup with formatted output.
 
 ## Requirements
 
-- `w3m`
-
-```bash
-brew install w3m
-```
+- Python 3
+- macOS
 
 ## Usage
 
@@ -22,8 +19,3 @@ dictionary <word>
 dictionary serendipity
 dictionary appreciate
 ```
-
-## Notes
-
-- Combines a native Swift dictionary lookup (`lib/dictionary.swift`) with weblio usage examples.
-- Requires a network connection.

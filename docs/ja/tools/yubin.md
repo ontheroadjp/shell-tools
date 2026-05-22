@@ -1,4 +1,4 @@
-# 📮 yubin
+# 📮 yubin <Badge type="tip" text="Shell" />
 
 日本郵便の郵便番号データベースを `fzf-tmux` でインタラクティブに検索します。
 

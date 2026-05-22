@@ -1,4 +1,4 @@
-# ☀️ today
+# ☀️ today <Badge type="tip" text="Shell" />
 
 显示今日日期（含日本年号）、天气和世界时间的每日摘要。
 

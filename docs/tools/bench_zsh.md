@@ -1,4 +1,4 @@
-# 🚀 bench_zsh
+# 🚀 bench_zsh <Badge type="tip" text="Shell" />
 
 Measure `zsh -l` login shell startup time over multiple runs and report average, minimum, and maximum.
 

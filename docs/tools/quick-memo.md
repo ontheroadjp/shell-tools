@@ -1,4 +1,4 @@
-# 📝 quick-memo
+# 📝 quick-memo <Badge type="tip" text="Shell" />
 
 Quickly manage memos and TODOs from the terminal. Notes are stored in a Markdown file.
 

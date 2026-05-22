@@ -1,4 +1,4 @@
-# 🎨 colors
+# 🎨 colors <Badge type="tip" text="Shell" />
 
 ANSI カラーコードと xterm 256色テーブルをターミナルに表示します。
 

@@ -1,4 +1,4 @@
-# 📶 wifi-helth-check
+# 📶 wifi-helth-check <Badge type="tip" text="Shell" />
 
 Diagnose WiFi signal strength, connection speed, and internet connectivity with color-coded output.
 

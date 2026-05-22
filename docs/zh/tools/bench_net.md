@@ -1,4 +1,4 @@
-# 🌐 bench_net
+# 🌐 bench_net <Badge type="tip" text="Shell" />
 
 通过 speedtest.net 测量网络下载和上传速度。
 

@@ -1,4 +1,4 @@
-# 💹 stock-jp
+# 💹 stock-jp <Badge type="tip" text="Shell" />
 
 東証上場銘柄を `peco` でインタラクティブに検索し、選択した証券会社・情報サイトをブラウザで開きます。
 

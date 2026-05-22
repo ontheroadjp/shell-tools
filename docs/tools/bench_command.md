@@ -1,4 +1,4 @@
-# 💻 bench_command
+# 💻 bench_command <Badge type="tip" text="Shell" />
 
 Benchmark execution time of any shell command over multiple runs, reporting average, minimum, and maximum.
 

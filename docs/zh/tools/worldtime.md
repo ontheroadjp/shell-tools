@@ -1,4 +1,4 @@
-# 🌍 worldtime
+# 🌍 worldtime <Badge type="tip" text="Shell" />
 
 显示悉尼、东京、上海、伦敦、纽约、洛杉矶的当前时间，也可通过 `peco` 交互选择时区。
 

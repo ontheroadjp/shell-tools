@@ -2,81 +2,168 @@ import { defineConfig } from 'vitepress'
 
 const toolsSidebarEn = [
   {
-    text: 'Tools',
+    text: 'System',
+    items: [
+      { text: 'colors', link: '/tools/colors' },
+    ],
+  },
+  {
+    text: 'System Utilities',
     items: [
       { text: 'bench_command', link: '/tools/bench_command' },
       { text: 'bench_function', link: '/tools/bench_function' },
       { text: 'bench_net', link: '/tools/bench_net' },
       { text: 'bench_zsh', link: '/tools/bench_zsh' },
-      { text: 'colors', link: '/tools/colors' },
       { text: 'counts', link: '/tools/counts' },
+      { text: 'fix_filename', link: '/tools/fix_filename' },
+      { text: 'numstats', link: '/tools/numstats' },
+      { text: 'wifi-helth-check', link: '/tools/wifi-helth-check' },
+    ],
+  },
+  {
+    text: 'Utilities',
+    items: [
+      { text: 'text_converter', link: '/tools/text_converter' },
+    ],
+  },
+  {
+    text: 'Mini Apps',
+    items: [
       { text: 'dictionary', link: '/tools/dictionary' },
       { text: 'holiday', link: '/tools/holiday' },
-      { text: 'movie-converter', link: '/tools/movie-converter' },
-      { text: 'numstats', link: '/tools/numstats' },
       { text: 'quick-memo', link: '/tools/quick-memo' },
       { text: 'stock-jp', link: '/tools/stock-jp' },
       { text: 'timer', link: '/tools/timer' },
       { text: 'today', link: '/tools/today' },
       { text: 'wareki', link: '/tools/wareki' },
       { text: 'weather', link: '/tools/weather' },
-      { text: 'wifi-helth-check', link: '/tools/wifi-helth-check' },
       { text: 'worldtime', link: '/tools/worldtime' },
       { text: 'yubin', link: '/tools/yubin' },
+    ],
+  },
+  {
+    text: 'Multimedia',
+    items: [
+      { text: 'movie-converter', link: '/tools/movie-converter' },
+    ],
+  },
+  {
+    text: 'Network',
+    items: [
+      { text: 'extract_links', link: '/tools/extract_links' },
+      { text: 'list_downloader', link: '/tools/list_downloader' },
     ],
   },
 ]
 
 const toolsSidebarJa = [
   {
-    text: 'ツール',
+    text: 'システム',
+    items: [
+      { text: 'colors', link: '/ja/tools/colors' },
+    ],
+  },
+  {
+    text: 'システムユーティリティ',
     items: [
       { text: 'bench_command', link: '/ja/tools/bench_command' },
       { text: 'bench_function', link: '/ja/tools/bench_function' },
       { text: 'bench_net', link: '/ja/tools/bench_net' },
       { text: 'bench_zsh', link: '/ja/tools/bench_zsh' },
-      { text: 'colors', link: '/ja/tools/colors' },
       { text: 'counts', link: '/ja/tools/counts' },
+      { text: 'fix_filename', link: '/ja/tools/fix_filename' },
+      { text: 'numstats', link: '/ja/tools/numstats' },
+      { text: 'wifi-helth-check', link: '/ja/tools/wifi-helth-check' },
+    ],
+  },
+  {
+    text: 'ユーティリティ',
+    items: [
+      { text: 'text_converter', link: '/ja/tools/text_converter' },
+    ],
+  },
+  {
+    text: 'ミニアプリ',
+    items: [
       { text: 'dictionary', link: '/ja/tools/dictionary' },
       { text: 'holiday', link: '/ja/tools/holiday' },
-      { text: 'movie-converter', link: '/ja/tools/movie-converter' },
-      { text: 'numstats', link: '/ja/tools/numstats' },
       { text: 'quick-memo', link: '/ja/tools/quick-memo' },
       { text: 'stock-jp', link: '/ja/tools/stock-jp' },
       { text: 'timer', link: '/ja/tools/timer' },
       { text: 'today', link: '/ja/tools/today' },
       { text: 'wareki', link: '/ja/tools/wareki' },
       { text: 'weather', link: '/ja/tools/weather' },
-      { text: 'wifi-helth-check', link: '/ja/tools/wifi-helth-check' },
       { text: 'worldtime', link: '/ja/tools/worldtime' },
       { text: 'yubin', link: '/ja/tools/yubin' },
+    ],
+  },
+  {
+    text: 'マルチメディア',
+    items: [
+      { text: 'movie-converter', link: '/ja/tools/movie-converter' },
+    ],
+  },
+  {
+    text: 'ネットワーク',
+    items: [
+      { text: 'extract_links', link: '/ja/tools/extract_links' },
+      { text: 'list_downloader', link: '/ja/tools/list_downloader' },
     ],
   },
 ]
 
 const toolsSidebarZh = [
   {
-    text: '工具',
+    text: '系统',
+    items: [
+      { text: 'colors', link: '/zh/tools/colors' },
+    ],
+  },
+  {
+    text: '系统工具',
     items: [
       { text: 'bench_command', link: '/zh/tools/bench_command' },
       { text: 'bench_function', link: '/zh/tools/bench_function' },
       { text: 'bench_net', link: '/zh/tools/bench_net' },
       { text: 'bench_zsh', link: '/zh/tools/bench_zsh' },
-      { text: 'colors', link: '/zh/tools/colors' },
       { text: 'counts', link: '/zh/tools/counts' },
+      { text: 'fix_filename', link: '/zh/tools/fix_filename' },
+      { text: 'numstats', link: '/zh/tools/numstats' },
+      { text: 'wifi-helth-check', link: '/zh/tools/wifi-helth-check' },
+    ],
+  },
+  {
+    text: '工具',
+    items: [
+      { text: 'text_converter', link: '/zh/tools/text_converter' },
+    ],
+  },
+  {
+    text: '迷你应用',
+    items: [
       { text: 'dictionary', link: '/zh/tools/dictionary' },
       { text: 'holiday', link: '/zh/tools/holiday' },
-      { text: 'movie-converter', link: '/zh/tools/movie-converter' },
-      { text: 'numstats', link: '/zh/tools/numstats' },
       { text: 'quick-memo', link: '/zh/tools/quick-memo' },
       { text: 'stock-jp', link: '/zh/tools/stock-jp' },
       { text: 'timer', link: '/zh/tools/timer' },
       { text: 'today', link: '/zh/tools/today' },
       { text: 'wareki', link: '/zh/tools/wareki' },
       { text: 'weather', link: '/zh/tools/weather' },
-      { text: 'wifi-helth-check', link: '/zh/tools/wifi-helth-check' },
       { text: 'worldtime', link: '/zh/tools/worldtime' },
       { text: 'yubin', link: '/zh/tools/yubin' },
+    ],
+  },
+  {
+    text: '多媒体',
+    items: [
+      { text: 'movie-converter', link: '/zh/tools/movie-converter' },
+    ],
+  },
+  {
+    text: '网络',
+    items: [
+      { text: 'extract_links', link: '/zh/tools/extract_links' },
+      { text: 'list_downloader', link: '/zh/tools/list_downloader' },
     ],
   },
 ]

@@ -1,4 +1,4 @@
-# 📊 bench_function
+# 📊 bench_function <Badge type="tip" text="Shell" />
 
 加载 Zsh 文件并对指定函数进行多次执行时间基准测试。
 

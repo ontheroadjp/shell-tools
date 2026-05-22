@@ -1,14 +1,11 @@
-# 📖 dictionary
+# 📖 dictionary <Badge type="info" text="Python" />
 
-通过 weblio 查询英文单词，显示释义和用法示例。
+通过 macOS 内置 DictionaryServices 框架查询单词，支持英日互译并格式化输出。
 
 ## 环境要求
 
-- `w3m`
-
-```bash
-brew install w3m
-```
+- Python 3
+- macOS
 
 ## 用法
 
@@ -22,8 +19,3 @@ dictionary <单词>
 dictionary serendipity
 dictionary appreciate
 ```
-
-## 说明
-
-- 结合 Swift 原生词典查询（`lib/dictionary.swift`）和 weblio 用法示例。
-- 需要网络连接。

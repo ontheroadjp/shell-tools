@@ -1,4 +1,4 @@
-# 📶 wifi-helth-check
+# 📶 wifi-helth-check <Badge type="tip" text="Shell" />
 
 诊断 WiFi 信号强度、连接速度和互联网连接状态，以彩色显示检测结果。
 

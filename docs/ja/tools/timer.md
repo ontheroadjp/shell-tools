@@ -1,4 +1,4 @@
-# ⏱️ timer
+# ⏱️ timer <Badge type="tip" text="Shell" />
 
 指定した時間が経過すると macOS の通知センターに通知を出し、サウンドを鳴らすカウントダウンタイマーです。
 

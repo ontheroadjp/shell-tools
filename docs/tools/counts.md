@@ -1,4 +1,4 @@
-# 📊 counts
+# 📊 counts <Badge type="tip" text="Shell" />
 
 Count and analyze files and directories by size or type.
 

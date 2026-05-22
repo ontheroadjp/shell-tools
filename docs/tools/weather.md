@@ -1,4 +1,4 @@
-# 🌤️ weather
+# 🌤️ weather <Badge type="tip" text="Shell" />
 
 Fetch current weather using the [wttr.in](https://wttr.in) API.
 

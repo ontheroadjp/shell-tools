@@ -1,4 +1,4 @@
-# 🎬 movie-converter
+# 🎬 movie-converter <Badge type="tip" text="Shell" />
 
 Converts MP4 files to MP3. Supports single files, directories, and stdin.
 

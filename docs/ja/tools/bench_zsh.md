@@ -1,4 +1,4 @@
-# 🚀 bench_zsh
+# 🚀 bench_zsh <Badge type="tip" text="Shell" />
 
 `zsh -l` のログインシェル起動時間を複数回計測し、平均・最短・最長を報告します。
 

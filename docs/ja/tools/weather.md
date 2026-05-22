@@ -1,4 +1,4 @@
-# 🌤️ weather
+# 🌤️ weather <Badge type="tip" text="Shell" />
 
 [wttr.in](https://wttr.in) API を使って現在の天気を取得します。
 

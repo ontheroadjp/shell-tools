@@ -1,4 +1,4 @@
-# 🎬 movie-converter
+# 🎬 movie-converter <Badge type="tip" text="Shell" />
 
 将 MP4 文件转换为 MP3，支持单个文件、目录批量转换和标准输入。
 
