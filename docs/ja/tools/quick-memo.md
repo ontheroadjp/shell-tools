@@ -14,13 +14,11 @@ brew install gnu-sed ripgrep
 
 ## Setup
 
-メモの保存先を環境変数で指定します:
+データは XDG Base Directory 仕様に従い `~/.local/share/quick-memo/` に保存されます。保存先を変更する場合:
 
 ```bash
-export QUICK_MEMO_DATA_DIR="$HOME/.quick-memo"
+export QUICK_MEMO_DATA_DIR="/path/to/dir"  # 任意で上書き可能
 ```
-
-未設定の場合は `$HOME/.quick-memo` が使われます。
 
 ## Usage
 
@@ -52,5 +50,5 @@ quick-memo mail you@example.com
 
 ## Notes
 
-- メモファイルは `$QUICK_MEMO_DATA_DIR/quick_memo.md` に保存されます。
+- メモファイルは `~/.local/share/quick-memo/quick_memo.md`（`$QUICK_MEMO_DATA_DIR` が設定されている場合はそちら）に保存されます。
 - TODO は `[ ]` 形式のチェックボックスで管理されます。

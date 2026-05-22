@@ -4,16 +4,19 @@
 
 ## 环境要求
 
-- `peco`
-- `nkf`
+- `peco`、`nkf`
+- `python3` + `xlrd`（用于 XLS 转换）
 
 ```bash
 brew install peco nkf
+pip3 install 'xlrd==1.2.0'
 ```
 
 ## 配置
 
-将股票数据 CSV（`stock.csv`）放置于 `shell_scripts/stock-jp/data/`。首次使用或需要更新时：
+首次运行时，将自动从 JPX 下载 XLS 数据并转换为 CSV。数据默认保存至 `~/.local/share/stock-jp/`（遵循 XDG Base Directory 规范）。
+
+强制更新数据：
 
 ```bash
 stock-jp --update
@@ -27,7 +30,7 @@ stock-jp [选项]
 
 | 选项 | 说明 |
 |---|---|
-| `--update` | 从 JPX 下载股票数据 |
+| `--update` | 从 JPX 下载 XLS 并转换为 CSV |
 | `-h, --help` | 显示帮助 |
 | `-v, --version` | 显示版本 |
 

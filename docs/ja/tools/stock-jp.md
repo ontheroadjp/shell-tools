@@ -4,16 +4,19 @@
 
 ## Requirements
 
-- `peco`
-- `nkf`
+- `peco`、`nkf`
+- `python3` + `xlrd`（XLS 変換用）
 
 ```bash
 brew install peco nkf
+pip3 install 'xlrd==1.2.0'
 ```
 
 ## Setup
 
-銘柄データ CSV (`stock.csv`) を `shell_scripts/stock-jp/data/` に配置する必要があります。初回または更新時は `--update` オプションで JPX から取得できます。
+初回実行時に JPX から XLS を自動ダウンロードし、CSV に変換します。データは XDG Base Directory 仕様に従い `~/.local/share/stock-jp/` に保存されます。
+
+強制更新する場合:
 
 ```bash
 stock-jp --update
@@ -27,7 +30,7 @@ stock-jp [options]
 
 | Option | Description |
 |---|---|
-| `--update` | JPX から銘柄データをダウンロード |
+| `--update` | JPX から XLS をダウンロードして CSV に変換 |
 | `-h, --help` | ヘルプを表示 |
 | `-v, --version` | バージョンを表示 |
 

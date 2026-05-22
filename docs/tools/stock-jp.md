@@ -4,16 +4,19 @@ Interactively search Tokyo Stock Exchange securities with `peco` and open them i
 
 ## Requirements
 
-- `peco`
-- `nkf`
+- `peco`, `nkf`
+- `python3` + `xlrd` (for XLS conversion)
 
 ```bash
 brew install peco nkf
+pip3 install 'xlrd==1.2.0'
 ```
 
 ## Setup
 
-Place the stock data CSV (`stock.csv`) in `shell_scripts/stock-jp/data/`. On first run or to update:
+On first run, stock data is automatically downloaded from JPX and converted from XLS to CSV. Data is stored in `~/.local/share/stock-jp/` by default (XDG Base Directory).
+
+To force update:
 
 ```bash
 stock-jp --update
@@ -27,7 +30,7 @@ stock-jp [options]
 
 | Option | Description |
 |---|---|
-| `--update` | Download stock data from JPX |
+| `--update` | Download XLS from JPX and convert to CSV |
 | `-h, --help` | Show help |
 | `-v, --version` | Show version |
 

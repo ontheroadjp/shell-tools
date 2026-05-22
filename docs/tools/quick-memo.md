@@ -14,13 +14,11 @@ brew install gnu-sed ripgrep
 
 ## Setup
 
-Set the storage directory via environment variable:
+Data is stored in `~/.local/share/quick-memo/` by default (XDG Base Directory). The location can be overridden:
 
 ```bash
-export QUICK_MEMO_DATA_DIR="$HOME/.quick-memo"
+export QUICK_MEMO_DATA_DIR="/path/to/dir"  # optional override
 ```
-
-Defaults to `$HOME/.quick-memo` if not set.
 
 ## Usage
 
@@ -45,5 +43,5 @@ quick-memo mail you@example.com
 
 ## Notes
 
-- Memo is saved to `$QUICK_MEMO_DATA_DIR/quick_memo.md`.
+- Memo is saved to `~/.local/share/quick-memo/quick_memo.md` (or `$QUICK_MEMO_DATA_DIR` if set).
 - TODOs use `[ ]` checkbox format.

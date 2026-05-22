@@ -15,10 +15,10 @@ brew install nkf fzf
 
 ## Setup
 
-初回実行時に日本郵便のサイトから郵便番号 CSV を自動ダウンロードします。保存先は環境変数で変更できます:
+初回実行時に日本郵便のサイトから郵便番号 CSV を自動ダウンロードします。データは XDG Base Directory 仕様に従い `~/.local/share/yubin/` に保存されます。保存先を変更する場合:
 
 ```bash
-export YUBIN_DATA_DIR="$HOME/.yubin-data"  # デフォルト
+export YUBIN_DATA_DIR="/path/to/dir"  # 任意で上書き可能
 ```
 
 ## Usage
@@ -43,6 +43,6 @@ yubin
 
 ## Notes
 
-- データは `$YUBIN_DATA_DIR/KEN_ALL.CSV` に保存されます。
+- データは `~/.local/share/yubin/KEN_ALL.CSV`（`$YUBIN_DATA_DIR` が設定されている場合はそちら）に保存されます。
 - ファイルが存在する場合は再ダウンロードしません。データを更新する場合は手動で削除してください。
 - tmux 環境での使用を前提としています（`fzf-tmux`）。

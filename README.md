@@ -53,3 +53,16 @@ counts fatf .
 - Common: `curl`, `fzf`
 - Some tools require: `peco`, `nkf`, `w3m`, `gsed`, `rg`
 - bench-suite: `zsh`, `bc`, `python`
+- stock-jp: `python3`, `xlrd==1.2.0` (`pip3 install 'xlrd==1.2.0'`)
+
+## Data Storage
+
+Tools that download or generate data follow the [XDG Base Directory](https://specifications.freedesktop.org/basedir-spec/latest/) spec:
+
+| Tool | Default data path |
+|---|---|
+| `yubin` | `~/.local/share/yubin/` |
+| `quick-memo` | `~/.local/share/quick-memo/` |
+| `stock-jp` | `~/.local/share/stock-jp/` |
+
+Each can be overridden via its corresponding environment variable (`YUBIN_DATA_DIR`, `QUICK_MEMO_DATA_DIR`, `STOCK_SEARCH_DIR`).

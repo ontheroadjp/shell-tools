@@ -12,10 +12,10 @@ brew install nkf fzf
 
 ## 配置
 
-首次运行时，将自动从日本邮政官网下载邮政编码 CSV。可通过环境变量修改保存路径：
+首次运行时，将自动从日本邮政官网下载邮政编码 CSV。数据默认保存至 `~/.local/share/yubin/`（遵循 XDG Base Directory 规范）。如需自定义路径：
 
 ```bash
-export YUBIN_DATA_DIR="$HOME/.yubin-data"  # 默认值
+export YUBIN_DATA_DIR="/path/to/dir"  # 可选覆盖
 ```
 
 ## 用法
@@ -39,6 +39,6 @@ yubin
 
 ## 说明
 
-- 数据保存至 `$YUBIN_DATA_DIR/KEN_ALL.CSV`。
+- 数据保存至 `~/.local/share/yubin/KEN_ALL.CSV`（若设置了 `$YUBIN_DATA_DIR` 则使用该路径）。
 - 文件已存在时不会重新下载。如需更新数据，请手动删除该文件。
 - 设计用于 tmux 环境（`fzf-tmux`）。
