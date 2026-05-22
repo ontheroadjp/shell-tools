@@ -14,6 +14,22 @@ hero:
       link: https://github.com/ontheroadjp/shell-tools
 
 features:
+  - icon: 💻
+    title: bench_command
+    details: 对任意 Shell 命令进行执行时间基准测试
+    link: /zh/tools/bench_command
+  - icon: 📊
+    title: bench_function
+    details: 对任意 Zsh 函数进行执行时间基准测试
+    link: /zh/tools/bench_function
+  - icon: 🌐
+    title: bench_net
+    details: 通过 speedtest.net 测量网络下载/上传速度
+    link: /zh/tools/bench_net
+  - icon: 🚀
+    title: bench_zsh
+    details: 测量 Zsh 登录 Shell 的启动时间
+    link: /zh/tools/bench_zsh
   - icon: 🎨
     title: colors
     details: 在终端显示 ANSI 颜色代码和 256 色表

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv bench_command bench_command.zsh)",
+      "Bash(mv bench_function bench_function.zsh)",
+      "Bash(mv bench_net bench_net.py)",
+      "Bash(mv bench_zsh bench_zsh.sh)"
+    ]
+  }
+}

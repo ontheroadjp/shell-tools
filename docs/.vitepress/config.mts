@@ -4,6 +4,10 @@ const toolsSidebarEn = [
   {
     text: 'Tools',
     items: [
+      { text: 'bench_command', link: '/tools/bench_command' },
+      { text: 'bench_function', link: '/tools/bench_function' },
+      { text: 'bench_net', link: '/tools/bench_net' },
+      { text: 'bench_zsh', link: '/tools/bench_zsh' },
       { text: 'colors', link: '/tools/colors' },
       { text: 'counts', link: '/tools/counts' },
       { text: 'dictionary', link: '/tools/dictionary' },
@@ -27,6 +31,10 @@ const toolsSidebarJa = [
   {
     text: 'ツール',
     items: [
+      { text: 'bench_command', link: '/ja/tools/bench_command' },
+      { text: 'bench_function', link: '/ja/tools/bench_function' },
+      { text: 'bench_net', link: '/ja/tools/bench_net' },
+      { text: 'bench_zsh', link: '/ja/tools/bench_zsh' },
       { text: 'colors', link: '/ja/tools/colors' },
       { text: 'counts', link: '/ja/tools/counts' },
       { text: 'dictionary', link: '/ja/tools/dictionary' },
@@ -50,6 +58,10 @@ const toolsSidebarZh = [
   {
     text: '工具',
     items: [
+      { text: 'bench_command', link: '/zh/tools/bench_command' },
+      { text: 'bench_function', link: '/zh/tools/bench_function' },
+      { text: 'bench_net', link: '/zh/tools/bench_net' },
+      { text: 'bench_zsh', link: '/zh/tools/bench_zsh' },
       { text: 'colors', link: '/zh/tools/colors' },
       { text: 'counts', link: '/zh/tools/counts' },
       { text: 'dictionary', link: '/zh/tools/dictionary' },

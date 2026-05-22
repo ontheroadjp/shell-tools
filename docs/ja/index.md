@@ -14,6 +14,22 @@ hero:
       link: https://github.com/ontheroadjp/shell-tools
 
 features:
+  - icon: 💻
+    title: bench_command
+    details: 任意のシェルコマンドの実行時間をベンチマーク
+    link: /ja/tools/bench_command
+  - icon: 📊
+    title: bench_function
+    details: 任意の Zsh 関数の実行時間をベンチマーク
+    link: /ja/tools/bench_function
+  - icon: 🌐
+    title: bench_net
+    details: speedtest.net 経由でネットワーク速度を計測
+    link: /ja/tools/bench_net
+  - icon: 🚀
+    title: bench_zsh
+    details: Zsh ログインシェルの起動時間を計測
+    link: /ja/tools/bench_zsh
   - icon: 🎨
     title: colors
     details: ANSI カラーコードと 256色テーブルを表示

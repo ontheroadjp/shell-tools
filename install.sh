@@ -9,8 +9,10 @@ linked=0
 skipped=0
 errors=0
 
-for script in "${REPO_ROOT}"/shell_scripts/*/*.sh; do
-    name="$(basename "${script}" .sh)"
+for script in "${REPO_ROOT}"/shell_scripts/*/*.sh "${REPO_ROOT}"/shell_scripts/*/*.zsh "${REPO_ROOT}"/shell_scripts/*/*.py; do
+    [ -e "${script}" ] || continue
+    filename="$(basename "${script}")"
+    name="${filename%.*}"
     link="${BIN_DIR}/${name}"
 
     if [ -L "${link}" ]; then

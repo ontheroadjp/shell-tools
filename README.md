@@ -16,6 +16,10 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
+| `bench_command` | Benchmark execution time of any command |
+| `bench_function` | Benchmark execution time of any Zsh function |
+| `bench_net` | Measure network download/upload speed via speedtest.net |
+| `bench_zsh` | Measure Zsh startup time |
 | `colors` | Display ANSI color codes and 256-color tables |
 | `counts` | Count/analyze files and directories by size or type |
 | `dictionary` | Look up English words via weblio |
@@ -48,3 +52,4 @@ counts fatf .
 - macOS
 - Common: `curl`, `fzf`
 - Some tools require: `peco`, `nkf`, `w3m`, `gsed`, `rg`
+- bench-suite: `zsh`, `bc`, `python`

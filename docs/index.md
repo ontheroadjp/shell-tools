@@ -14,6 +14,22 @@ hero:
       link: https://github.com/ontheroadjp/shell-tools
 
 features:
+  - icon: 💻
+    title: bench_command
+    details: Benchmark execution time of any shell command
+    link: /en/tools/bench_command
+  - icon: 📊
+    title: bench_function
+    details: Benchmark execution time of any Zsh function
+    link: /en/tools/bench_function
+  - icon: 🌐
+    title: bench_net
+    details: Measure network download/upload speed via speedtest.net
+    link: /en/tools/bench_net
+  - icon: 🚀
+    title: bench_zsh
+    details: Measure Zsh login shell startup time
+    link: /en/tools/bench_zsh
   - icon: 🎨
     title: colors
     details: Display ANSI color codes and 256-color tables
