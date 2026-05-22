@@ -14,27 +14,57 @@ Create symlinks to `~/dotfiles/bin`:
 
 ## Tools
 
+### system
+
+| Script | Description |
+|---|---|
+| `battery` | tmux status bar: battery level |
+| `colors` | Display ANSI color codes and 256-color tables |
+| `get-ssid` | tmux status bar: current Wi-Fi SSID |
+| `get-volume` | tmux status bar: system volume |
+| `ssid` | Display current Wi-Fi SSID |
+
+### system_utilities
+
 | Script | Description |
 |---|---|
 | `bench_command` | Benchmark execution time of any command |
 | `bench_function` | Benchmark execution time of any Zsh function |
 | `bench_net` | Measure network download/upload speed via speedtest.net |
 | `bench_zsh` | Measure Zsh startup time |
-| `colors` | Display ANSI color codes and 256-color tables |
 | `counts` | Count/analyze files and directories by size or type |
-| `dictionary` | Look up English words via weblio |
-| `holiday` | List Japanese public holidays |
-| `movie-converter` | Convert MP4 to MP3 |
+| `fix_filename` | Rename files using pattern/replacement config files |
 | `numstats` | Basic statistics for a list of numbers |
+| `wifi-helth-check` | WiFi and network diagnostics |
+
+### utilities
+
+| Script | Description |
+|---|---|
+| `list_downloader` | Batch download files from a list of URLs |
+| `to_hankaku` | Convert full-width characters to half-width |
+| `to_zenkaku` | Convert half-width characters to full-width |
+
+### mini_apps
+
+| Script | Description |
+|---|---|
+| `dictionary` | Look up words using macOS Dictionary (English ↔ Japanese) |
+| `holiday` | List Japanese public holidays |
 | `quick-memo` | Quick memo and TODO management |
 | `stock-jp` | Look up Japanese stock prices |
 | `timer` | Countdown timer with macOS notification |
 | `today` | Daily summary (date, weather, world time) |
 | `wareki` | Convert between Western and Japanese era years |
 | `weather` | Current weather via wttr.in |
-| `wifi-helth-check` | WiFi and network diagnostics |
 | `worldtime` | Display current time in major cities |
 | `yubin` | Japanese postal code search |
+
+### multimedia
+
+| Script | Description |
+|---|---|
+| `mp4_to_mp3` | Convert MP4 to MP3 using ffmpeg |
 
 ## Usage
 
@@ -45,15 +75,17 @@ timer 1h30m
 weather Tokyo
 wareki 2024
 counts fatf .
+fix_filename -c zenkaku_to_hankaku.conf ./files
 ```
 
 ## Requirements
 
 - macOS
 - Common: `curl`, `fzf`
-- Some tools require: `peco`, `nkf`, `w3m`, `gsed`, `rg`
+- Some tools require: `peco`, `nkf`, `gsed`, `rg`
 - bench-suite: `zsh`, `bc`, `python`
 - stock-jp: `python3`, `xlrd==1.2.0` (`pip3 install 'xlrd==1.2.0'`)
+- multimedia: `ffmpeg`
 
 ## Data Storage
 

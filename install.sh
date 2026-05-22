@@ -9,7 +9,7 @@ linked=0
 skipped=0
 errors=0
 
-for script in "${REPO_ROOT}"/shell_scripts/*/*.sh "${REPO_ROOT}"/shell_scripts/*/*.zsh "${REPO_ROOT}"/shell_scripts/*/*.py; do
+for script in "${REPO_ROOT}"/tools/*/*/*{.sh,.zsh,.py}; do
     [ -e "${script}" ] || continue
     filename="$(basename "${script}")"
     name="${filename%.*}"
