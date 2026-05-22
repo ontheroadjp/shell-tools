@@ -55,11 +55,39 @@ STOCK_SEARCH_DIR="${STOCK_SEARCH_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/stock
 STOCK_DATA_FILE="stock.csv"
 
 
+function _check_xlrd() {
+    if ! python3 -c "import xlrd" 2>/dev/null; then
+        echo "error: xlrd is required to convert XLS data."
+        echo "install: pip3 install 'xlrd==1.2.0'"
+        exit 1
+    fi
+}
+
+function _xls_to_csv() {
+    local xls="$1"
+    local csv="$2"
+    python3 - "$xls" "$csv" <<'PYEOF'
+import xlrd, csv, sys
+wb = xlrd.open_workbook(sys.argv[1])
+ws = wb.sheet_by_index(0)
+def fmt(v):
+    if isinstance(v, float) and v == int(v):
+        return str(int(v))
+    return str(v)
+with open(sys.argv[2], 'w', newline='', encoding='utf-8') as f:
+    w = csv.writer(f)
+    for i in range(ws.nrows):
+        w.writerow([fmt(ws.cell_value(i, j)) for j in range(ws.ncols)])
+PYEOF
+}
+
 function _download_stock_data() {
-    url='https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls'
-    curl ${url} -o ${STOCK_SEARCH_DIR}/stock.xls && {
-        echo 'updated!'
-    }
+    _check_xlrd
+    local url='https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls'
+    local xls="${STOCK_SEARCH_DIR}/stock.xls"
+    local csv="${STOCK_SEARCH_DIR}/${STOCK_DATA_FILE}"
+    mkdir -p "${STOCK_SEARCH_DIR}"
+    curl -L "${url}" -o "${xls}" && _xls_to_csv "${xls}" "${csv}" && echo 'updated!'
 }
 
 function _jp_stock_search() {
@@ -122,7 +150,11 @@ function _main() {
         echo "need peco."
         exit 1
     fi
-    mkdir -p ${STOCK_SEARCH_DIR}
+    mkdir -p "${STOCK_SEARCH_DIR}"
+    if [ ! -f "${STOCK_SEARCH_DIR}/${STOCK_DATA_FILE}" ]; then
+        echo "stock data not found. downloading..."
+        _download_stock_data
+    fi
     _jp_stock_search
 }
 
