@@ -10,10 +10,12 @@ _init() {
         exit 1
     fi
     mkdir -p "${QUICK_MEMO_DATA_DIR}"
+    touch "${QUICK_MEMO_MARKDOWN}"
 }
 
 _send_mail() {
     [ -z "$1" ] && echo "need e-mail address to send email." && exit 1
+    _init
     local subject="Quick Memo ($(date))"
     cat "${QUICK_MEMO_MARKDOWN}" | mail -s "${subject}" "$1"
     echo "e-mail (quick memo) has been sent to $1"
