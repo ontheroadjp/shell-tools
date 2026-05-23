@@ -1,56 +1,63 @@
-# DeepL Clipboard Translater
+# deepl-translater
 
-Translates clipboard text using the DeepL API. The source language is automatically detected.
+Translate clipboard text or stdin using the DeepL API. Source language is auto-detected.
 
 ## Requirements
 
 - Python 3
 - DeepL API key (Free plan supported)
 
-## Installation
+```bash
+pip install -r requirements.txt
+```
 
-1. Install dependencies:
+## Setup
 
-    ```bash
-    python3 -m pip install -r requirements.txt
-    ```
+### 1. Get a DeepL API key
 
-2. Create a `.env` file in the project directory and add your DeepL API key:
+1. Create a free account at https://www.deepl.com/en/pro#developer
+2. Go to **Account** → **Authentication Key for DeepL API**
+3. Copy the API key (ends with `:fx` for the Free plan)
 
-    ```
-    DEEPL_API_KEY=your_api_key
-    ```
+### 2. Create the credentials file
+
+Credentials are stored in `$XDG_CONFIG_HOME/shell-tools/deepl-translater/credentials`. If `XDG_CONFIG_HOME` is not set, `~/.config` is used.
+
+```bash
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/shell-tools/deepl-translater"
+echo "DEEPL_API_KEY=your_api_key_here" > "${XDG_CONFIG_HOME:-$HOME/.config}/shell-tools/deepl-translater/credentials"
+```
+
+See `credentials.example` for the expected format.
 
 ## Usage
 
-Use the `-o` option to specify a target language:
+```bash
+deepl-translater [-o TARGET_LANG]
+```
 
 | Option | Language |
-|--------|----------|
-| `EN`   | English (default) |
-| `JA`   | Japanese |
-| `ZH`   | Chinese |
-| `KO`   | Korean |
+|---|---|
+| `-o EN` | English (default) |
+| `-o JA` | Japanese |
+| `-o ZH` | Chinese |
+| `-o KO` | Korean |
 
-### From clipboard
+Reads from clipboard if no stdin is provided.
 
-Copy text to your clipboard, then run the script:
-
-```bash
-python3 deepl-clipboard-translater.py
-python3 deepl-clipboard-translater.py -o ja
-```
-
-### From stdin (pipe)
+## Examples
 
 ```bash
-echo "こんにちは" | python3 deepl-clipboard-translater.py
-cat file.txt | python3 deepl-clipboard-translater.py -o ja
-```
+# Translate clipboard text to English (default)
+deepl-translater
 
-### Copy result to clipboard
+# Translate clipboard text to Japanese
+deepl-translater -o JA
 
-```bash
-python3 deepl-clipboard-translater.py | pbcopy   # macOS
-python3 deepl-clipboard-translater.py | xclip    # Linux
+# Translate from stdin
+echo "こんにちは" | deepl-translater
+
+# Translate and copy result to clipboard
+deepl-translater | pbcopy    # macOS
+deepl-translater | xclip     # Linux
 ```

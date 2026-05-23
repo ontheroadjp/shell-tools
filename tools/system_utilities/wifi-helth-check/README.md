@@ -1,49 +1,52 @@
-# wifi-check
+# wifi-helth-check
 
-WiFi health checker for Mac OS X
+WiFi diagnostics: signal strength, connection speed, and internet connectivity with color-coded output.
 
-# usage
+## Requirements
 
-Run it. It will give you colorized output.
+- macOS: `airport`, `bc`, `perl`, `dig`
+- Linux: `iw`, `ip`, `dig`
 
-```
-$ ./wifi-check
+## Usage
 
-======== Internet Information
-Address: 192.168.0.98
-Gateway: 192.168.0.1
-Ping: 3.637 ms (100% packets transmitted)
-DNS: OK
-
-======== Wireless Information
-SSID: your-awesome-ssid
-BSSID: 00:00:0c:98:11:10
-CHANNEL: 11
-
-======== Radio status
-RSSI: -50 / -95 (S/N: 45)
-Rate: 54 / 54
-MCS: -1
+```bash
+wifi-helth-check [subcommand]
 ```
 
-Just show it to your system admin and say, "Hey I dunno why but the wifi is so slow, fix it now".
+| Subcommand | Description |
+|---|---|
+| (none) or `wificheck` | Run all diagnostics |
+| `inetinfo` | Internet connectivity only |
+| `wifiinfo` | WiFi connection info only |
+| `radioinfo` | Signal strength and speed only |
 
-# install
+## Example
 
-Move it to wherever you want, such like `~/bin`.
+```bash
+wifi-helth-check
+```
 
-# Licensed under the Apache License, Version 2.0
+```
+Address: 192.168.1.xxx
+Gateway: 192.168.1.1
+Ping: 2 ms (100% packets transmitted)
+DNS:   OK
 
-Copyright 2015, sugitak
+SSID:    MyHomeWifi
+BSSID:   xx:xx:xx:xx:xx:xx
+CHANNEL: 6ch: 2.4GHz
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+RSSI:  -55
+Noise: -95
+S/N:   40
+Rate:  130
+MCS:   7
+```
 
-    http://www.apache.org/licenses/LICENSE-2.0
+## Color Indicators
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+| Color | Meaning |
+|---|---|
+| Green | Good |
+| Yellow | Warning |
+| Red | Problem |

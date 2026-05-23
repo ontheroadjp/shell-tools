@@ -41,8 +41,8 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
-| `to_hankaku` | Convert full-width characters to half-width |
-| `to_zenkaku` | Convert half-width characters to full-width |
+| `deepl-translater` | Translate clipboard text or stdin via DeepL API |
+| `text_converter` | Convert between full-width and half-width characters |
 
 ### network
 
@@ -59,7 +59,7 @@ Create symlinks to `~/dotfiles/bin`:
 | `holiday` | List Japanese public holidays |
 | `quick-memo` | Quick memo and TODO management |
 | `stock-jp` | Look up Japanese stock prices |
-| `timer` | Countdown timer with macOS notification |
+| `timer` | Countdown timer with notification |
 | `today` | Daily summary (date, weather, world time) |
 | `wareki` | Convert between Western and Japanese era years |
 | `weather` | Current weather via wttr.in |
@@ -70,7 +70,7 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
-| `mp4_to_mp3` | Convert MP4 to MP3 using ffmpeg |
+| `movie-converter` | Convert video files using ffmpeg |
 
 ## Usage
 
@@ -82,25 +82,28 @@ weather Tokyo
 wareki 2024
 counts fatf .
 fix_filename -c zenkaku_to_hankaku.conf ./files
+deepl-translater -o JA
 ```
 
 ## Requirements
 
-- macOS
+- macOS / Linux
 - Common: `curl`, `fzf`
 - Some tools require: `peco`, `nkf`, `gsed`, `rg`
 - bench-suite: `zsh`, `bc`, `python`
 - stock-jp: `python3`, `xlrd==1.2.0` (`pip3 install 'xlrd==1.2.0'`)
+- deepl-translater: `python3`, `pip install -r requirements.txt`
 - multimedia: `ffmpeg`
 
 ## Data Storage
 
-Tools that download or generate data follow the [XDG Base Directory](https://specifications.freedesktop.org/basedir-spec/latest/) spec:
+Tools that store data follow the [XDG Base Directory](https://specifications.freedesktop.org/basedir-spec/latest/) spec. If the XDG environment variable is not set, the default path is used.
 
-| Tool | Default data path |
-|---|---|
-| `yubin` | `~/.local/share/yubin/` |
-| `quick-memo` | `~/.local/share/quick-memo/` |
-| `stock-jp` | `~/.local/share/stock-jp/` |
+| Tool | XDG variable | Default path |
+|---|---|---|
+| `yubin` | `XDG_DATA_HOME` | `~/.local/share/shell-tools/yubin/` |
+| `quick-memo` | `XDG_DATA_HOME` | `~/.local/share/shell-tools/quick-memo/` |
+| `stock-jp` | `XDG_DATA_HOME` | `~/.local/share/shell-tools/stock-jp/` |
+| `deepl-translater` | `XDG_CONFIG_HOME` | `~/.config/shell-tools/deepl-translater/credentials` |
 
-Each can be overridden via its corresponding environment variable (`YUBIN_DATA_DIR`, `QUICK_MEMO_DATA_DIR`, `STOCK_SEARCH_DIR`).
+Each data path can also be overridden via its tool-specific environment variable (`YUBIN_DATA_DIR`, `QUICK_MEMO_DATA_DIR`, `STOCK_SEARCH_DIR`).

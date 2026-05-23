@@ -1,51 +1,47 @@
-# Stock JP
+# stock-jp
 
-## Overview
+Search Japanese stocks by name or code and open the result in a browser.
 
-Stock JP is a shell script that allows users to search for information about Japanese stocks on various financial websites. Users can choose the stock they are interested in and select which financial website they want to view the information on. The script then opens the selected website in a web browser.
+## Requirements
 
-## Getting Started
+- `bash`, `curl`, `peco`, `nkf`, `column`, `sed`
+- `python3`, `xlrd==1.2.0` — for XLS→CSV conversion on first run
 
-To use Stock JP, simply download the `stock-jp.sh` script and make it executable. Then run the script with appropriate options to search for stock information. Note that after running `./stock-jp.sh --update`, you need to manually convert the downloaded `.xls` file to a `.csv` file.
+```bash
+pip3 install 'xlrd==1.2.0'
+```
 
-## Operating Environment
+## Data Storage
 
-Stock JP requires the following dependencies to be installed:
+Stock data is downloaded automatically on first run from JPX and converted from XLS to CSV. Data is stored in `$XDG_DATA_HOME/shell-tools/stock-jp/`. If `XDG_DATA_HOME` is not set, `~/.local/share` is used.
 
-- Bash shell
-- curl
-- peco
-- nkf
-- column
-- sed
-- open (on macOS)
+The path can be overridden:
+
+```bash
+export STOCK_SEARCH_DIR="/path/to/dir"
+```
 
 ## Usage
 
+```bash
+stock-jp [OPTIONS]
 ```
-Usage: stock-jp [OPTIONS] FILE
 
-Search a security in stock market Tokyo@japan.
-
-Options:
-  -h, --help                      Show help
-  -v, --version                   Show script version
-      --update                    Update stock data 
-      --verbose                   Print various logging information
-```
+| Option | Description |
+|---|---|
+| (none) | Interactive stock search |
+| `--update` | Re-download and refresh stock data |
+| `-v`, `--version` | Show version |
+| `-h`, `--help` | Show help |
 
 ## Example
 
-Search for stock information and view it on Yahoo! Finance:
-
+```bash
+# Launch interactive search
+stock-jp
 ```
-$ ./stock-jp.sh
-```
 
-Update stock data:
-
-- Note: Manually convert the downloaded .xls file to .csv
-
-```
-$ ./stock-jp.sh --update
+```bash
+# Refresh stock data
+stock-jp --update
 ```
