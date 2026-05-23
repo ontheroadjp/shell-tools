@@ -10,6 +10,7 @@ The source language is automatically detected.
 import os
 import sys
 import argparse
+from pathlib import Path
 
 if sys.version_info[0] < 3:
     sys.stderr.write("This script requires Python 3.\n")
@@ -27,23 +28,27 @@ warnings.filterwarnings("ignore", category=NotOpenSSLWarning)
 import requests
 from dotenv import load_dotenv
 
+def _credentials_path():
+    xdg_config_home = Path(os.environ.get('XDG_CONFIG_HOME', Path.home() / '.config'))
+    return xdg_config_home / 'shell-tools' / 'deepl-translater' / 'credentials'
+
 def main():
-    """
-    Main function to translate clipboard text.
-    """
     parser = argparse.ArgumentParser(description="Translate text from the clipboard using DeepL.")
     supported_langs = ["JA", "EN", "ZH", "KO"]
     parser.add_argument("-o", "--target_lang", type=str.upper, default="EN", choices=supported_langs,
                         help=f"Target language. Supported: {', '.join(supported_langs)}. Defaults to EN.")
     args = parser.parse_args()
 
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    dotenv_path = os.path.join(script_dir, '.env')
-    load_dotenv(dotenv_path=dotenv_path)
+    load_dotenv(dotenv_path=_credentials_path())
 
     api_key = os.getenv("DEEPL_API_KEY")
     if not api_key:
-        sys.stderr.write("Error: DEEPL_API_KEY not found in .env file.\n")
+        cred = _credentials_path()
+        sys.stderr.write(
+            f"Error: DEEPL_API_KEY not set.\n"
+            f"Create {cred} with:\n"
+            f"  DEEPL_API_KEY=your_api_key_here\n"
+        )
         sys.exit(1)
 
     if not sys.stdin.isatty():

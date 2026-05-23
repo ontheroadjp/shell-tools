@@ -14,7 +14,7 @@ pip3 install 'xlrd==1.2.0'
 
 ## 配置
 
-首次运行时，将自动从 JPX 下载 XLS 数据并转换为 CSV。数据默认保存至 `~/.local/share/stock-jp/`（遵循 XDG Base Directory 规范）。
+首次运行时，将自动从 JPX 下载 XLS 数据并转换为 CSV。数据默认保存至 `~/.local/share/shell-tools/stock-jp/`（遵循 XDG Base Directory 规范）。
 
 强制更新数据：
 

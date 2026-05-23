@@ -14,7 +14,7 @@ brew install gnu-sed ripgrep
 
 ## 配置
 
-数据默认保存至 `~/.local/share/quick-memo/`（遵循 XDG Base Directory 规范）。如需自定义路径：
+数据默认保存至 `~/.local/share/shell-tools/quick-memo/`（遵循 XDG Base Directory 规范）。如需自定义路径：
 
 ```bash
 export QUICK_MEMO_DATA_DIR="/path/to/dir"  # 可选覆盖
@@ -43,7 +43,7 @@ quick-memo
 **Output:**
 
 ```
-[opens ~/.local/share/quick-memo/quick_memo.md in vim]
+[opens ~/.local/share/shell-tools/quick-memo/quick_memo.md in vim]
 ```
 
 ### 添加一个待办事项
@@ -88,5 +88,5 @@ quick-memo todo
 
 ## 说明
 
-- 备忘录保存至 `~/.local/share/quick-memo/quick_memo.md`（若设置了 `$QUICK_MEMO_DATA_DIR` 则使用该路径）。
+- 备忘录保存至 `~/.local/share/shell-tools/quick-memo/quick_memo.md`（若设置了 `$QUICK_MEMO_DATA_DIR` 则使用该路径）。
 - 待办事项使用 `[ ]` 复选框格式管理。

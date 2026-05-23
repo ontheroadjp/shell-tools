@@ -14,7 +14,7 @@ pip3 install 'xlrd==1.2.0'
 
 ## Setup
 
-On first run, stock data is automatically downloaded from JPX and converted from XLS to CSV. Data is stored in `~/.local/share/stock-jp/` by default (XDG Base Directory).
+On first run, stock data is automatically downloaded from JPX and converted from XLS to CSV. Data is stored in `~/.local/share/shell-tools/stock-jp/` by default (XDG Base Directory).
 
 To force update:
 

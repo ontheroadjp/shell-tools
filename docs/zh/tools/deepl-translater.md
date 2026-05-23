@@ -19,10 +19,11 @@ pip install -r requirements.txt
 2. 进入 **账户** → **DeepL API 的身份验证密钥**
 3. 复制 API 密钥（免费计划的密钥以 `:fx` 结尾）
 
-### 2. 创建 `.env` 文件
+### 2. 创建 credentials 文件
 
 ```bash
-echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env
+mkdir -p ~/.config/shell-tools/deepl-translater
+echo "DEEPL_API_KEY=your_api_key_here" > ~/.config/shell-tools/deepl-translater/credentials
 ```
 
 ## 用法
@@ -99,6 +100,6 @@ deepl-translater | xclip     # Linux
 
 ## 说明
 
-- 需要在工具目录中创建包含 `DEEPL_API_KEY` 的 `.env` 文件。
+- 需要在 `~/.config/shell-tools/deepl-translater/credentials` 中写入 `DEEPL_API_KEY=...`。
 - 使用 DeepL 免费 API 端点（`api-free.deepl.com`）。
 - 若标准输入为管道则从 stdin 读取，否则从剪贴板读取。

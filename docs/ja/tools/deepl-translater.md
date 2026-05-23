@@ -19,10 +19,11 @@ pip install -r requirements.txt
 2. **アカウント** → **DeepL API の認証キー** に移動
 3. API キーをコピー（無料プランのキーは末尾が `:fx`）
 
-### 2. `.env` ファイルの作成
+### 2. credentials ファイルの作成
 
 ```bash
-echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env
+mkdir -p ~/.config/shell-tools/deepl-translater
+echo "DEEPL_API_KEY=your_api_key_here" > ~/.config/shell-tools/deepl-translater/credentials
 ```
 
 ## 使い方
@@ -99,6 +100,6 @@ deepl-translater | xclip     # Linux
 
 ## 備考
 
-- ツールディレクトリに `DEEPL_API_KEY` を記載した `.env` ファイルが必要です。
+- `~/.config/shell-tools/deepl-translater/credentials` に `DEEPL_API_KEY=...` の記述が必要です。
 - DeepL 無料 API エンドポイント（`api-free.deepl.com`）を使用します。
 - 標準入力がパイプの場合は stdin から読み込み、それ以外はクリップボードから読み込みます。

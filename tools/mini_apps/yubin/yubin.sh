@@ -1,6 +1,6 @@
 #!/bin/bash
 
-YUBIN_DATA_DIR="${YUBIN_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/yubin}"
+YUBIN_DATA_DIR="${YUBIN_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/shell-tools/yubin}"
 YUBIN_DATA_URL='https://www.post.japanpost.jp/service/search/zipcode/download/kogaki/zip/ken_all.zip'
 YUBIN_DATA_ZIP="${YUBIN_DATA_DIR}/ken_all.zip"
 YUBIN_DATA_CSV="${YUBIN_DATA_DIR}/KEN_ALL.CSV"

@@ -19,10 +19,11 @@ pip install -r requirements.txt
 2. Go to **Account** → **Authentication Key for DeepL API**
 3. Copy the API key (ends with `:fx` for the Free plan)
 
-### 2. Create the `.env` file
+### 2. Create the credentials file
 
 ```bash
-echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env
+mkdir -p ~/.config/shell-tools/deepl-translater
+echo "DEEPL_API_KEY=your_api_key_here" > ~/.config/shell-tools/deepl-translater/credentials
 ```
 
 ## Usage
@@ -99,6 +100,6 @@ deepl-translater | xclip     # Linux
 
 ## Notes
 
-- Requires a `.env` file with `DEEPL_API_KEY` in the tool directory.
+- Requires `~/.config/shell-tools/deepl-translater/credentials` with `DEEPL_API_KEY=...`.
 - Uses the DeepL Free API endpoint (`api-free.deepl.com`).
 - If stdin is a pipe, reads from stdin; otherwise reads from clipboard.

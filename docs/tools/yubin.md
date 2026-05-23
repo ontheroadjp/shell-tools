@@ -12,7 +12,7 @@ brew install nkf fzf
 
 ## Setup
 
-On first run, the postal code CSV is automatically downloaded from Japan Post. Data is stored in `~/.local/share/yubin/` by default (XDG Base Directory). The location can be overridden:
+On first run, the postal code CSV is automatically downloaded from Japan Post. Data is stored in `~/.local/share/shell-tools/yubin/` by default (XDG Base Directory). The location can be overridden:
 
 ```bash
 export YUBIN_DATA_DIR="/path/to/dir"  # optional override
@@ -50,6 +50,6 @@ Type to filter:
 
 ## Notes
 
-- Data is saved to `~/.local/share/yubin/KEN_ALL.CSV` (or `$YUBIN_DATA_DIR` if set).
+- Data is saved to `~/.local/share/shell-tools/yubin/KEN_ALL.CSV` (or `$YUBIN_DATA_DIR` if set).
 - If the file exists, it will not be re-downloaded. Delete it manually to refresh.
 - Designed for use in a tmux environment (`fzf-tmux`).

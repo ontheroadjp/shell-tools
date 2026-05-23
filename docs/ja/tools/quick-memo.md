@@ -14,7 +14,7 @@ brew install gnu-sed ripgrep
 
 ## Setup
 
-データは XDG Base Directory 仕様に従い `~/.local/share/quick-memo/` に保存されます。保存先を変更する場合:
+データは XDG Base Directory 仕様に従い `~/.local/share/shell-tools/quick-memo/` に保存されます。保存先を変更する場合:
 
 ```bash
 export QUICK_MEMO_DATA_DIR="/path/to/dir"  # 任意で上書き可能
@@ -43,7 +43,7 @@ quick-memo
 **Output:**
 
 ```
-[opens ~/.local/share/quick-memo/quick_memo.md in vim]
+[opens ~/.local/share/shell-tools/quick-memo/quick_memo.md in vim]
 ```
 
 ### TODO を追加
@@ -88,5 +88,5 @@ quick-memo todo
 
 ## Notes
 
-- メモファイルは `~/.local/share/quick-memo/quick_memo.md`（`$QUICK_MEMO_DATA_DIR` が設定されている場合はそちら）に保存されます。
+- メモファイルは `~/.local/share/shell-tools/quick-memo/quick_memo.md`（`$QUICK_MEMO_DATA_DIR` が設定されている場合はそちら）に保存されます。
 - TODO は `[ ]` 形式のチェックボックスで管理されます。
