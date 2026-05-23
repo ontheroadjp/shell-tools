@@ -1,4 +1,4 @@
-# 🌐 deepl-translater <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🌐 deepl-translater <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 DeepL API を使ってクリップボードのテキストまたは標準入力を翻訳します。翻訳元言語は自動検出されます。
 

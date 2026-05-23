@@ -1,4 +1,4 @@
-# 🚀 bench_zsh <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🚀 bench_zsh <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 `zsh -l` のログインシェル起動時間を複数回計測し、平均・最短・最長を報告します。
 

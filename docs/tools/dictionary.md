@@ -1,4 +1,4 @@
-# 📖 dictionary <Badge type="info" text="Python Script" /> <Badge type="warning" text="macOS" />
+# 📖 dictionary <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span>
 
 Look up words using macOS built-in Dictionary via DictionaryServices framework. Supports English↔Japanese lookup with formatted output.
 

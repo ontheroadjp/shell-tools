@@ -1,4 +1,4 @@
-# ☀️ today <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# ☀️ today <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 显示今日日期（含日本年号）、天气和世界时间的每日摘要。
 

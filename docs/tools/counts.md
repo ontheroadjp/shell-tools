@@ -1,4 +1,4 @@
-# 📊 counts <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📊 counts <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Count and analyze files and directories by size or type.
 

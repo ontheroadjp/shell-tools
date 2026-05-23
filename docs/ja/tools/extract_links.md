@@ -1,4 +1,4 @@
-# 🔗 extract_links <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🔗 extract_links <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 ウェブページをスクレイピングし、指定した拡張子に一致するリンクをすべて抽出します。
 

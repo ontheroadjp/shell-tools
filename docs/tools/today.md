@@ -1,4 +1,4 @@
-# ☀️ today <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# ☀️ today <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 A daily summary showing today's date in Japanese era, weather, and world time.
 

@@ -1,4 +1,4 @@
-# ⬇️ list_downloader <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# ⬇️ list_downloader <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 从 URL 列表批量下载文件，从文件或 stdin 读取 URL。
 

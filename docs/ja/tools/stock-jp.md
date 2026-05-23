@@ -1,4 +1,4 @@
-# 💹 stock-jp <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 💹 stock-jp <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 東証上場銘柄を `peco` でインタラクティブに検索し、選択した証券会社・情報サイトをブラウザで開きます。
 

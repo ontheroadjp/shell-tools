@@ -1,4 +1,4 @@
-# 🎬 movie-converter <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🎬 movie-converter <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 MP4 ファイルを MP3 に変換します。ファイル単体・ディレクトリ一括・標準入力のいずれにも対応します。
 

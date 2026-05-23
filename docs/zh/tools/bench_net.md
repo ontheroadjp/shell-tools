@@ -1,4 +1,4 @@
-# 🌐 bench_net <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🌐 bench_net <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 通过 speedtest.net 测量网络下载和上传速度。
 

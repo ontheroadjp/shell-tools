@@ -1,4 +1,4 @@
-# 🎌 holiday <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🎌 holiday <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Google カレンダーの ICS フィードから日本の祝日を取得して一覧表示します。
 

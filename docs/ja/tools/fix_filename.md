@@ -1,4 +1,4 @@
-# 🔧 fix_filename <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🔧 fix_filename <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 設定ファイルに定義されたパターン/置換ルールを適用してファイルをリネームします。一括リネーム、ディレクトリの再帰処理、stdin パイプをサポートします。
 

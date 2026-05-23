@@ -1,4 +1,4 @@
-# 🌍 worldtime <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🌍 worldtime <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Sydney / Tokyo / Shanghai / London / New York / Los Angeles の現在時刻を一覧表示します。タイムゾーン一覧から `peco` でインタラクティブに選択することもできます。
 

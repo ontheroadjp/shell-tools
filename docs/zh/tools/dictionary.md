@@ -1,4 +1,4 @@
-# 📖 dictionary <Badge type="info" text="Python Script" /> <Badge type="warning" text="macOS" />
+# 📖 dictionary <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span>
 
 通过 macOS 内置 DictionaryServices 框架查询单词，支持英日互译并格式化输出。
 

@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Shell Tools
   text: Standalone shell scripts for everyday terminal operations
-  tagline: A curated collection of macOS shell utilities
+  tagline: A curated collection of shell utilities for macOS and Linux
   actions:
     - theme: brand
       text: Get Started
@@ -29,7 +29,7 @@ hero:
       <p class="tool-card-desc">Display ANSI color codes and 256-color tables</p>
     </div>
   </a>
-  <div class="tool-card">
+  <a href="./tools/battery" class="tool-card">
     <span class="tool-card-icon">🔋</span>
     <div class="tool-card-body">
       <span class="tool-card-title">battery</span>
@@ -37,22 +37,48 @@ hero:
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
         <span class="tc-badge tc-badge-linux">Linux</span>
+        <span class="tc-badge tc-badge-tmux">tmux</span>
       </div>
       <p class="tool-card-desc">tmux status bar: battery level</p>
     </div>
-  </div>
-  <div class="tool-card">
+  </a>
+  <a href="./tools/ssid" class="tool-card">
     <span class="tool-card-icon">📡</span>
     <div class="tool-card-body">
       <span class="tool-card-title">ssid</span>
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Display current Wi-Fi SSID</p>
     </div>
-  </div>
+  </a>
+  <a href="./tools/get-ssid" class="tool-card">
+    <span class="tool-card-icon">📶</span>
+    <div class="tool-card-body">
+      <span class="tool-card-title">get-ssid</span>
+      <div class="tool-card-badges">
+        <span class="tc-badge tc-badge-shell">Shell Script</span>
+        <span class="tc-badge tc-badge-macos">macOS</span>
+        <span class="tc-badge tc-badge-linux">Linux</span>
+        <span class="tc-badge tc-badge-tmux">tmux</span>
+      </div>
+      <p class="tool-card-desc">tmux status bar: Wi-Fi SSID with signal strength</p>
+    </div>
+  </a>
+  <a href="./tools/get-volume" class="tool-card">
+    <span class="tool-card-icon">🔊</span>
+    <div class="tool-card-body">
+      <span class="tool-card-title">get-volume</span>
+      <div class="tool-card-badges">
+        <span class="tc-badge tc-badge-shell">Shell Script</span>
+        <span class="tc-badge tc-badge-macos">macOS</span>
+        <span class="tc-badge tc-badge-linux">Linux</span>
+        <span class="tc-badge tc-badge-tmux">tmux</span>
+      </div>
+      <p class="tool-card-desc">tmux status bar: system volume bar</p>
+    </div>
+  </a>
 </div>
 
 ## System Utilities
@@ -65,8 +91,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Benchmark execution time of any shell command</p>
     </div>
   </a>
@@ -77,8 +102,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Benchmark execution time of any Zsh function</p>
     </div>
   </a>
@@ -89,8 +113,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Measure network download/upload speed via speedtest.net</p>
     </div>
   </a>
@@ -101,8 +124,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Measure Zsh login shell startup time</p>
     </div>
   </a>
@@ -113,8 +135,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Analyze files and directories by size or type</p>
     </div>
   </a>
@@ -125,8 +146,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Rename files using pattern/replacement config files</p>
     </div>
   </a>
@@ -137,8 +157,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Compute min, max, avg, and count for a list of numbers</p>
     </div>
   </a>
@@ -149,8 +168,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Diagnose WiFi signal strength and internet connectivity</p>
     </div>
   </a>
@@ -166,8 +184,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-python">Python Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Translate clipboard text via DeepL API</p>
     </div>
   </a>
@@ -178,8 +195,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Convert between full-width and half-width characters</p>
     </div>
   </a>
@@ -206,8 +222,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">List Japanese public holidays</p>
     </div>
   </a>
@@ -218,8 +233,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Quickly manage memos and TODOs from the terminal</p>
     </div>
   </a>
@@ -230,8 +244,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Interactively search Tokyo Stock Exchange securities</p>
     </div>
   </a>
@@ -242,8 +255,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Countdown timer with macOS notification</p>
     </div>
   </a>
@@ -254,8 +266,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Daily summary of date, weather, and world time</p>
     </div>
   </a>
@@ -266,8 +277,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Convert between Western and Japanese era years</p>
     </div>
   </a>
@@ -278,8 +288,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Fetch current weather via wttr.in</p>
     </div>
   </a>
@@ -290,8 +299,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Display current time in major cities worldwide</p>
     </div>
   </a>
@@ -302,8 +310,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Interactively search Japanese postal codes</p>
     </div>
   </a>
@@ -319,8 +326,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Convert MP4 files to MP3 using ffmpeg</p>
     </div>
   </a>
@@ -336,8 +342,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-python">Python Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Extract file links from a web page by extension</p>
     </div>
   </a>
@@ -348,8 +353,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-python">Python Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Batch download files from a list of URLs</p>
     </div>
   </a>

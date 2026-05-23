@@ -1,4 +1,4 @@
-# ⏱️ timer <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# ⏱️ timer <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 倒计时器，时间到后发送 macOS 通知并播放提示音。
 

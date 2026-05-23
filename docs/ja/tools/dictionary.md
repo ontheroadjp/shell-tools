@@ -1,4 +1,4 @@
-# 📖 dictionary <Badge type="info" text="Python Script" /> <Badge type="warning" text="macOS" />
+# 📖 dictionary <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span>
 
 macOS 組み込みの DictionaryServices フレームワークを使って単語を検索します。英日・日英の相互検索とフォーマット済み出力をサポートします。
 

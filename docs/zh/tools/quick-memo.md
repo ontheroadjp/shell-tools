@@ -1,4 +1,4 @@
-# 📝 quick-memo <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📝 quick-memo <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 从终端快速管理备忘录和待办事项，笔记以 Markdown 文件形式保存。
 

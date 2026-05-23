@@ -1,4 +1,4 @@
-# 🌐 deepl-translater <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🌐 deepl-translater <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Translate clipboard text or stdin using the DeepL API. Source language is auto-detected.
 

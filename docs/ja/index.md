@@ -4,7 +4,7 @@ layout: home
 hero:
   name: Shell Tools
   text: Standalone shell scripts for everyday terminal operations
-  tagline: macOS向けの便利なシェルスクリプト集
+  tagline: macOS・Linux 対応のシェルスクリプト集
   actions:
     - theme: brand
       text: Get Started
@@ -29,7 +29,7 @@ hero:
       <p class="tool-card-desc">ANSI カラーコードと 256色テーブルを表示</p>
     </div>
   </a>
-  <div class="tool-card">
+  <a href="./tools/battery" class="tool-card">
     <span class="tool-card-icon">🔋</span>
     <div class="tool-card-body">
       <span class="tool-card-title">battery</span>
@@ -37,22 +37,48 @@ hero:
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
         <span class="tc-badge tc-badge-linux">Linux</span>
+        <span class="tc-badge tc-badge-tmux">tmux</span>
       </div>
       <p class="tool-card-desc">tmux ステータスバー用: バッテリー残量表示</p>
     </div>
-  </div>
-  <div class="tool-card">
+  </a>
+  <a href="./tools/ssid" class="tool-card">
     <span class="tool-card-icon">📡</span>
     <div class="tool-card-body">
       <span class="tool-card-title">ssid</span>
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">現在接続中の Wi-Fi SSID を表示</p>
     </div>
-  </div>
+  </a>
+  <a href="./tools/get-ssid" class="tool-card">
+    <span class="tool-card-icon">📶</span>
+    <div class="tool-card-body">
+      <span class="tool-card-title">get-ssid</span>
+      <div class="tool-card-badges">
+        <span class="tc-badge tc-badge-shell">Shell Script</span>
+        <span class="tc-badge tc-badge-macos">macOS</span>
+        <span class="tc-badge tc-badge-linux">Linux</span>
+        <span class="tc-badge tc-badge-tmux">tmux</span>
+      </div>
+      <p class="tool-card-desc">tmux ステータスバー用: SSID と電波強度表示</p>
+    </div>
+  </a>
+  <a href="./tools/get-volume" class="tool-card">
+    <span class="tool-card-icon">🔊</span>
+    <div class="tool-card-body">
+      <span class="tool-card-title">get-volume</span>
+      <div class="tool-card-badges">
+        <span class="tc-badge tc-badge-shell">Shell Script</span>
+        <span class="tc-badge tc-badge-macos">macOS</span>
+        <span class="tc-badge tc-badge-linux">Linux</span>
+        <span class="tc-badge tc-badge-tmux">tmux</span>
+      </div>
+      <p class="tool-card-desc">tmux ステータスバー用: 音量バー表示</p>
+    </div>
+  </a>
 </div>
 
 ## システムユーティリティ
@@ -65,8 +91,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">任意のシェルコマンドの実行時間をベンチマーク</p>
     </div>
   </a>
@@ -77,8 +102,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">任意の Zsh 関数の実行時間をベンチマーク</p>
     </div>
   </a>
@@ -89,8 +113,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">speedtest.net 経由でネットワーク速度を計測</p>
     </div>
   </a>
@@ -101,8 +124,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">Zsh ログインシェルの起動時間を計測</p>
     </div>
   </a>
@@ -113,8 +135,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">ファイル・ディレクトリをサイズや種類で集計</p>
     </div>
   </a>
@@ -125,8 +146,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">設定ファイルのパターン/置換ルールでファイルをリネーム</p>
     </div>
   </a>
@@ -137,8 +157,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">数値リストの統計（最小・最大・平均・件数）を計算</p>
     </div>
   </a>
@@ -149,8 +168,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">WiFi の電波強度・速度・インターネット接続を診断</p>
     </div>
   </a>
@@ -166,8 +184,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-python">Python Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">DeepL API でクリップボードのテキストを翻訳</p>
     </div>
   </a>
@@ -178,8 +195,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">全角・半角文字を相互変換</p>
     </div>
   </a>
@@ -206,8 +222,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">日本の祝日を一覧表示</p>
     </div>
   </a>
@@ -218,8 +233,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">ターミナルからすばやくメモや TODO を管理</p>
     </div>
   </a>
@@ -230,8 +244,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">東証銘柄をインタラクティブに検索して各サイトで表示</p>
     </div>
   </a>
@@ -242,8 +255,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">指定時間後に macOS 通知で知らせるカウントダウンタイマー</p>
     </div>
   </a>
@@ -254,8 +266,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">日付・天気・世界時計をまとめて表示するデイリーサマリー</p>
     </div>
   </a>
@@ -266,8 +277,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">西暦と和暦を相互変換</p>
     </div>
   </a>
@@ -278,8 +288,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">wttr.in API で現在の天気を取得</p>
     </div>
   </a>
@@ -290,8 +299,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">主要都市の現在時刻を一覧表示</p>
     </div>
   </a>
@@ -302,8 +310,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">日本郵便の郵便番号データベースをインタラクティブに検索</p>
     </div>
   </a>
@@ -319,8 +326,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-shell">Shell Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">ffmpeg を使って MP4 ファイルを MP3 に変換</p>
     </div>
   </a>
@@ -336,8 +342,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-python">Python Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">ウェブページから指定拡張子のリンクを抽出</p>
     </div>
   </a>
@@ -348,8 +353,7 @@ hero:
       <div class="tool-card-badges">
         <span class="tc-badge tc-badge-python">Python Script</span>
         <span class="tc-badge tc-badge-macos">macOS</span>
-        <span class="tc-badge tc-badge-linux">Linux</span>
-      </div>
+        <span class="tc-badge tc-badge-linux">Linux</span>      </div>
       <p class="tool-card-desc">URL リストからファイルを一括ダウンロード</p>
     </div>
   </a>

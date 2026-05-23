@@ -4,7 +4,11 @@ const toolsSidebarEn = [
   {
     text: 'System',
     items: [
+      { text: 'battery', link: '/tools/battery' },
       { text: 'colors', link: '/tools/colors' },
+      { text: 'get-ssid', link: '/tools/get-ssid' },
+      { text: 'get-volume', link: '/tools/get-volume' },
+      { text: 'ssid', link: '/tools/ssid' },
     ],
   },
   {
@@ -61,7 +65,11 @@ const toolsSidebarJa = [
   {
     text: 'システム',
     items: [
+      { text: 'battery', link: '/ja/tools/battery' },
       { text: 'colors', link: '/ja/tools/colors' },
+      { text: 'get-ssid', link: '/ja/tools/get-ssid' },
+      { text: 'get-volume', link: '/ja/tools/get-volume' },
+      { text: 'ssid', link: '/ja/tools/ssid' },
     ],
   },
   {
@@ -118,7 +126,11 @@ const toolsSidebarZh = [
   {
     text: '系统',
     items: [
+      { text: 'battery', link: '/zh/tools/battery' },
       { text: 'colors', link: '/zh/tools/colors' },
+      { text: 'get-ssid', link: '/zh/tools/get-ssid' },
+      { text: 'get-volume', link: '/zh/tools/get-volume' },
+      { text: 'ssid', link: '/zh/tools/ssid' },
     ],
   },
   {

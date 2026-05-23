@@ -1,4 +1,4 @@
-# 📜 wareki <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📜 wareki <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 西暦と和暦を対応させて表示します。明治元年（1868年）から令和10年（2028年）まで対応しています。
 

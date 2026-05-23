@@ -1,4 +1,4 @@
-# ⬇️ list_downloader <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# ⬇️ list_downloader <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Batch download files from a list of URLs. Reads URLs from a file or stdin.
 

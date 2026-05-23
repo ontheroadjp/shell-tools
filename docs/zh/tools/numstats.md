@@ -1,4 +1,4 @@
-# 📈 numstats <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📈 numstats <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 计算数字列表的统计信息（最小值、最大值、平均值、数量）。可通过参数或标准输入传入数字。
 

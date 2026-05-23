@@ -1,4 +1,4 @@
-# 📈 numstats <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📈 numstats <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 数値リストの統計（最小値・最大値・平均値・件数）を計算します。引数または標準入力から数値を受け取ります。
 

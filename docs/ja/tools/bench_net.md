@@ -1,4 +1,4 @@
-# 🌐 bench_net <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🌐 bench_net <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 speedtest.net を使ってネットワークのダウンロード・アップロード速度を計測します。
 

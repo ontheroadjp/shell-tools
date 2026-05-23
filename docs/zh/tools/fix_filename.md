@@ -1,4 +1,4 @@
-# 🔧 fix_filename <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🔧 fix_filename <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 通过配置文件中定义的模式/替换规则重命名文件，支持批量重命名、目录递归和 stdin 管道。
 

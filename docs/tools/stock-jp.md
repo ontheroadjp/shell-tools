@@ -1,4 +1,4 @@
-# 💹 stock-jp <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 💹 stock-jp <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Interactively search Tokyo Stock Exchange securities with `peco` and open them in your browser.
 

@@ -1,4 +1,4 @@
-# 📈 numstats <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📈 numstats <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Computes basic statistics (min, max, avg, count) for a list of numbers. Accepts numbers as arguments or via stdin.
 

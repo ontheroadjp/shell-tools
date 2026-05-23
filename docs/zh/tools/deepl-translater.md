@@ -1,4 +1,4 @@
-# 🌐 deepl-translater <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🌐 deepl-translater <span class="tc-badge tc-badge-python">Python Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 使用 DeepL API 翻译剪贴板文本或标准输入，自动检测源语言。
 

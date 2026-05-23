@@ -1,4 +1,4 @@
-# 📶 wifi-helth-check <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📶 wifi-helth-check <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 WiFi の電波強度・接続速度・インターネット接続をまとめて診断します。値の良否をカラーで視覚的に表示します。
 

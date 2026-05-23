@@ -1,4 +1,4 @@
-# 🎌 holiday <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🎌 holiday <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 从 Google 日历的 ICS 数据源获取日本法定节假日，并按日期顺序显示。
 

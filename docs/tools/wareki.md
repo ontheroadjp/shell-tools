@@ -1,4 +1,4 @@
-# 📜 wareki <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📜 wareki <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Converts between Western years and Japanese era years (Meiji 1868 – Reiwa 2028).
 

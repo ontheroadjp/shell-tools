@@ -1,4 +1,4 @@
-# 🔧 fix_filename <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🔧 fix_filename <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Rename files by applying pattern/replacement rules defined in config files. Supports batch renaming, directory recursion, and stdin piping.
 

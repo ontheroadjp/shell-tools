@@ -1,4 +1,4 @@
-# 🎨 colors <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 🎨 colors <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 Displays ANSI color codes and xterm 256-color tables in your terminal.
 

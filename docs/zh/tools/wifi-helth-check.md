@@ -1,4 +1,4 @@
-# 📶 wifi-helth-check <Badge type="tip" text="Shell Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+# 📶 wifi-helth-check <span class="tc-badge tc-badge-shell">Shell Script</span> <span class="tc-badge tc-badge-macos">macOS</span> <span class="tc-badge tc-badge-linux">Linux</span>
 
 诊断 WiFi 信号强度、连接速度和互联网连接状态，以彩色显示检测结果。
 
