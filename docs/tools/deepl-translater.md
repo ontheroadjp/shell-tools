@@ -21,9 +21,11 @@ pip install -r requirements.txt
 
 ### 2. Create the credentials file
 
+Credentials are stored in `$XDG_CONFIG_HOME/shell-tools/deepl-translater/credentials`. If `XDG_CONFIG_HOME` is not set, `~/.config` is used.
+
 ```bash
-mkdir -p ~/.config/shell-tools/deepl-translater
-echo "DEEPL_API_KEY=your_api_key_here" > ~/.config/shell-tools/deepl-translater/credentials
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/shell-tools/deepl-translater"
+echo "DEEPL_API_KEY=your_api_key_here" > "${XDG_CONFIG_HOME:-$HOME/.config}/shell-tools/deepl-translater/credentials"
 ```
 
 ## Usage
@@ -100,6 +102,6 @@ deepl-translater | xclip     # Linux
 
 ## Notes
 
-- Requires `~/.config/shell-tools/deepl-translater/credentials` with `DEEPL_API_KEY=...`.
+- Credentials are read from `$XDG_CONFIG_HOME/shell-tools/deepl-translater/credentials` (defaults to `~/.config/shell-tools/deepl-translater/credentials`).
 - Uses the DeepL Free API endpoint (`api-free.deepl.com`).
 - If stdin is a pipe, reads from stdin; otherwise reads from clipboard.

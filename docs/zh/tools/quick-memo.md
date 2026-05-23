@@ -14,7 +14,7 @@ brew install gnu-sed ripgrep
 
 ## 配置
 
-数据默认保存至 `~/.local/share/shell-tools/quick-memo/`（遵循 XDG Base Directory 规范）。如需自定义路径：
+数据保存至 `$XDG_DATA_HOME/shell-tools/quick-memo/`。若未设置 `XDG_DATA_HOME`，则使用 `~/.local/share`。如需完全自定义路径：
 
 ```bash
 export QUICK_MEMO_DATA_DIR="/path/to/dir"  # 可选覆盖
@@ -88,5 +88,5 @@ quick-memo todo
 
 ## 说明
 
-- 备忘录保存至 `~/.local/share/shell-tools/quick-memo/quick_memo.md`（若设置了 `$QUICK_MEMO_DATA_DIR` 则使用该路径）。
+- 备忘录保存至 `$XDG_DATA_HOME/shell-tools/quick-memo/quick_memo.md`（未设置时默认为 `~/.local/share/shell-tools/quick-memo/quick_memo.md`，若设置了 `$QUICK_MEMO_DATA_DIR` 则使用该路径）。
 - 待办事项使用 `[ ]` 复选框格式管理。

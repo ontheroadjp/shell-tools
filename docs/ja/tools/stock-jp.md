@@ -14,7 +14,7 @@ pip3 install 'xlrd==1.2.0'
 
 ## Setup
 
-初回実行時に JPX から XLS を自動ダウンロードし、CSV に変換します。データは XDG Base Directory 仕様に従い `~/.local/share/shell-tools/stock-jp/` に保存されます。
+初回実行時に JPX から XLS を自動ダウンロードし、CSV に変換します。データは `$XDG_DATA_HOME/shell-tools/stock-jp/` に保存されます。`XDG_DATA_HOME` が未設定の場合は `~/.local/share` が使用されます。
 
 強制更新する場合:
 

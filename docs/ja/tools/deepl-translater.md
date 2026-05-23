@@ -21,9 +21,11 @@ pip install -r requirements.txt
 
 ### 2. credentials ファイルの作成
 
+credentials は `$XDG_CONFIG_HOME/shell-tools/deepl-translater/credentials` に保存されます。`XDG_CONFIG_HOME` が未設定の場合は `~/.config` が使用されます。
+
 ```bash
-mkdir -p ~/.config/shell-tools/deepl-translater
-echo "DEEPL_API_KEY=your_api_key_here" > ~/.config/shell-tools/deepl-translater/credentials
+mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}/shell-tools/deepl-translater"
+echo "DEEPL_API_KEY=your_api_key_here" > "${XDG_CONFIG_HOME:-$HOME/.config}/shell-tools/deepl-translater/credentials"
 ```
 
 ## 使い方
@@ -100,6 +102,6 @@ deepl-translater | xclip     # Linux
 
 ## 備考
 
-- `~/.config/shell-tools/deepl-translater/credentials` に `DEEPL_API_KEY=...` の記述が必要です。
+- credentials は `$XDG_CONFIG_HOME/shell-tools/deepl-translater/credentials` から読み込まれます（未設定時は `~/.config/shell-tools/deepl-translater/credentials`）。
 - DeepL 無料 API エンドポイント（`api-free.deepl.com`）を使用します。
 - 標準入力がパイプの場合は stdin から読み込み、それ以外はクリップボードから読み込みます。
