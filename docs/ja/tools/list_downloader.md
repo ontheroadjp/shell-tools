@@ -23,9 +23,15 @@ list_downloader urls.txt
 **Output:**
 
 ```
-Downloading: https://example.com/doc/manual.pdf
-Downloading: https://example.com/doc/guide.pdf
-Done. 2 files downloaded.
+🧠 2 URLs loaded. Starting download using 4 threads...
+
+Downloading ████████████████████ 100%
+
+📋 Summary:
+✅ manual.pdf
+✅ guide.pdf
+
+🎉 Done: 2/2 succeeded.
 ```
 
 ### 保存先ディレクトリを指定してダウンロード
@@ -37,9 +43,15 @@ list_downloader urls.txt -o ~/Downloads/docs
 **Output:**
 
 ```
-Downloading: https://example.com/doc/manual.pdf → ~/Downloads/docs/manual.pdf
-Downloading: https://example.com/doc/guide.pdf  → ~/Downloads/docs/guide.pdf
-Done. 2 files downloaded.
+🧠 2 URLs loaded. Starting download using 4 threads...
+
+Downloading ████████████████████ 100%
+
+📋 Summary:
+✅ manual.pdf
+✅ guide.pdf
+
+🎉 Done: 2/2 succeeded.
 ```
 
 ### 2ステップ: 抽出→ダウンロード
@@ -52,10 +64,16 @@ extract_links https://example.com -e pdf -o urls.txt && list_downloader urls.txt
 
 ```
 ✅ 3 links saved to urls.txt
-Downloading: https://example.com/doc1.pdf
-Downloading: https://example.com/doc2.pdf
-Downloading: https://example.com/doc3.pdf
-Done. 3 files downloaded.
+🧠 3 URLs loaded. Starting download using 4 threads...
+
+Downloading ████████████████████ 100%
+
+📋 Summary:
+✅ doc1.pdf
+✅ doc2.pdf
+✅ doc3.pdf
+
+🎉 Done: 3/3 succeeded.
 ```
 
 ## 備考

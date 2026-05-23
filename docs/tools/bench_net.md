@@ -23,8 +23,9 @@ bench_net
 **Output:**
 
 ```
-Download: 487.32 Mbps
-Upload:   198.54 Mbps
+Ping: 12.34 ms
+Download: 487.32 Mbit/s
+Upload: 198.54 Mbit/s
 ```
 
 ## Notes

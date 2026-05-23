@@ -25,8 +25,18 @@ bench_zsh
 **Output:**
 
 ```
-Zsh startup time (10 runs):
-  min:  0.124s
-  max:  0.201s
-  avg:  0.158s
+Run 1: 0.037s
+Run 2: 0.019s
+Run 3: 0.019s
+Run 4: 0.020s
+Run 5: 0.017s
+Run 6: 0.020s
+Run 7: 0.018s
+Run 8: 0.019s
+Run 9: 0.016s
+Run 10: 0.020s
+----------------------------
+Average start time: 0.020s (10backs)
+Minimum: 0.016s
+Maximum: 0.037s
 ```

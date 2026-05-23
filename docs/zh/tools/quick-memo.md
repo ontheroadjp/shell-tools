@@ -81,9 +81,9 @@ quick-memo todo
 **Output:**
 
 ```
-- [ ] Fix bug #42
-- [ ] Write tests
-- [ ] Update docs
+[ ] Fix bug #42
+[ ] Write tests
+[ ] Update docs
 ```
 
 ## 说明

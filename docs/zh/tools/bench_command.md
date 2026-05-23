@@ -14,7 +14,7 @@ bench_command <命令> [次数=100]
 
 ## 示例
 
-### 对命令进行基准测试（默认 10 次）
+### 对命令进行基准测试（默认 100 次）
 
 ```bash
 bench_command ls
@@ -23,23 +23,25 @@ bench_command ls
 **Output:**
 
 ```
-Benchmark: ls (10 runs)
-  min:  0.003s
-  max:  0.008s
-  avg:  0.005s
+💻 コマンド: ls
+🔁 回数: 100
+⏱️ 平均: 0.000005s
+⚡ 最短: 0.000003s
+🐢 最長: 0.000008s
 ```
 
 ### 自定义测试次数
 
 ```bash
-bench_command -n 50 "echo hello"
+bench_command "echo hello" 50
 ```
 
 **Output:**
 
 ```
-Benchmark: echo hello (50 runs)
-  min:  0.001s
-  max:  0.003s
-  avg:  0.002s
+💻 コマンド: echo hello
+🔁 回数: 50
+⏱️ 平均: 0.000002s
+⚡ 最短: 0.000001s
+🐢 最長: 0.000004s
 ```

@@ -30,17 +30,19 @@ wifi-helth-check
 **Output:**
 
 ```
-Address: 192.168.1.42
+Address: 192.168.1.xxx
 Gateway: 192.168.1.1
-Ping: 2.3 ms (100% packets transmitted)
+Ping: 2 ms (100% packets transmitted)
 DNS:   OK
 
 SSID:    MyHomeWifi
-BSSID:   aa:bb:cc:dd:ee:ff
+BSSID:   xx:xx:xx:xx:xx:xx
 CHANNEL: 6ch: 2.4GHz
 
-RSSI:  -55 / -95  (S/N: 40)
-Rate:  130 / 144
+RSSI:  -55
+Noise: -95
+S/N:   40
+Rate:  130
 MCS:   7
 ```
 
@@ -68,8 +70,10 @@ wifi-helth-check radioinfo
 **Output:**
 
 ```
-RSSI:  -55 / -95  (S/N: 40)
-Rate:  130 / 144
+RSSI:  -55
+Noise: -95
+S/N:   40
+Rate:  130
 MCS:   7
 ```
 

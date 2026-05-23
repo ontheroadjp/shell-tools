@@ -23,8 +23,9 @@ bench_function my_func
 **Output:**
 
 ```
-Benchmark: my_func (10 runs)
-  min:  0.012s
-  max:  0.025s
-  avg:  0.018s
+📊 function: my_func
+🔁 times: 100
+⏱️ average: 0.000123s
+⚡ Shortest: 0.000089s
+🐢 longest: 0.000201s
 ```
