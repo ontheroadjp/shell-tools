@@ -34,28 +34,37 @@ quick-memo [子命令]
 
 ## 示例
 
+### 用 vim 打开备忘录文件
+
 ```bash
-# 用 vim 打开备忘录文件
 quick-memo
 ```
+
+**Output:**
 
 ```
 [opens ~/.local/share/quick-memo/quick_memo.md in vim]
 ```
 
+### 添加一个待办事项
+
 ```bash
-# 添加一个待办事项
 quick-memo todo "Review pull request"
 ```
+
+**Output:**
 
 ```
 add todo: Review pull request
 ```
 
+### 一次添加多个待办事项
+
 ```bash
-# 一次添加多个待办事项
 quick-memo todo "Fix bug #42" "Write tests" "Update docs"
 ```
+
+**Output:**
 
 ```
 add todo: Fix bug #42
@@ -63,10 +72,13 @@ add todo: Write tests
 add todo: Update docs
 ```
 
+### 显示所有未完成的待办事项
+
 ```bash
-# 显示所有未完成的待办事项
 quick-memo todo
 ```
+
+**Output:**
 
 ```
 - [ ] Fix bug #42

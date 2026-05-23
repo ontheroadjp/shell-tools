@@ -17,19 +17,25 @@ colors [subcommand]
 
 ## Examples
 
+### ANSI 基本カラーをすべて表示
+
 ```bash
-# ANSI 基本カラーをすべて表示
 colors
 ```
+
+**Output:**
 
 ```
 [displays colored terminal output with ANSI color codes and names]
 ```
 
+### 256色テーブルを表示
+
 ```bash
-# 256色テーブルを表示
 colors 256
 ```
+
+**Output:**
 
 ```
 [displays 256-color table with color indices]

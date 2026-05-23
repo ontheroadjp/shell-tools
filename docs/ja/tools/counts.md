@@ -22,19 +22,25 @@ counts <subcommand> [path]
 
 ## Examples
 
+### カレントディレクトリの合計サイズを表示
+
 ```bash
-# カレントディレクトリの合計サイズを表示
 counts dirsize
 ```
+
+**Output:**
 
 ```
 /Users/user/project		142M
 ```
 
+### ~/Downloads の大きいファイル上位10件を表示
+
 ```bash
-# ~/Downloads の大きいファイル上位10件を表示
 counts fatf ~/Downloads
 ```
+
+**Output:**
 
 ```
 1.2G  /Users/user/Downloads/video.mp4
@@ -42,10 +48,13 @@ counts fatf ~/Downloads
  98M  /Users/user/Downloads/dataset.tar.gz
 ```
 
+### カレントディレクトリの画像ファイルをカウント
+
 ```bash
-# カレントディレクトリの画像ファイルをカウント
 counts cimg .
 ```
+
+**Output:**
 
 ```
 ./photo1.jpg
@@ -55,10 +64,13 @@ counts cimg .
 3 files.
 ```
 
+### 指定ディレクトリのサブディレクトリサイズ上位10件を表示
+
 ```bash
-# 指定ディレクトリのサブディレクトリサイズ上位10件を表示
 counts subdirsize ~/Documents
 ```
+
+**Output:**
 
 ```
  85M  /Users/user/Documents/Projects

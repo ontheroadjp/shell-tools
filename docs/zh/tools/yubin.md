@@ -28,10 +28,13 @@ yubin
 
 ## 示例
 
+### 启动交互式邮政编码搜索
+
 ```bash
-# 启动交互式邮政编码搜索
 yubin
 ```
+
+**Output:**
 
 ```
 [fzf-tmux search interface opens]

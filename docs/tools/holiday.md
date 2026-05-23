@@ -19,10 +19,13 @@ holiday [keyword]
 
 ## Examples
 
+### List all Japanese public holidays this year
+
 ```bash
-# List all Japanese public holidays this year
 holiday
 ```
+
+**Output:**
 
 ```
 20260101 元日
@@ -43,19 +46,25 @@ holiday
 20261123 勤労感謝の日
 ```
 
+### Filter by keyword
+
 ```bash
-# Filter by keyword
 holiday 正月
 ```
+
+**Output:**
 
 ```
 20260101 元日
 ```
 
+### Show holidays in a specific month
+
 ```bash
-# Show holidays in a specific month
 holiday 2026-05
 ```
+
+**Output:**
 
 ```
 20260503 憲法記念日

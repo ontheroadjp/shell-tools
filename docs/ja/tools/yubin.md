@@ -31,10 +31,13 @@ yubin
 
 ## Examples
 
+### インタラクティブな郵便番号検索を起動
+
 ```bash
-# インタラクティブな郵便番号検索を起動
 yubin
 ```
+
+**Output:**
 
 ```
 [fzf-tmux search interface opens]

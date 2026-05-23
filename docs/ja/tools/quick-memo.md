@@ -34,28 +34,37 @@ quick-memo [subcommand]
 
 ## Examples
 
+### メモファイルを vim で開く
+
 ```bash
-# メモファイルを vim で開く
 quick-memo
 ```
+
+**Output:**
 
 ```
 [opens ~/.local/share/quick-memo/quick_memo.md in vim]
 ```
 
+### TODO を追加
+
 ```bash
-# TODO を追加
 quick-memo todo "Review pull request"
 ```
+
+**Output:**
 
 ```
 add todo: Review pull request
 ```
 
+### 複数の TODO を一度に追加
+
 ```bash
-# 複数の TODO を一度に追加
 quick-memo todo "Fix bug #42" "Write tests" "Update docs"
 ```
+
+**Output:**
 
 ```
 add todo: Fix bug #42
@@ -63,10 +72,13 @@ add todo: Write tests
 add todo: Update docs
 ```
 
+### 未完了の TODO を一覧表示
+
 ```bash
-# 未完了の TODO を一覧表示
 quick-memo todo
 ```
+
+**Output:**
 
 ```
 - [ ] Fix bug #42

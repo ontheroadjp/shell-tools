@@ -16,38 +16,50 @@ Time is specified using `h` (hours), `m` (minutes), and `s` (seconds).
 
 ## Examples
 
+### Set a 30-minute timer
+
 ```bash
-# Set a 30-minute timer
 timer 30m
 ```
+
+**Output:**
 
 ```
 After 1800 sec
 [macOS notification / Linux notify-send after 30 minutes]
 ```
 
+### Set a 1 hour 30 minute timer
+
 ```bash
-# Set a 1 hour 30 minute timer
 timer 1h30m
 ```
+
+**Output:**
 
 ```
 After 5400 sec
 ```
 
+### Set a 90-second timer
+
 ```bash
-# Set a 90-second timer
 timer 90s
 ```
+
+**Output:**
 
 ```
 After 90 sec
 ```
 
+### Run in background
+
 ```bash
-# Run in background
 timer 25m &
 ```
+
+**Output:**
 
 ```
 [1] 12345

@@ -15,10 +15,13 @@ extract_links <url> [-e ext ...] [-o output_file]
 
 ## 例
 
+### ページから PDF リンクをすべて抽出
+
 ```bash
-# ページから PDF リンクをすべて抽出
 extract_links https://example.com -e pdf
 ```
+
+**Output:**
 
 ```
 https://example.com/doc/manual.pdf
@@ -26,10 +29,13 @@ https://example.com/doc/guide.pdf
 https://example.com/doc/report.pdf
 ```
 
+### 複数のファイル形式を抽出
+
 ```bash
-# 複数のファイル形式を抽出
 extract_links https://example.com -e pdf jpg png
 ```
+
+**Output:**
 
 ```
 https://example.com/docs/manual.pdf
@@ -37,10 +43,13 @@ https://example.com/images/logo.png
 https://example.com/images/banner.jpg
 ```
 
+### 抽出した URL をファイルに保存
+
 ```bash
-# 抽出した URL をファイルに保存
 extract_links https://example.com -e pdf -o urls.txt
 ```
+
+**Output:**
 
 ```
 ✅ 3 links saved to urls.txt

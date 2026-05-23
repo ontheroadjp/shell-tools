@@ -24,10 +24,13 @@ find . -name "*.mp4" | mp4_to_mp3
 
 ## 示例
 
+### 将单个 MP4 文件转换为 MP3
+
 ```bash
-# 将单个 MP4 文件转换为 MP3
 mp4_to_mp3 video.mp4
 ```
+
+**Output:**
 
 ```
 ffmpeg version 6.0 ...
@@ -35,10 +38,13 @@ ffmpeg version 6.0 ...
 video.mp4
 ```
 
+### 转换目录中的所有 MP4 文件
+
 ```bash
-# 转换目录中的所有 MP4 文件
 mp4_to_mp3 ./videos/
 ```
+
+**Output:**
 
 ```
 ./videos/lecture1.mp4
@@ -46,10 +52,13 @@ mp4_to_mp3 ./videos/
 ./videos/interview.mp4
 ```
 
+### 通过 stdin 与 find 配合使用
+
 ```bash
-# 通过 stdin 与 find 配合使用
 find ~/Movies -name "*.mp4" | mp4_to_mp3
 ```
+
+**Output:**
 
 ```
 /Users/user/Movies/clip1.mp4

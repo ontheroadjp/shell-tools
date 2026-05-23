@@ -16,10 +16,13 @@ Edit `N=10` inside the script to change the number of runs.
 
 ## Examples
 
+### Measure Zsh startup time (10 runs)
+
 ```bash
-# Measure Zsh startup time (10 runs)
 bench_zsh
 ```
+
+**Output:**
 
 ```
 Zsh startup time (10 runs):

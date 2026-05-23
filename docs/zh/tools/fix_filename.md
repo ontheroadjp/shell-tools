@@ -30,39 +30,51 @@ old_word,new_word
 
 ## 示例
 
+### 将文件名中的全角字符转为半角
+
 ```bash
-# 将文件名中的全角字符转为半角
 fix_filename -c zenkaku_to_hankaku.conf ./files/
 ```
+
+**Output:**
 
 ```
 ./files/ABC_test.txt
 ./files/report_2025.pdf
 ```
 
+### 将空格替换为下划线
+
 ```bash
-# 将空格替换为下划线
 fix_filename -c space_to_underbar.conf "my document.txt"
 ```
+
+**Output:**
 
 ```
 my_document.txt
 ```
 
+### 同时应用多个规则
+
 ```bash
-# 同时应用多个规则
 fix_filename -c zenkaku_to_hankaku.conf -c space_to_underbar.conf ./docs/
 ```
+
+**Output:**
 
 ```
 ./docs/ABC_report_2025.txt
 ./docs/project_notes.md
 ```
 
+### 通过 stdin 与 find 配合使用
+
 ```bash
-# 通过 stdin 与 find 配合使用
 find . -name "*.txt" | fix_filename -c zenkaku_to_hankaku.conf
 ```
+
+**Output:**
 
 ```
 ./ABC_test.txt

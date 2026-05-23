@@ -20,19 +20,25 @@ weather [city]
 
 ## Examples
 
+### Show weather for Tokyo
+
 ```bash
-# Show weather for Tokyo
 weather Tokyo
 ```
+
+**Output:**
 
 ```
 Tokyo: ⛅️ +22°C 60% 0.0mm 🌔 18
 ```
 
+### Select city interactively with peco
+
 ```bash
-# Select city interactively with peco
 weather
 ```
+
+**Output:**
 
 ```
 [peco city selection interface]

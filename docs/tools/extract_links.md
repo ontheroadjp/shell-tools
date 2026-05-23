@@ -15,10 +15,13 @@ extract_links <url> [-e ext ...] [-o output_file]
 
 ## Examples
 
+### Extract all PDF links from a page
+
 ```bash
-# Extract all PDF links from a page
 extract_links https://example.com -e pdf
 ```
+
+**Output:**
 
 ```
 https://example.com/doc/manual.pdf
@@ -26,10 +29,13 @@ https://example.com/doc/guide.pdf
 https://example.com/doc/report.pdf
 ```
 
+### Extract multiple file types
+
 ```bash
-# Extract multiple file types
 extract_links https://example.com -e pdf jpg png
 ```
+
+**Output:**
 
 ```
 https://example.com/docs/manual.pdf
@@ -37,10 +43,13 @@ https://example.com/images/logo.png
 https://example.com/images/banner.jpg
 ```
 
+### Save extracted URLs to a file
+
 ```bash
-# Save extracted URLs to a file
 extract_links https://example.com -e pdf -o urls.txt
 ```
+
+**Output:**
 
 ```
 ✅ 3 links saved to urls.txt

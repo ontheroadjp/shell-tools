@@ -14,10 +14,13 @@ bench_function <function-file> <function-name> [count=100] [args...]
 
 ## Examples
 
+### Benchmark a Zsh function 10 times
+
 ```bash
-# Benchmark a Zsh function 10 times
 bench_function my_func
 ```
+
+**Output:**
 
 ```
 Benchmark: my_func (10 runs)

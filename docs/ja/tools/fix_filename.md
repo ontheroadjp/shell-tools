@@ -30,39 +30,51 @@ old_word,new_word
 
 ## 例
 
+### ファイル名の全角文字を半角に変換
+
 ```bash
-# ファイル名の全角文字を半角に変換
 fix_filename -c zenkaku_to_hankaku.conf ./files/
 ```
+
+**Output:**
 
 ```
 ./files/ABC_test.txt
 ./files/report_2025.pdf
 ```
 
+### スペースをアンダースコアに変換
+
 ```bash
-# スペースをアンダースコアに変換
 fix_filename -c space_to_underbar.conf "my document.txt"
 ```
+
+**Output:**
 
 ```
 my_document.txt
 ```
 
+### 複数のルールを同時に適用
+
 ```bash
-# 複数のルールを同時に適用
 fix_filename -c zenkaku_to_hankaku.conf -c space_to_underbar.conf ./docs/
 ```
+
+**Output:**
 
 ```
 ./docs/ABC_report_2025.txt
 ./docs/project_notes.md
 ```
 
+### find との組み合わせで stdin から使用
+
 ```bash
-# find との組み合わせで stdin から使用
 find . -name "*.txt" | fix_filename -c zenkaku_to_hankaku.conf
 ```
+
+**Output:**
 
 ```
 ./ABC_test.txt

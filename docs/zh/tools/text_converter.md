@@ -19,28 +19,37 @@ to_zenkaku [file ...]
 
 ## 示例
 
+### 将全角字符转为半角
+
 ```bash
-# 将全角字符转为半角
 echo "ＡＢＣＤ　１２３４" | to_hankaku
 ```
+
+**Output:**
 
 ```
 ABCD 1234
 ```
 
+### 将半角字符转为全角
+
 ```bash
-# 将半角字符转为全角
 echo "ABCD 1234" | to_zenkaku
 ```
+
+**Output:**
 
 ```
 ＡＢＣＤ　１２３４
 ```
 
+### 转换文件内容
+
 ```bash
-# 转换文件内容
 to_hankaku input.txt
 ```
+
+**Output:**
 
 ```
 [converted content printed to stdout]

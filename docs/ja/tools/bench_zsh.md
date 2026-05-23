@@ -16,10 +16,13 @@ bench_zsh
 
 ## 例
 
+### Zsh の起動時間を計測（10回）
+
 ```bash
-# Zsh の起動時間を計測（10回）
 bench_zsh
 ```
+
+**Output:**
 
 ```
 Zsh startup time (10 runs):

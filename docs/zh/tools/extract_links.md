@@ -15,10 +15,13 @@ extract_links <url> [-e ext ...] [-o output_file]
 
 ## 示例
 
+### 提取页面中所有 PDF 链接
+
 ```bash
-# 提取页面中所有 PDF 链接
 extract_links https://example.com -e pdf
 ```
+
+**Output:**
 
 ```
 https://example.com/doc/manual.pdf
@@ -26,10 +29,13 @@ https://example.com/doc/guide.pdf
 https://example.com/doc/report.pdf
 ```
 
+### 提取多种文件类型
+
 ```bash
-# 提取多种文件类型
 extract_links https://example.com -e pdf jpg png
 ```
+
+**Output:**
 
 ```
 https://example.com/docs/manual.pdf
@@ -37,10 +43,13 @@ https://example.com/images/logo.png
 https://example.com/images/banner.jpg
 ```
 
+### 将提取的 URL 保存到文件
+
 ```bash
-# 将提取的 URL 保存到文件
 extract_links https://example.com -e pdf -o urls.txt
 ```
+
+**Output:**
 
 ```
 ✅ 3 links saved to urls.txt

@@ -44,10 +44,13 @@ stock-jp [options]
 
 ## Examples
 
+### Launch interactive stock search
+
 ```bash
-# Launch interactive stock search
 stock-jp
 ```
+
+**Output:**
 
 ```
 [displays fzf search interface]
@@ -68,10 +71,13 @@ Quick（株価）
 ...
 ```
 
+### Download/update stock data
+
 ```bash
-# Download/update stock data
 stock-jp --update
 ```
+
+**Output:**
 
 ```
   % Total    % Received % Xferd ...

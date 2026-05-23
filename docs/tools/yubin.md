@@ -28,10 +28,13 @@ Opens an interactive `fzf-tmux` search. You can search by postal code, prefectur
 
 ## Examples
 
+### Launch interactive postal code search
+
 ```bash
-# Launch interactive postal code search
 yubin
 ```
+
+**Output:**
 
 ```
 [fzf-tmux search interface opens]

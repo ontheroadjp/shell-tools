@@ -19,28 +19,37 @@ to_zenkaku [file ...]
 
 ## Examples
 
+### Convert full-width to half-width
+
 ```bash
-# Convert full-width to half-width
 echo "ＡＢＣＤ　１２３４" | to_hankaku
 ```
+
+**Output:**
 
 ```
 ABCD 1234
 ```
 
+### Convert half-width to full-width
+
 ```bash
-# Convert half-width to full-width
 echo "ABCD 1234" | to_zenkaku
 ```
+
+**Output:**
 
 ```
 ＡＢＣＤ　１２３４
 ```
 
+### Convert a file
+
 ```bash
-# Convert a file
 to_hankaku input.txt
 ```
+
+**Output:**
 
 ```
 [converted content printed to stdout]

@@ -15,29 +15,38 @@ wareki [year]
 
 ## Examples
 
+### Show Japanese era for the current year
+
 ```bash
-# Show Japanese era for the current year
 wareki
 ```
+
+**Output:**
 
 ```
 令和8年,2026
 ```
 
+### Convert a specific Western year
+
 ```bash
-# Convert a specific Western year
 wareki 2019
 ```
+
+**Output:**
 
 ```
 平成31年,2019
 令和元年,2019
 ```
 
+### Search by era name
+
 ```bash
-# Search by era name
 wareki 昭和
 ```
+
+**Output:**
 
 ```
 昭和元年,1926
@@ -46,10 +55,13 @@ wareki 昭和
 昭和64年,1989
 ```
 
+### Search by partial year
+
 ```bash
-# Search by partial year
 wareki 1989
 ```
+
+**Output:**
 
 ```
 昭和64年,1989

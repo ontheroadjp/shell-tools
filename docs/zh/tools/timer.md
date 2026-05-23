@@ -16,38 +16,50 @@ timer <时间>
 
 ## 示例
 
+### 设置 30 分钟定时器
+
 ```bash
-# 设置 30 分钟定时器
 timer 30m
 ```
+
+**Output:**
 
 ```
 After 1800 sec
 [macOS notification / Linux notify-send after 30 minutes]
 ```
 
+### 设置 1 小时 30 分钟定时器
+
 ```bash
-# 设置 1 小时 30 分钟定时器
 timer 1h30m
 ```
+
+**Output:**
 
 ```
 After 5400 sec
 ```
 
+### 设置 90 秒定时器
+
 ```bash
-# 设置 90 秒定时器
 timer 90s
 ```
+
+**Output:**
 
 ```
 After 90 sec
 ```
 
+### 在后台运行
+
 ```bash
-# 在后台运行
 timer 25m &
 ```
+
+**Output:**
 
 ```
 [1] 12345

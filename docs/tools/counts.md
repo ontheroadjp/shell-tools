@@ -22,19 +22,25 @@ counts <subcommand> [path]
 
 ## Examples
 
+### Show total size of current directory
+
 ```bash
-# Show total size of current directory
 counts dirsize
 ```
+
+**Output:**
 
 ```
 /Users/user/project		142M
 ```
 
+### Show top 10 largest files in a directory
+
 ```bash
-# Show top 10 largest files in a directory
 counts fatf ~/Downloads
 ```
+
+**Output:**
 
 ```
 1.2G  /Users/user/Downloads/video.mp4
@@ -42,10 +48,13 @@ counts fatf ~/Downloads
  98M  /Users/user/Downloads/dataset.tar.gz
 ```
 
+### Count image files in current directory
+
 ```bash
-# Count image files in current directory
 counts cimg .
 ```
+
+**Output:**
 
 ```
 ./photo1.jpg
@@ -55,10 +64,13 @@ counts cimg .
 3 files.
 ```
 
+### Show top 10 subdirectory sizes
+
 ```bash
-# Show top 10 subdirectory sizes
 counts subdirsize ~/Documents
 ```
+
+**Output:**
 
 ```
  85M  /Users/user/Documents/Projects

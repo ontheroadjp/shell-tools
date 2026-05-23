@@ -16,38 +16,50 @@ timer <time>
 
 ## Examples
 
+### 30分タイマーをセット
+
 ```bash
-# 30分タイマーをセット
 timer 30m
 ```
+
+**Output:**
 
 ```
 After 1800 sec
 [macOS notification / Linux notify-send after 30 minutes]
 ```
 
+### 1時間30分タイマーをセット
+
 ```bash
-# 1時間30分タイマーをセット
 timer 1h30m
 ```
+
+**Output:**
 
 ```
 After 5400 sec
 ```
 
+### 90秒タイマーをセット
+
 ```bash
-# 90秒タイマーをセット
 timer 90s
 ```
+
+**Output:**
 
 ```
 After 90 sec
 ```
 
+### バックグラウンドで実行
+
 ```bash
-# バックグラウンドで実行
 timer 25m &
 ```
+
+**Output:**
 
 ```
 [1] 12345

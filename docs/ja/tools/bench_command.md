@@ -14,10 +14,13 @@ bench_command <コマンド> [回数=100]
 
 ## 例
 
+### コマンドを10回計測（デフォルト）
+
 ```bash
-# コマンドを10回計測（デフォルト）
 bench_command ls
 ```
+
+**Output:**
 
 ```
 Benchmark: ls (10 runs)
@@ -26,10 +29,13 @@ Benchmark: ls (10 runs)
   avg:  0.005s
 ```
 
+### 計測回数を指定して実行
+
 ```bash
-# 計測回数を指定して実行
 bench_command -n 50 "echo hello"
 ```
+
+**Output:**
 
 ```
 Benchmark: echo hello (50 runs)

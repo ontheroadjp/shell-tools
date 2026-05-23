@@ -15,10 +15,13 @@ dictionary <单词>
 
 ## 示例
 
+### 查询英文单词
+
 ```bash
-# 查询英文单词
 dictionary serendipity
 ```
+
+**Output:**
 
 ```
 serendipity
@@ -27,10 +30,13 @@ serendipity
 ▸ the faculty or phenomenon of finding valuable or agreeble things not sought for
 ```
 
+### 查询日语单词
+
 ```bash
-# 查询日语单词
 dictionary 曖昧
 ```
+
+**Output:**
 
 ```
 曖昧

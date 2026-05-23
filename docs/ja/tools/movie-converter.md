@@ -24,10 +24,13 @@ find . -name "*.mp4" | mp4_to_mp3
 
 ## Examples
 
+### 単一の MP4 ファイルを MP3 に変換
+
 ```bash
-# 単一の MP4 ファイルを MP3 に変換
 mp4_to_mp3 video.mp4
 ```
+
+**Output:**
 
 ```
 ffmpeg version 6.0 ...
@@ -35,10 +38,13 @@ ffmpeg version 6.0 ...
 video.mp4
 ```
 
+### ディレクトリ内の全 MP4 ファイルを変換
+
 ```bash
-# ディレクトリ内の全 MP4 ファイルを変換
 mp4_to_mp3 ./videos/
 ```
+
+**Output:**
 
 ```
 ./videos/lecture1.mp4
@@ -46,10 +52,13 @@ mp4_to_mp3 ./videos/
 ./videos/interview.mp4
 ```
 
+### find との組み合わせで stdin から使用
+
 ```bash
-# find との組み合わせで stdin から使用
 find ~/Movies -name "*.mp4" | mp4_to_mp3
 ```
+
+**Output:**
 
 ```
 /Users/user/Movies/clip1.mp4

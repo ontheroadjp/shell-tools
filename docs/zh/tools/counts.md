@@ -22,19 +22,25 @@ counts <子命令> [路径]
 
 ## 示例
 
+### 显示当前目录的总大小
+
 ```bash
-# 显示当前目录的总大小
 counts dirsize
 ```
+
+**Output:**
 
 ```
 /Users/user/project		142M
 ```
 
+### 显示目录中最大的 10 个文件
+
 ```bash
-# 显示目录中最大的 10 个文件
 counts fatf ~/Downloads
 ```
+
+**Output:**
 
 ```
 1.2G  /Users/user/Downloads/video.mp4
@@ -42,10 +48,13 @@ counts fatf ~/Downloads
  98M  /Users/user/Downloads/dataset.tar.gz
 ```
 
+### 统计当前目录中的图片文件
+
 ```bash
-# 统计当前目录中的图片文件
 counts cimg .
 ```
+
+**Output:**
 
 ```
 ./photo1.jpg
@@ -55,10 +64,13 @@ counts cimg .
 3 files.
 ```
 
+### 显示子目录大小前 10 名
+
 ```bash
-# 显示子目录大小前 10 名
 counts subdirsize ~/Documents
 ```
+
+**Output:**
 
 ```
  85M  /Users/user/Documents/Projects

@@ -15,10 +15,13 @@ dictionary <word>
 
 ## Examples
 
+### Look up an English word
+
 ```bash
-# Look up an English word
 dictionary serendipity
 ```
+
+**Output:**
 
 ```
 serendipity
@@ -27,10 +30,13 @@ serendipity
 ▸ the faculty or phenomenon of finding valuable or agreeble things not sought for
 ```
 
+### Look up a Japanese word
+
 ```bash
-# Look up a Japanese word
 dictionary 曖昧
 ```
+
+**Output:**
 
 ```
 曖昧

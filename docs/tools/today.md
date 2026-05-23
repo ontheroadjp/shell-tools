@@ -14,10 +14,13 @@ today
 
 ## Examples
 
+### Show daily summary
+
 ```bash
-# Show daily summary
 today
 ```
+
+**Output:**
 
 ```
 令和8年 05月 23日 ⛅️ +22°C 60%

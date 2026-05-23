@@ -21,10 +21,13 @@ wifi-helth-check [子命令]
 
 ## 示例
 
+### 完整的 WiFi 和互联网诊断（默认）
+
 ```bash
-# 完整的 WiFi 和互联网诊断（默认）
 wifi-helth-check
 ```
+
+**Output:**
 
 ```
 Address: 192.168.1.42
@@ -41,10 +44,13 @@ Rate:  130 / 144
 MCS:   7
 ```
 
+### 仅显示互联网信息
+
 ```bash
-# 仅显示互联网信息
 wifi-helth-check inetinfo
 ```
+
+**Output:**
 
 ```
 Address: 192.168.1.42
@@ -53,10 +59,13 @@ Ping: 2.3 ms (100% packets transmitted)
 DNS:   OK
 ```
 
+### 仅显示 WiFi 信号信息
+
 ```bash
-# 仅显示 WiFi 信号信息
 wifi-helth-check radioinfo
 ```
+
+**Output:**
 
 ```
 RSSI:  -55 / -95  (S/N: 40)

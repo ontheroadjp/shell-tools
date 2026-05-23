@@ -22,10 +22,13 @@ worldtime tz [timezone]
 
 ## Examples
 
+### Show current time in 6 major cities
+
 ```bash
-# Show current time in 6 major cities
 worldtime
 ```
+
+**Output:**
 
 ```
 Sydney:         [ 8:00 AM] Friday, May 23, 2026
@@ -36,19 +39,25 @@ New York:       [ 6:00 PM] Thursday, May 22, 2026
 Los Angeles:    [ 3:00 PM] Thursday, May 22, 2026
 ```
 
+### Filter by city name
+
 ```bash
-# Filter by city name
 worldtime Tokyo
 ```
+
+**Output:**
 
 ```
 Tokyo:          [ 7:00 AM] Friday, May 23, 2026
 ```
 
+### Show time for a specific timezone
+
 ```bash
-# Show time for a specific timezone
 worldtime tz Asia/Seoul
 ```
+
+**Output:**
 
 ```
 Asia/Seoul: Fri May 23 07:00:00 KST 2026

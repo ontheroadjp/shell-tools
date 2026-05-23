@@ -20,19 +20,25 @@ weather [city]
 
 ## Examples
 
+### 東京の天気を表示
+
 ```bash
-# 東京の天気を表示
 weather Tokyo
 ```
+
+**Output:**
 
 ```
 Tokyo: ⛅️ +22°C 60% 0.0mm 🌔 18
 ```
 
+### peco でインタラクティブに都市を選択
+
 ```bash
-# peco でインタラクティブに都市を選択
 weather
 ```
+
+**Output:**
 
 ```
 [peco city selection interface]

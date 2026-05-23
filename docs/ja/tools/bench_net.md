@@ -14,10 +14,13 @@ bench_net
 
 ## 例
 
+### speedtest.net でネットワーク速度を計測
+
 ```bash
-# speedtest.net でネットワーク速度を計測
 bench_net
 ```
+
+**Output:**
 
 ```
 Download: 487.32 Mbps

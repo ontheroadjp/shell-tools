@@ -30,39 +30,51 @@ Bundled config files:
 
 ## Examples
 
+### Convert full-width characters to half-width in filenames
+
 ```bash
-# Convert full-width characters to half-width in filenames
 fix_filename -c zenkaku_to_hankaku.conf ./files/
 ```
+
+**Output:**
 
 ```
 ./files/ABC_test.txt
 ./files/report_2025.pdf
 ```
 
+### Replace spaces with underscores
+
 ```bash
-# Replace spaces with underscores
 fix_filename -c space_to_underbar.conf "my document.txt"
 ```
+
+**Output:**
 
 ```
 my_document.txt
 ```
 
+### Apply multiple rules at once
+
 ```bash
-# Apply multiple rules at once
 fix_filename -c zenkaku_to_hankaku.conf -c space_to_underbar.conf ./docs/
 ```
+
+**Output:**
 
 ```
 ./docs/ABC_report_2025.txt
 ./docs/project_notes.md
 ```
 
+### Use with find via stdin
+
 ```bash
-# Use with find via stdin
 find . -name "*.txt" | fix_filename -c zenkaku_to_hankaku.conf
 ```
+
+**Output:**
 
 ```
 ./ABC_test.txt

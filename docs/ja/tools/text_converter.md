@@ -19,28 +19,37 @@ to_zenkaku [file ...]
 
 ## 例
 
+### 全角を半角に変換
+
 ```bash
-# 全角を半角に変換
 echo "ＡＢＣＤ　１２３４" | to_hankaku
 ```
+
+**Output:**
 
 ```
 ABCD 1234
 ```
 
+### 半角を全角に変換
+
 ```bash
-# 半角を全角に変換
 echo "ABCD 1234" | to_zenkaku
 ```
+
+**Output:**
 
 ```
 ＡＢＣＤ　１２３４
 ```
 
+### ファイルを変換
+
 ```bash
-# ファイルを変換
 to_hankaku input.txt
 ```
+
+**Output:**
 
 ```
 [converted content printed to stdout]

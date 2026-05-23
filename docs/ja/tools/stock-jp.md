@@ -51,10 +51,13 @@ stock-jp [options]
 
 ## Examples
 
+### インタラクティブな銘柄検索を起動
+
 ```bash
-# インタラクティブな銘柄検索を起動
 stock-jp
 ```
+
+**Output:**
 
 ```
 [displays fzf search interface]
@@ -75,10 +78,13 @@ Quick（株価）
 ...
 ```
 
+### 銘柄データをダウンロード・更新
+
 ```bash
-# 銘柄データをダウンロード・更新
 stock-jp --update
 ```
+
+**Output:**
 
 ```
   % Total    % Received % Xferd ...

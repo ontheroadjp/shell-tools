@@ -14,10 +14,13 @@ bench_command <命令> [次数=100]
 
 ## 示例
 
+### 对命令进行基准测试（默认 10 次）
+
 ```bash
-# 对命令进行基准测试（默认 10 次）
 bench_command ls
 ```
+
+**Output:**
 
 ```
 Benchmark: ls (10 runs)
@@ -26,10 +29,13 @@ Benchmark: ls (10 runs)
   avg:  0.005s
 ```
 
+### 自定义测试次数
+
 ```bash
-# 自定义测试次数
 bench_command -n 50 "echo hello"
 ```
+
+**Output:**
 
 ```
 Benchmark: echo hello (50 runs)

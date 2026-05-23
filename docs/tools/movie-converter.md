@@ -24,10 +24,13 @@ find . -name "*.mp4" | mp4_to_mp3
 
 ## Examples
 
+### Convert a single MP4 file to MP3
+
 ```bash
-# Convert a single MP4 file to MP3
 mp4_to_mp3 video.mp4
 ```
+
+**Output:**
 
 ```
 ffmpeg version 6.0 ...
@@ -35,10 +38,13 @@ ffmpeg version 6.0 ...
 video.mp4
 ```
 
+### Convert all MP4 files in a directory
+
 ```bash
-# Convert all MP4 files in a directory
 mp4_to_mp3 ./videos/
 ```
+
+**Output:**
 
 ```
 ./videos/lecture1.mp4
@@ -46,10 +52,13 @@ mp4_to_mp3 ./videos/
 ./videos/interview.mp4
 ```
 
+### Use with find via stdin
+
 ```bash
-# Use with find via stdin
 find ~/Movies -name "*.mp4" | mp4_to_mp3
 ```
+
+**Output:**
 
 ```
 /Users/user/Movies/clip1.mp4

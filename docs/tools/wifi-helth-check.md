@@ -21,10 +21,13 @@ wifi-helth-check [subcommand]
 
 ## Examples
 
+### Full WiFi and internet diagnostics (default)
+
 ```bash
-# Full WiFi and internet diagnostics (default)
 wifi-helth-check
 ```
+
+**Output:**
 
 ```
 Address: 192.168.1.42
@@ -41,10 +44,13 @@ Rate:  130 / 144
 MCS:   7
 ```
 
+### Show only internet info
+
 ```bash
-# Show only internet info
 wifi-helth-check inetinfo
 ```
+
+**Output:**
 
 ```
 Address: 192.168.1.42
@@ -53,10 +59,13 @@ Ping: 2.3 ms (100% packets transmitted)
 DNS:   OK
 ```
 
+### Show only WiFi signal info
+
 ```bash
-# Show only WiFi signal info
 wifi-helth-check radioinfo
 ```
+
+**Output:**
 
 ```
 RSSI:  -55 / -95  (S/N: 40)

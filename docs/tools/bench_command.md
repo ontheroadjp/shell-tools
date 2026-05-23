@@ -14,10 +14,13 @@ bench_command <command> [count=100]
 
 ## Examples
 
+### Benchmark a command 10 times (default)
+
 ```bash
-# Benchmark a command 10 times (default)
 bench_command ls
 ```
+
+**Output:**
 
 ```
 Benchmark: ls (10 runs)
@@ -26,10 +29,13 @@ Benchmark: ls (10 runs)
   avg:  0.005s
 ```
 
+### Benchmark with custom iterations
+
 ```bash
-# Benchmark with custom iterations
 bench_command -n 50 "echo hello"
 ```
+
+**Output:**
 
 ```
 Benchmark: echo hello (50 runs)

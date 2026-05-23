@@ -17,19 +17,25 @@ colors [subcommand]
 
 ## Examples
 
+### Show all ANSI basic colors
+
 ```bash
-# Show all ANSI basic colors
 colors
 ```
+
+**Output:**
 
 ```
 [displays colored terminal output with ANSI color codes and names]
 ```
 
+### Show 256-color table
+
 ```bash
-# Show 256-color table
 colors 256
 ```
+
+**Output:**
 
 ```
 [displays 256-color table with color indices]

@@ -17,19 +17,25 @@ colors [子命令]
 
 ## 示例
 
+### 显示所有 ANSI 基本颜色
+
 ```bash
-# 显示所有 ANSI 基本颜色
 colors
 ```
+
+**Output:**
 
 ```
 [displays colored terminal output with ANSI color codes and names]
 ```
 
+### 显示 256 色表
+
 ```bash
-# 显示 256 色表
 colors 256
 ```
+
+**Output:**
 
 ```
 [displays 256-color table with color indices]

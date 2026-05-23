@@ -15,10 +15,13 @@ dictionary <単語>
 
 ## 例
 
+### 英単語を調べる
+
 ```bash
-# 英単語を調べる
 dictionary serendipity
 ```
+
+**Output:**
 
 ```
 serendipity
@@ -27,10 +30,13 @@ serendipity
 ▸ the faculty or phenomenon of finding valuable or agreeble things not sought for
 ```
 
+### 日本語を調べる
+
 ```bash
-# 日本語を調べる
 dictionary 曖昧
 ```
+
+**Output:**
 
 ```
 曖昧

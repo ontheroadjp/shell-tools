@@ -14,10 +14,13 @@ list_downloader <urls_file> [-o output_dir]
 
 ## 例
 
+### URL リストからファイルをダウンロード
+
 ```bash
-# URL リストからファイルをダウンロード
 list_downloader urls.txt
 ```
+
+**Output:**
 
 ```
 Downloading: https://example.com/doc/manual.pdf
@@ -25,10 +28,13 @@ Downloading: https://example.com/doc/guide.pdf
 Done. 2 files downloaded.
 ```
 
+### 保存先ディレクトリを指定してダウンロード
+
 ```bash
-# 保存先ディレクトリを指定してダウンロード
 list_downloader urls.txt -o ~/Downloads/docs
 ```
+
+**Output:**
 
 ```
 Downloading: https://example.com/doc/manual.pdf → ~/Downloads/docs/manual.pdf
@@ -36,10 +42,13 @@ Downloading: https://example.com/doc/guide.pdf  → ~/Downloads/docs/guide.pdf
 Done. 2 files downloaded.
 ```
 
+### 2ステップ: 抽出→ダウンロード
+
 ```bash
-# 2ステップ: 抽出→ダウンロード
 extract_links https://example.com -e pdf -o urls.txt && list_downloader urls.txt
 ```
+
+**Output:**
 
 ```
 ✅ 3 links saved to urls.txt

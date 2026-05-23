@@ -14,10 +14,13 @@ bench_function <関数ファイル> <関数名> [回数=100] [引数...]
 
 ## 例
 
+### Zsh 関数を10回計測
+
 ```bash
-# Zsh 関数を10回計測
 bench_function my_func
 ```
+
+**Output:**
 
 ```
 Benchmark: my_func (10 runs)

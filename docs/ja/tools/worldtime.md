@@ -22,10 +22,13 @@ worldtime tz [timezone]
 
 ## Examples
 
+### 主要6都市の現在時刻を表示
+
 ```bash
-# 主要6都市の現在時刻を表示
 worldtime
 ```
+
+**Output:**
 
 ```
 Sydney:         [ 8:00 AM] Friday, May 23, 2026
@@ -36,19 +39,25 @@ New York:       [ 6:00 PM] Thursday, May 22, 2026
 Los Angeles:    [ 3:00 PM] Thursday, May 22, 2026
 ```
 
+### 都市名でフィルタ
+
 ```bash
-# 都市名でフィルタ
 worldtime Tokyo
 ```
+
+**Output:**
 
 ```
 Tokyo:          [ 7:00 AM] Friday, May 23, 2026
 ```
 
+### タイムゾーンを直接指定
+
 ```bash
-# タイムゾーンを直接指定
 worldtime tz Asia/Seoul
 ```
+
+**Output:**
 
 ```
 Asia/Seoul: Fri May 23 07:00:00 KST 2026

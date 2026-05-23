@@ -34,28 +34,37 @@ quick-memo [subcommand]
 
 ## Examples
 
+### Open memo file in vim
+
 ```bash
-# Open memo file in vim
 quick-memo
 ```
+
+**Output:**
 
 ```
 [opens ~/.local/share/quick-memo/quick_memo.md in vim]
 ```
 
+### Add a TODO item
+
 ```bash
-# Add a TODO item
 quick-memo todo "Review pull request"
 ```
+
+**Output:**
 
 ```
 add todo: Review pull request
 ```
 
+### Add multiple TODO items at once
+
 ```bash
-# Add multiple TODO items at once
 quick-memo todo "Fix bug #42" "Write tests" "Update docs"
 ```
+
+**Output:**
 
 ```
 add todo: Fix bug #42
@@ -63,10 +72,13 @@ add todo: Write tests
 add todo: Update docs
 ```
 
+### Show all pending TODO items
+
 ```bash
-# Show all pending TODO items
 quick-memo todo
 ```
+
+**Output:**
 
 ```
 - [ ] Fix bug #42
