@@ -3,6 +3,7 @@
 
 runcher.sh
 vnev/
+tools/**/.env
 node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/

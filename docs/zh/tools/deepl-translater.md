@@ -1,0 +1,98 @@
+# 🌐 deepl-translater <Badge type="info" text="Python Script" /> <Badge type="tip" text="macOS" /> <Badge type="info" text="Linux" />
+
+使用 DeepL API 翻译剪贴板文本或标准输入，自动检测源语言。
+
+## 环境要求
+
+- Python 3
+- DeepL API 密钥（支持免费计划）
+
+```bash
+pip install -r requirements.txt
+```
+
+## 初始设置
+
+在工具目录中创建 `.env` 文件并填写 DeepL API 密钥：
+
+```bash
+echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env
+```
+
+## 用法
+
+```bash
+deepl-translater [-o 目标语言]
+```
+
+| 选项 | 说明 |
+|---|---|
+| `-o EN` | 翻译为英语（默认） |
+| `-o JA` | 翻译为日语 |
+| `-o ZH` | 翻译为中文 |
+| `-o KO` | 翻译为韩语 |
+
+若无标准输入，则从剪贴板读取。
+
+## 示例
+
+### 将剪贴板文本翻译为英语（默认）
+
+```bash
+deepl-translater
+```
+
+**Output:**
+
+```
+Hello, world.
+```
+
+### 将剪贴板文本翻译为日语
+
+```bash
+deepl-translater -o JA
+```
+
+**Output:**
+
+```
+こんにちは、世界。
+```
+
+### 从标准输入翻译
+
+```bash
+echo "こんにちは" | deepl-translater
+```
+
+**Output:**
+
+```
+Hello
+```
+
+### 翻译文件内容
+
+```bash
+cat document.txt | deepl-translater -o ZH
+```
+
+**Output:**
+
+```
+你好，世界。
+```
+
+### 翻译并复制结果到剪贴板
+
+```bash
+deepl-translater | pbcopy    # macOS
+deepl-translater | xclip     # Linux
+```
+
+## 说明
+
+- 需要在工具目录中创建包含 `DEEPL_API_KEY` 的 `.env` 文件。
+- 使用 DeepL 免费 API 端点（`api-free.deepl.com`）。
+- 若标准输入为管道则从 stdin 读取，否则从剪贴板读取。

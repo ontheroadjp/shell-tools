@@ -23,6 +23,7 @@ const toolsSidebarEn = [
   {
     text: 'Utilities',
     items: [
+      { text: 'deepl-translater', link: '/tools/deepl-translater' },
       { text: 'text_converter', link: '/tools/text_converter' },
     ],
   },
@@ -79,6 +80,7 @@ const toolsSidebarJa = [
   {
     text: 'ユーティリティ',
     items: [
+      { text: 'deepl-translater', link: '/ja/tools/deepl-translater' },
       { text: 'text_converter', link: '/ja/tools/text_converter' },
     ],
   },
@@ -135,6 +137,7 @@ const toolsSidebarZh = [
   {
     text: '工具',
     items: [
+      { text: 'deepl-translater', link: '/zh/tools/deepl-translater' },
       { text: 'text_converter', link: '/zh/tools/text_converter' },
     ],
   },

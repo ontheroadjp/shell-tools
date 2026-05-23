@@ -159,6 +159,18 @@ hero:
 ## Utilities
 
 <div class="tool-cards">
+  <a href="./tools/deepl-translater" class="tool-card">
+    <span class="tool-card-icon">🌐</span>
+    <div class="tool-card-body">
+      <span class="tool-card-title">deepl-translater</span>
+      <div class="tool-card-badges">
+        <span class="tc-badge tc-badge-python">Python Script</span>
+        <span class="tc-badge tc-badge-macos">macOS</span>
+        <span class="tc-badge tc-badge-linux">Linux</span>
+      </div>
+      <p class="tool-card-desc">Translate clipboard text via DeepL API</p>
+    </div>
+  </a>
   <a href="./tools/text_converter" class="tool-card">
     <span class="tool-card-icon">🔤</span>
     <div class="tool-card-body">
