@@ -13,7 +13,13 @@ pip install -r requirements.txt
 
 ## Setup
 
-Create a `.env` file in the tool directory with your DeepL API key:
+### 1. Get a DeepL API key
+
+1. Create a free account at [https://www.deepl.com/en/pro#developer](https://www.deepl.com/en/pro#developer)
+2. Go to **Account** → **Authentication Key for DeepL API**
+3. Copy the API key (ends with `:fx` for the Free plan)
+
+### 2. Create the `.env` file
 
 ```bash
 echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env

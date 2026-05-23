@@ -13,7 +13,13 @@ pip install -r requirements.txt
 
 ## 初始设置
 
-在工具目录中创建 `.env` 文件并填写 DeepL API 密钥：
+### 1. 获取 DeepL API 密钥
+
+1. 在 [https://www.deepl.com/zh/pro#developer](https://www.deepl.com/zh/pro#developer) 注册免费账户
+2. 进入 **账户** → **DeepL API 的身份验证密钥**
+3. 复制 API 密钥（免费计划的密钥以 `:fx` 结尾）
+
+### 2. 创建 `.env` 文件
 
 ```bash
 echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env

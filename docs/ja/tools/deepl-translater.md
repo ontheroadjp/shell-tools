@@ -13,7 +13,13 @@ pip install -r requirements.txt
 
 ## セットアップ
 
-ツールディレクトリに `.env` ファイルを作成し、DeepL API キーを設定します：
+### 1. DeepL API キーの取得
+
+1. [https://www.deepl.com/ja/pro#developer](https://www.deepl.com/ja/pro#developer) で無料アカウントを作成
+2. **アカウント** → **DeepL API の認証キー** に移動
+3. API キーをコピー（無料プランのキーは末尾が `:fx`）
+
+### 2. `.env` ファイルの作成
 
 ```bash
 echo "DEEPL_API_KEY=your_api_key_here" > tools/utilities/deepl-translater/.env
