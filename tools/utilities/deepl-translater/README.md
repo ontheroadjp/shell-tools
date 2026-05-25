@@ -49,15 +49,23 @@ Reads from clipboard if no stdin is provided.
 
 ```bash
 # Translate clipboard text to English (default)
-deepl-translater
+```
+python deepl-translater.py
+```
 
 # Translate clipboard text to Japanese
-deepl-translater -o JA
+```
+python deepl-translater.py -o JA
+```
 
 # Translate from stdin
-echo "こんにちは" | deepl-translater
+```
+echo "こんにちは" | python deepl-translater.py
+```
 
 # Translate and copy result to clipboard
-deepl-translater | pbcopy    # macOS
-deepl-translater | xclip     # Linux
+```
+python deepl-translater.py | pbcopy    # macOS
+python deepl-translater.py | xclip     # Linux
+```
 ```
