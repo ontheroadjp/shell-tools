@@ -1,6 +1,8 @@
 .DS_Store
 *.zwc
 
+.claude/
+
 runcher.sh
 vnev/
 tools/**/.env
