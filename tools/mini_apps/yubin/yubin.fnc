@@ -1,6 +1,17 @@
 #-------------------------------------------------
 # Search Yubin bangou
 #-------------------------------------------------
+function _convert_yubin_csv() {
+    if command -v nkf >/dev/null 2>&1; then
+        nkf -w -Z1
+    elif command -v iconv >/dev/null 2>&1; then
+        iconv -f CP932 -t UTF-8
+    else
+        echo 'yubin: nkf or iconv is required' >&2
+        return 1
+    fi
+}
+
 function _search_yubin_bangou() {
     mkdir -p ${YUBIN_DATA_DIR:-${HOME}/.yubin-data}
     YUBIN_DATA_URL='https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip'
@@ -13,8 +24,7 @@ function _search_yubin_bangou() {
         }
     fi
 
-    cat "${YUBIN_DATA_CSV}" | \
-        nkf -w -Z1 | \
+    _convert_yubin_csv < "${YUBIN_DATA_CSV}" | \
         sed 's/"//g' | \
         awk -F',' '{ printf("%10d %-60s\n", $3, $7$8$9) }' | \
         sed 's/〜/-/g' | \

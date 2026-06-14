@@ -4,11 +4,13 @@ Interactively search Japanese postal codes using `fzf-tmux` with data from Japan
 
 ## Requirements
 
-- `curl`, `unzip`, `nkf`, `fzf`
+- `curl`, `unzip`, `nkf` or `iconv`, `fzf`
 
 ```bash
 brew install nkf fzf
 ```
+
+If `nkf` is unavailable, `iconv` is used instead.
 
 ## Setup
 

@@ -4,11 +4,13 @@
 
 ## 环境要求
 
-- `curl`、`unzip`、`nkf`、`fzf`
+- `curl`、`unzip`、`nkf` 或 `iconv`、`fzf`
 
 ```bash
 brew install nkf fzf
 ```
+
+如果没有 `nkf`，则使用 `iconv`。
 
 ## 配置
 

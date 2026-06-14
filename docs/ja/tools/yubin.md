@@ -6,12 +6,14 @@
 
 - `curl`
 - `unzip`
-- `nkf`
+- `nkf` または `iconv`
 - `fzf` (fzf-tmux)
 
 ```bash
 brew install nkf fzf
 ```
+
+`nkf` がない場合は `iconv` を使用します。
 
 ## Setup
 
