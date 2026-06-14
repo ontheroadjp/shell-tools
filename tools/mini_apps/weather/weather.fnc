@@ -19,7 +19,7 @@ function _print_weather() {
             echo "Kumamoto"
             echo "Kagoshima"
             echo "Okinawa"
-        } | peco )
+        } | fzf --prompt="Weather > ")
     else
         place=${1}
     fi
