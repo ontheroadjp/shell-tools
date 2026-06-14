@@ -9,12 +9,11 @@ _find_scripts() {
 }
 
 _tool_name() {
-    local f; f="$(basename "$1")"
-    echo "${f%.*}"
+    basename "$1" | sed 's/\.[^.]*$//'
 }
 
 _category() {
-    echo "$1" | awk -F'/' '{print $(NF-2)}'
+    basename "$(dirname "$(dirname "$1")")"
 }
 
 _list() {
@@ -27,20 +26,28 @@ _list() {
 
 _link_one() {
     local script="$1"
-    local name; name="$(_tool_name "$script")"
+    local name="$(_tool_name "$script")"
     local link="${BIN_DIR}/${name}"
 
-    if [ -L "${link}" ] && [ ! -e "${link}" ]; then
-        # dangling symlink (e.g. after directory reorganization) → update
-        rm "${link}"
-        ln -s "${script}" "${link}"
-        echo "updated: ${name}"
-        return 0
-    elif [ -L "${link}" ] && [ -e "${link}" ]; then
-        echo "skip:    ${name}"
+    if [ ! -x "$script" ]; then
+        echo "warning: ${name} (script is not executable, skipped)"
         return 2
+    fi
+
+    if [ -L "${link}" ]; then
+        local target="$(readlink "${link}")"
+        if [ "${target}" = "${script}" ]; then
+            echo "skip:    ${name} (already linked correctly)"
+            return 2
+        else
+            # リンク先が異なる、あるいはリンク切れの場合は再作成
+            rm "${link}"
+            ln -s "${script}" "${link}"
+            echo "updated: ${name} (target changed)"
+            return 0
+        fi
     elif [ -e "${link}" ]; then
-        echo "error:   ${name} (file already exists, not a symlink)"
+        echo "error:   ${name} (file exists and is not a symlink)"
         return 1
     else
         ln -s "${script}" "${link}"
@@ -72,13 +79,11 @@ _install_named() {
     local linked=0 skipped=0 errors=0 notfound=0
 
     for name in "$@"; do
-        local script=""
-        while IFS= read -r s; do
-            [ "$(_tool_name "$s")" = "$name" ] && script="$s" && break
-        done < <(_find_scripts)
+        # find の再帰呼び出しを避け、直接対象を検索する
+        local script="$(find "${REPO_ROOT}/tools" -type f \( -name "${name}.sh" -o -name "${name}.zsh" -o -name "${name}.py" \) | head -n 1)"
 
         if [ -z "$script" ]; then
-            echo "error:  ${name} (not found — run './install.sh list' to see available tools)"
+            echo "error:   ${name} (not found — run './install.sh list')"
             (( notfound++ ))
         else
             _link_one "$script"
@@ -100,7 +105,7 @@ _unlink_one() {
     local link="${BIN_DIR}/${name}"
 
     if [ -L "${link}" ]; then
-        local target; target="$(readlink "${link}")"
+        local target="$(readlink "${link}")"
         if [[ "${target}" == "${REPO_ROOT}"* ]]; then
             rm "${link}"
             echo "removed: ${name}"
@@ -139,13 +144,10 @@ _uninstall_named() {
     local removed=0 skipped=0 errors=0 notfound=0
 
     for name in "$@"; do
-        local found=false
-        while IFS= read -r s; do
-            [ "$(_tool_name "$s")" = "$name" ] && found=true && break
-        done < <(_find_scripts)
+        local script="$(find "${REPO_ROOT}/tools" -type f \( -name "${name}.sh" -o -name "${name}.zsh" -o -name "${name}.py" \) | head -n 1)"
 
-        if ! $found; then
-            echo "error:   ${name} (not found — run './install.sh list' to see available tools)"
+        if [ -z "$script" ]; then
+            echo "error:   ${name} (not found — run './install.sh list')"
             (( notfound++ ))
         else
             _unlink_one "$name"
