@@ -11,42 +11,44 @@ _init() {
 }
 
 _send_mail() {
-    [ -z "$1" ] && echo "need e-mail address to send email." && exit 1
+    if [ -z "$1" ]; then
+        echo "need e-mail address to send email." >&2
+        return 1
+    fi
     _init
     local subject="Quick Memo ($(date))"
-    cat "${QUICK_MEMO_MARKDOWN}" | mail -s "${subject}" "$1"
+    mail -s "${subject}" "$1" < "${QUICK_MEMO_MARKDOWN}"
     echo "e-mail (quick memo) has been sent to $1"
 }
 
 _memo() {
     _init
-    local header="## =====> $(date) <=====\n\n"
-    "$SED" -i -e "1s/^/${header}/" "${QUICK_MEMO_MARKDOWN}"
-    vim "${QUICK_MEMO_MARKDOWN}"
+    local header="## =====> $(date '+%Y-%m-%d %H:%M:%S') <=====\n\n"
+    "$SED" -i "1s/^/${header}/" "${QUICK_MEMO_MARKDOWN}"
+    "${EDITOR:-vim}" "${QUICK_MEMO_MARKDOWN}"
 }
 
 _todo() {
     _init
     if [ -z "$1" ]; then
-        less "${QUICK_MEMO_MARKDOWN}" | rg '\[ \]'
+        rg '\[ \]' "${QUICK_MEMO_MARKDOWN}"
     else
-        local contents="## =====> $(date) <=====\n"
-        local todo=''
-        for i in "$@"; do
-            todo+="[ ] ${i}\n"
-            echo "add todo: $i"
+        local contents="## =====> $(date '+%Y-%m-%d %H:%M:%S') <=====\n"
+        for item in "$@"; do
+            contents+="[ ] ${item}\n"
+            echo "add todo: ${item}"
         done
-        contents+="${todo}\n"
-        "$SED" -i -e "1s/^/${contents}/" "${QUICK_MEMO_MARKDOWN}"
+        contents+="\n"
+        "$SED" -i "1s/^/${contents}/" "${QUICK_MEMO_MARKDOWN}"
     fi
 }
 
 case "$1" in
-    mail)   shift; _send_mail "$@" ;;
-    todo)   shift; _todo "$@" ;;
+    mail)    shift; _send_mail "$@" ;;
+    todo)    shift; _todo "$@" ;;
     ""|memo) _memo ;;
     *)
-        echo "Usage: $(basename "$0") [memo|todo [items...]|mail <address>]"
+        echo "Usage: $(basename "$0") [memo|todo [items...]|mail <address>]" >&2
         exit 1
         ;;
 esac
