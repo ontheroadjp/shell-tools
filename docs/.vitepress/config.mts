@@ -18,8 +18,8 @@ const toolsSidebarEn = [
       { text: 'bench_function', link: '/tools/bench_function' },
       { text: 'bench_net', link: '/tools/bench_net' },
       { text: 'bench_zsh', link: '/tools/bench_zsh' },
+      { text: 'converter', link: '/tools/converter' },
       { text: 'counts', link: '/tools/counts' },
-      { text: 'fix_filename', link: '/tools/fix_filename' },
       { text: 'numstats', link: '/tools/numstats' },
       { text: 'wifi-helth-check', link: '/tools/wifi-helth-check' },
     ],
@@ -28,7 +28,6 @@ const toolsSidebarEn = [
     text: 'Utilities',
     items: [
       { text: 'deepl-translater', link: '/tools/deepl-translater' },
-      { text: 'text_converter', link: '/tools/text_converter' },
     ],
   },
   {
@@ -79,8 +78,8 @@ const toolsSidebarJa = [
       { text: 'bench_function', link: '/ja/tools/bench_function' },
       { text: 'bench_net', link: '/ja/tools/bench_net' },
       { text: 'bench_zsh', link: '/ja/tools/bench_zsh' },
+      { text: 'converter', link: '/ja/tools/converter' },
       { text: 'counts', link: '/ja/tools/counts' },
-      { text: 'fix_filename', link: '/ja/tools/fix_filename' },
       { text: 'numstats', link: '/ja/tools/numstats' },
       { text: 'wifi-helth-check', link: '/ja/tools/wifi-helth-check' },
     ],
@@ -89,7 +88,6 @@ const toolsSidebarJa = [
     text: 'ユーティリティ',
     items: [
       { text: 'deepl-translater', link: '/ja/tools/deepl-translater' },
-      { text: 'text_converter', link: '/ja/tools/text_converter' },
     ],
   },
   {
@@ -140,8 +138,8 @@ const toolsSidebarZh = [
       { text: 'bench_function', link: '/zh/tools/bench_function' },
       { text: 'bench_net', link: '/zh/tools/bench_net' },
       { text: 'bench_zsh', link: '/zh/tools/bench_zsh' },
+      { text: 'converter', link: '/zh/tools/converter' },
       { text: 'counts', link: '/zh/tools/counts' },
-      { text: 'fix_filename', link: '/zh/tools/fix_filename' },
       { text: 'numstats', link: '/zh/tools/numstats' },
       { text: 'wifi-helth-check', link: '/zh/tools/wifi-helth-check' },
     ],
@@ -150,7 +148,6 @@ const toolsSidebarZh = [
     text: '工具',
     items: [
       { text: 'deepl-translater', link: '/zh/tools/deepl-translater' },
-      { text: 'text_converter', link: '/zh/tools/text_converter' },
     ],
   },
   {
