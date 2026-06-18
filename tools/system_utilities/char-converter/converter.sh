@@ -2,7 +2,7 @@
 
 set -Ceu
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 WORDS_CONF="${SCRIPT_DIR}/specific_words.conf"
 ZEN2HAN_AWK="${SCRIPT_DIR}/_zen2han.awk"
 HAN2ZEN_AWK="${SCRIPT_DIR}/_han2zen.awk"
