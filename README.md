@@ -55,6 +55,7 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
+| `calc` | Lightweight command-line calculator |
 | `dictionary` | Look up words using macOS Dictionary (English ↔ Japanese) |
 | `holiday` | List Japanese public holidays |
 | `quick-memo` | Quick memo and TODO management |
@@ -80,9 +81,23 @@ Each script shows usage when called without arguments.
 timer 1h30m
 weather Tokyo
 wareki 2024
+calc '(12+3)*4'
 counts fatf .
 fix_filename -c zenkaku_to_hankaku.conf ./files
 deepl-translater -o JA
+```
+
+For zsh, expressions containing parentheses or `*` must be quoted because zsh expands them before running `calc`.
+Use one of these approaches:
+
+```zsh
+calc '(12/12)/10'
+```
+
+Or add a `noglob` alias to `~/.zshrc`:
+
+```zsh
+alias calc='noglob calc'
 ```
 
 ## Requirements
