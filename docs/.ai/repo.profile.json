@@ -1,0 +1,34 @@
+{
+  "repo_id": "ontheroadjp/shell-tools",
+  "package_manager": "npm",
+  "doc_roots": [
+    "docs/L0_concept",
+    "docs/L1_project",
+    "docs/L2_development",
+    "docs/L3_implementation",
+    "docs/.ai"
+  ],
+  "primary_docs": {
+    "investigation": "docs/L3_implementation/specification_summary.md",
+    "structure": "docs/L1_project/repository_structure.md"
+  },
+  "commands": {
+    "install_all": "./install.sh",
+    "install_named": "./install.sh <name>",
+    "install_list": "./install.sh list",
+    "uninstall_all": "./install.sh uninstall",
+    "docs_dev": "npm run docs:dev",
+    "docs_build": "npm run docs:build",
+    "docs_preview": "npm run docs:preview"
+  },
+  "active_commands": [
+    "install.sh"
+  ],
+  "deploy": {
+    "trigger": "push to main",
+    "ci": ".github/workflows/deploy.yml",
+    "target": "GitHub Pages",
+    "build_cmd": "npm run docs:build",
+    "artifact": "docs/.vitepress/dist"
+  }
+}

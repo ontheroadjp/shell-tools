@@ -32,8 +32,8 @@ Create symlinks to `~/dotfiles/bin`:
 | `bench_function` | Benchmark execution time of any Zsh function |
 | `bench_net` | Measure network download/upload speed via speedtest.net |
 | `bench_zsh` | Measure Zsh startup time |
+| `converter` | Convert full/half-width characters, spaces; rename files or transform text |
 | `counts` | Count/analyze files and directories by size or type |
-| `fix_filename` | Rename files using pattern/replacement config files |
 | `numstats` | Basic statistics for a list of numbers |
 | `wifi-helth-check` | WiFi and network diagnostics |
 
@@ -41,8 +41,8 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
+| `deduplicate` | Remove duplicate lines or files |
 | `deepl-translater` | Translate clipboard text or stdin via DeepL API |
-| `text_converter` | Convert between full-width and half-width characters |
 
 ### network
 
@@ -83,7 +83,9 @@ weather Tokyo
 wareki 2024
 calc '(12+3)*4'
 counts fatf .
-fix_filename -c zenkaku_to_hankaku.conf ./files
+converter -z --rename ./files      # rename files: full-width → half-width
+converter -z -s --rename ./files   # rename: full-width → half-width + spaces → underscores
+echo "Ａｂｃ" | converter -z       # convert text contents
 deepl-translater -o JA
 ```
 
@@ -122,3 +124,11 @@ Tools that store data follow the [XDG Base Directory](https://specifications.fre
 | `deepl-translater` | `XDG_CONFIG_HOME` | `~/.config/shell-tools/deepl-translater/credentials` |
 
 Each data path can also be overridden via its tool-specific environment variable (`YUBIN_DATA_DIR`, `QUICK_MEMO_DATA_DIR`, `STOCK_SEARCH_DIR`).
+
+## Design Principles
+
+- **One tool, one directory** — each script lives at `tools/<category>/<name>/<name>.sh`; the installed command name is the filename without extension (`install.sh:_tool_name`)
+- **No shared library** — tools must not import from each other; each ships everything it needs
+- **Symlink distribution** — `install.sh` creates symlinks in `~/dotfiles/bin`; no package registry
+- **XDG compliance** — tools that write state follow XDG Base Directory spec
+- **Fail-visible** — scripts show usage when called without required arguments; missing external dependencies are reported as errors, not silently ignored
