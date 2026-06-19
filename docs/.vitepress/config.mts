@@ -22,6 +22,7 @@ const toolsSidebarEn = [
       { text: 'counts', link: '/tools/counts' },
       { text: 'numstats', link: '/tools/numstats' },
       { text: 'wifi-helth-check', link: '/tools/wifi-helth-check' },
+      { text: 'symlink-checker', link: '/tools/symlink-checker' },
     ],
   },
   {
@@ -82,6 +83,7 @@ const toolsSidebarJa = [
       { text: 'counts', link: '/ja/tools/counts' },
       { text: 'numstats', link: '/ja/tools/numstats' },
       { text: 'wifi-helth-check', link: '/ja/tools/wifi-helth-check' },
+      { text: 'symlink-checker', link: '/ja/tools/symlink-checker' },
     ],
   },
   {
@@ -142,6 +144,7 @@ const toolsSidebarZh = [
       { text: 'counts', link: '/zh/tools/counts' },
       { text: 'numstats', link: '/zh/tools/numstats' },
       { text: 'wifi-helth-check', link: '/zh/tools/wifi-helth-check' },
+      { text: 'symlink-checker', link: '/zh/tools/symlink-checker' },
     ],
   },
   {
