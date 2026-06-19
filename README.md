@@ -36,6 +36,7 @@ Create symlinks to `~/dotfiles/bin`:
 | `counts` | Count/analyze files and directories by size or type |
 | `numstats` | Basic statistics for a list of numbers |
 | `wifi-helth-check` | WiFi and network diagnostics |
+| `symlink-checker` | Detect and interactively remove broken symlinks |
 
 ### utilities
 
