@@ -9,6 +9,10 @@ _find_scripts() {
         \( -name "*.sh" -o -name "*.zsh" -o -name "*.py" \) | sort
 }
 
+_find_credentials() {
+    find "${REPO_ROOT}/tools" -mindepth 3 -maxdepth 3 -name "credentials" -type f | sort
+}
+
 _tool_name() {
     basename "$1" | sed 's/\.[^.]*$//'
 }
