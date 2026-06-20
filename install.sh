@@ -151,6 +151,8 @@ _install_all() {
         esac
     done < <(_find_credentials)
 
+    _warn_missing_credentials
+
     echo ""
     echo "BIN_DIR:    ${BIN_DIR}"
     echo "CONFIG_DIR: ${CONFIG_DIR}"
