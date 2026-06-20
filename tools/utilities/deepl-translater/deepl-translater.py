@@ -16,8 +16,6 @@ if sys.version_info[0] < 3:
     sys.stderr.write("This script requires Python 3.\n")
     sys.exit(1)
 
-import pyperclip
-
 # Suppress the NotOpenSSLWarning for environment-dependent SSL issues.
 # This warning appears on macOS systems where the 'ssl' module is compiled with LibreSSL.
 # See: https://github.com/urllib3/urllib3/issues/3020
