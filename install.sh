@@ -117,6 +117,18 @@ _unlink_credential() {
     fi
 }
 
+_warn_missing_credentials() {
+    local cyan='\033[0;36m'
+    local reset='\033[0m'
+    while IFS= read -r example; do
+        local name="$(_tool_dir_name "$example")"
+        local cred="${CONFIG_DIR}/${name}/credentials"
+        if [ ! -s "${cred}" ]; then
+            printf "${cyan}hint:    %s: add your API key to %s${reset}\n" "${name}" "${cred}"
+        fi
+    done < <(find "${REPO_ROOT}/tools" -mindepth 3 -maxdepth 3 -name "credentials.example" -type f | sort)
+}
+
 _install_all() {
     mkdir -p "${BIN_DIR}"
     local linked=0 skipped=0 errors=0
