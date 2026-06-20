@@ -98,21 +98,43 @@ _ask_confirm() {
 # ---------------------------------------------------------------------------
 
 _compute_rename() {
-    local file="$1" dir name new_name
-    dir=$(dirname "$file")
-    name=$(basename "$file")
+    local file="$1" name new_name
+    name="${file##*/}"
     new_name=$(_convert_string "$name")
     if [[ "$name" != "$new_name" ]]; then
-        printf '%s\t%s\n' "$file" "${dir}/${new_name}"
+        printf '%s\t%s\n' "$file" "${file%/*}/${new_name}"
+    fi
+}
+
+_list_entries() {
+    local target="$1"
+    if command -v fd &>/dev/null; then
+        fd --hidden --no-ignore --min-depth 1 . "$target"
+    else
+        find "$target" -mindepth 1
     fi
 }
 
 _collect_renames_for() {
     local target="$1"
     if [[ -d "$target" ]]; then
-        while IFS= read -r f; do
-            _compute_rename "$f"
-        done < <(find "$target" -mindepth 1 | sort -r)
+        local -a entries
+        mapfile -t entries < <(_list_entries "$target" | sort -r)
+        [[ ${#entries[@]} -eq 0 ]] && return 0
+
+        local -a new_names
+        mapfile -t new_names < <(printf '%s\n' "${entries[@]##*/}" | _convert_stream)
+
+        local i f name new_name dir
+        for i in "${!entries[@]}"; do
+            f="${entries[$i]}"
+            name="${f##*/}"
+            new_name="${new_names[$i]}"
+            if [[ "$name" != "$new_name" ]]; then
+                dir="${f%/*}"
+                printf '%s\t%s\n' "$f" "${dir}/${new_name}"
+            fi
+        done
     elif [[ -e "$target" ]]; then
         _compute_rename "$target"
     else
