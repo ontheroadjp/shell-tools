@@ -6,6 +6,7 @@
 runcher.sh
 vnev/
 tools/**/.env
+tools/**/credentials
 node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
