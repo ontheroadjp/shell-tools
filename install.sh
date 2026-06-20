@@ -190,6 +190,8 @@ _install_named() {
         fi
     done
 
+    _warn_missing_credentials
+
     echo ""
     echo "BIN_DIR:    ${BIN_DIR}"
     echo "CONFIG_DIR: ${CONFIG_DIR}"
