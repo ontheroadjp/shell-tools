@@ -2,6 +2,7 @@
 
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 BIN_DIR="${BIN_DIR:-${HOME}/dotfiles/bin}"
+CONFIG_DIR="${CONFIG_DIR:-${XDG_CONFIG_HOME:-${HOME}/.config}/shell-tools}"
 
 _find_scripts() {
     find "${REPO_ROOT}/tools" -mindepth 3 -maxdepth 3 -type f \
