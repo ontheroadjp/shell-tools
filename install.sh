@@ -65,6 +65,58 @@ _link_one() {
     fi
 }
 
+_link_credential() {
+    local cred="$1"
+    local name="$(_tool_dir_name "$cred")"
+    local link_dir="${CONFIG_DIR}/${name}"
+    local link="${link_dir}/credentials"
+
+    mkdir -p "${link_dir}"
+
+    if [ -L "${link}" ]; then
+        local target="$(readlink "${link}")"
+        if [ "${target}" = "${cred}" ]; then
+            echo "skip:    ${name}/credentials (already linked correctly)"
+            return 2
+        else
+            rm "${link}"
+            ln -s "${cred}" "${link}"
+            echo "updated: ${name}/credentials (target changed)"
+            return 0
+        fi
+    elif [ -e "${link}" ]; then
+        echo "error:   ${name}/credentials (file exists and is not a symlink)"
+        return 1
+    else
+        ln -s "${cred}" "${link}"
+        echo "linked:  ${name}/credentials"
+        return 0
+    fi
+}
+
+_unlink_credential() {
+    local name="$1"
+    local link="${CONFIG_DIR}/${name}/credentials"
+
+    if [ -L "${link}" ]; then
+        local target="$(readlink "${link}")"
+        if [[ "${target}" == "${REPO_ROOT}"* ]]; then
+            rm "${link}"
+            echo "removed: ${name}/credentials"
+            return 0
+        else
+            echo "skip:    ${name}/credentials (symlink points outside this repo)"
+            return 2
+        fi
+    elif [ -e "${link}" ]; then
+        echo "error:   ${name}/credentials (not a symlink, skipping)"
+        return 1
+    else
+        echo "skip:    ${name}/credentials (not installed)"
+        return 2
+    fi
+}
+
 _install_all() {
     mkdir -p "${BIN_DIR}"
     local linked=0 skipped=0 errors=0
