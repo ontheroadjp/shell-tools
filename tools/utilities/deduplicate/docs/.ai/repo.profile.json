@@ -1,0 +1,20 @@
+{
+  "repo_id": "deduplicate",
+  "package_manager": "unknown",
+  "doc_roots": [
+    "docs/L0_concept",
+    "docs/L1_project",
+    "docs/L2_development",
+    "docs/L3_implementation"
+  ],
+  "commands": {
+    "help": "python3 deduplicate.py --help",
+    "dry_run": "python3 deduplicate.py --dry-run <directory>",
+    "run": "python3 deduplicate.py <directory>",
+    "syntax_check": "python3 -c \"compile(open('deduplicate.py', encoding='utf-8').read(), 'deduplicate.py', 'exec')\""
+  },
+  "primary_docs": {
+    "investigation": "docs/L3_implementation/specification_summary.md",
+    "structure": "docs/L1_project/repository_structure.md"
+  }
+}
