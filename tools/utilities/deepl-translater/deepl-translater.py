@@ -52,6 +52,7 @@ def main():
     if not sys.stdin.isatty():
         input_text = sys.stdin.read()
     else:
+        import pyperclip
         input_text = pyperclip.paste()
 
     if not input_text:
