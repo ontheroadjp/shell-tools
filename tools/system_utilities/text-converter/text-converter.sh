@@ -177,7 +177,7 @@ _rename_mode() {
     echo "$label"
     for pair in "${pairs[@]}"; do
         src="${pair%%	*}"; dst="${pair##*	}"
-        printf '  %s  →  %s\n' "$(basename "$src")" "$(basename "$dst")"
+        printf '  %s  →  %s\n' "${src##*/}" "${dst##*/}"
     done
 
     [[ $dry_run -eq 1 ]] && exit 0
