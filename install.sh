@@ -17,6 +17,10 @@ _tool_name() {
     basename "$1" | sed 's/\.[^.]*$//'
 }
 
+_tool_dir_name() {
+    basename "$(dirname "$1")"
+}
+
 _category() {
     basename "$(dirname "$(dirname "$1")")"
 }
