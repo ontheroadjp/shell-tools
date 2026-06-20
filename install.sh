@@ -217,8 +217,18 @@ _uninstall_all() {
         esac
     done < <(_find_scripts)
 
+    while IFS= read -r cred; do
+        _unlink_credential "$(_tool_dir_name "$cred")"
+        case $? in
+            0) (( removed++  )) ;;
+            1) (( errors++   )) ;;
+            2) (( skipped++  )) ;;
+        esac
+    done < <(_find_credentials)
+
     echo ""
-    echo "BIN_DIR: ${BIN_DIR}"
+    echo "BIN_DIR:    ${BIN_DIR}"
+    echo "CONFIG_DIR: ${CONFIG_DIR}"
     echo "done.    removed=${removed} skipped=${skipped} errors=${errors}"
 }
 
