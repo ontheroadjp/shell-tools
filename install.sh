@@ -163,11 +163,22 @@ _install_named() {
                 1) (( errors++  )) ;;
                 2) (( skipped++ )) ;;
             esac
+
+            local tool_dir="$(dirname "$script")"
+            if [ -f "${tool_dir}/credentials" ]; then
+                _link_credential "${tool_dir}/credentials"
+                case $? in
+                    0) (( linked++  )) ;;
+                    1) (( errors++  )) ;;
+                    2) (( skipped++ )) ;;
+                esac
+            fi
         fi
     done
 
     echo ""
-    echo "BIN_DIR: ${BIN_DIR}"
+    echo "BIN_DIR:    ${BIN_DIR}"
+    echo "CONFIG_DIR: ${CONFIG_DIR}"
     echo "done.    linked=${linked} skipped=${skipped} errors=${errors} not_found=${notfound}"
 }
 
