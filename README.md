@@ -72,7 +72,8 @@ Create symlinks to `~/dotfiles/bin`:
 
 | Script | Description |
 |---|---|
-| `movie-text-converter` | Convert video files using ffmpeg |
+| `mp4_to_mp3` | Convert MP4 files to MP3 using ffmpeg |
+| `mts_to_mp4` | Convert MTS files in the current directory to H.265 MP4 using ffmpeg |
 
 ## Usage
 
