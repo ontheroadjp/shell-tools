@@ -33,3 +33,7 @@ Batch-converts AVCHD camcorder clips (`*.MTS`) in the current working directory 
 - Not recursive; only the current directory is processed.
 - Exit status is 0 even when some files fail; check stderr for `ERROR:` lines.
 - Output resolution is fixed to 1920x1080 regardless of the source.
+
+## 変更履歴（git log より自動生成）
+
+- 4ebb2ec feat(#8): add mts_to_mp4 tool to movie-converter
