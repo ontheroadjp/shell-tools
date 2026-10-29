@@ -9,36 +9,38 @@ HAN2ZEN_AWK="${SCRIPT_DIR}/_han2zen.awk"
 
 usage() {
     cat <<__USAGE >&2
-Usage: ${0##*/} [OPTIONS] [file ...]
-       find . | ${0##*/} [OPTIONS] --rename [dir ...]
+Usage: ${0##*/} [OPTIONS] [file_or_dir ...]
+       find . | ${0##*/} [OPTIONS]
 
-Conversion options (at least one required):
-  -z, --zen       Full-width -> half-width
-  -h, --han       Half-width -> full-width
-  -s, --space     Spaces -> underscores
-  -w, --words     Apply substitution rules from specific_words.conf
+Rename files and directories. Without path args, reads paths from stdin
+(one per line). Directories are expanded to their direct children only.
 
-Mode:
-      --rename    Transform filenames (mv); default: transform file contents
-                  Without file args, reads paths from stdin (one per line).
-                  Directories are expanded recursively.
+Default conversions (all on): full-width -> half-width, spaces -> underscores,
+and substitution rules from specific_words.conf.
+
+Conversion options:
+      --han       Half-width -> full-width (replaces the default full -> half)
+      --no-zen    Skip full-width -> half-width
+      --no-space  Skip spaces -> underscores
+      --no-words  Skip specific_words.conf rules
 
 Other:
-  -n, --dry-run   Show what would be done without making changes
+  -r, --recursive Include files and directories in all subdirectories
+      --dry-run   Show what would be done without making changes
 __USAGE
     exit 1
 }
 
-do_zen=0; do_han=0; do_space=0; do_words=0; do_rename=0; dry_run=0
+do_zen=1; do_han=0; do_space=1; do_words=1; do_recursive=0; dry_run=0
 targets=()
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        -z|--zen)      do_zen=1 ;;
-        -h|--han)      do_han=1 ;;
-        -s|--space)    do_space=1 ;;
-        -w|--words)    do_words=1 ;;
-        --rename)      do_rename=1 ;;
-        -n|--dry-run)  dry_run=1 ;;
+        --han)         do_han=1; do_zen=0 ;;
+        --no-zen)      do_zen=0 ;;
+        --no-space)    do_space=0 ;;
+        --no-words)    do_words=0 ;;
+        -r|--recursive) do_recursive=1 ;;
+        --dry-run)     dry_run=1 ;;
         --help)        usage ;;
         --)            shift; targets+=("$@"); break ;;
         -*)            usage ;;
@@ -48,9 +50,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 [[ $((do_zen + do_han + do_space + do_words)) -eq 0 ]] && usage
-[[ $do_zen -eq 1 && $do_han -eq 1 ]] && {
-    echo "${0##*/}: -z/--zen and -h/--han are mutually exclusive" >&2; exit 1
-}
 
 words_sed_args=()
 if [[ $do_words -eq 1 ]]; then
@@ -93,46 +92,52 @@ _ask_confirm() {
     esac
 }
 
-# ---------------------------------------------------------------------------
-# Rename mode
-# ---------------------------------------------------------------------------
+# Directory part of a path including the trailing slash; empty for a bare name
+# (relative to the current directory).
+_dirname_of() {
+    local p="$1"
+    [[ "$p" == */* ]] && printf '%s/' "${p%/*}"
+    return 0
+}
 
 _compute_rename() {
     local file="$1" name new_name
     name="${file##*/}"
     new_name=$(_convert_string "$name")
     if [[ "$name" != "$new_name" ]]; then
-        printf '%s\t%s\n' "$file" "${file%/*}/${new_name}"
+        printf '%s\t%s\n' "$file" "$(_dirname_of "$file")${new_name}"
     fi
 }
 
 _list_entries() {
     local target="$1"
+    local maxdepth=1
+    [[ $do_recursive -eq 1 ]] && maxdepth=""
     if command -v fd &>/dev/null; then
-        fd --hidden --no-ignore --min-depth 1 . "$target"
+        fd --hidden --no-ignore --min-depth 1 ${maxdepth:+--max-depth "$maxdepth"} . "$target"
     else
-        find "$target" -mindepth 1
+        find "$target" -mindepth 1 ${maxdepth:+-maxdepth "$maxdepth"}
     fi
 }
 
 _collect_renames_for() {
     local target="$1"
     if [[ -d "$target" ]]; then
+        echo "${0##*/}: scanning ${target} (large trees may take a while)..." >&2
         local -a entries
-        mapfile -t entries < <(_list_entries "$target" | sort -r)
+        mapfile -t entries < <(_list_entries "$target" | sed 's,/$,,' | sort -r)
         [[ ${#entries[@]} -eq 0 ]] && return 0
 
         local -a new_names
         mapfile -t new_names < <(printf '%s\n' "${entries[@]##*/}" | _convert_stream)
 
-        local i f name new_name dir
+        local i f name new_name
         for i in "${!entries[@]}"; do
             f="${entries[$i]}"
             name="${f##*/}"
             new_name="${new_names[$i]}"
             if [[ "$name" != "$new_name" ]]; then
-                dir="${f%/*}"
-                printf '%s\t%s\n' "$f" "${dir}/${new_name}"
+                printf '%s\t%s\n' "$f" "$(_dirname_of "$f")${new_name}"
             fi
         done
     elif [[ -e "$target" ]]; then
@@ -190,44 +195,4 @@ _rename_mode() {
     done
 }
 
-# ---------------------------------------------------------------------------
-# Content mode
-# ---------------------------------------------------------------------------
-
-_content_mode() {
-    if [[ ${#targets[@]} -eq 0 ]]; then
-        if [[ -t 0 ]]; then
-            echo "${0##*/}: no input: give file(s), pipe text via stdin, or use --rename" >&2
-            exit 1
-        fi
-        _convert_stream
-        return
-    fi
-
-    if [[ $dry_run -eq 1 ]]; then
-        echo "[DRY RUN] Would modify in place:"
-        for t in "${targets[@]}"; do echo "  $t"; done
-        exit 0
-    fi
-
-    echo "Will modify in place:"
-    for t in "${targets[@]}"; do echo "  $t"; done
-    _ask_confirm
-
-    local tmp
-    tmp=$(mktemp)
-    for t in "${targets[@]}"; do
-        _convert_stream < "$t" >| "$tmp"
-        mv "$tmp" "$t"
-    done
-}
-
-# ---------------------------------------------------------------------------
-# Entry point
-# ---------------------------------------------------------------------------
-
-if [[ $do_rename -eq 1 ]]; then
-    _rename_mode
-else
-    _content_mode
-fi
+_rename_mode
