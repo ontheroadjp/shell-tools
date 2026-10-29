@@ -196,6 +196,10 @@ _rename_mode() {
 
 _content_mode() {
     if [[ ${#targets[@]} -eq 0 ]]; then
+        if [[ -t 0 ]]; then
+            echo "${0##*/}: no input: give file(s), pipe text via stdin, or use --rename" >&2
+            exit 1
+        fi
         _convert_stream
         return
     fi
