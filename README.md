@@ -32,7 +32,7 @@ Create symlinks to `~/dotfiles/bin`:
 | `bench_function` | Benchmark execution time of any Zsh function |
 | `bench_net` | Measure network download/upload speed via speedtest.net |
 | `bench_zsh` | Measure Zsh startup time |
-| `text-converter` | Convert full/half-width characters, spaces; rename files or transform text |
+| `rename` | Rename files/directories: convert full/half-width characters, spaces |
 | `counts` | Count/analyze files and directories by size or type |
 | `numstats` | Basic statistics for a list of numbers |
 | `wifi-helth-check` | WiFi and network diagnostics |
@@ -85,9 +85,8 @@ weather Tokyo
 wareki 2024
 calc '(12+3)*4'
 counts fatf .
-text-converter -z --rename ./files      # rename files: full-width → half-width
-text-converter -z -s --rename ./files   # rename: full-width → half-width + spaces → underscores
-echo "Ａｂｃ" | text-converter -z       # convert text contents
+rename ./files                          # rename: full-width → half-width, spaces → _, word rules
+rename --dry-run ./files                # preview only
 deepl-translater -o JA
 ```
 

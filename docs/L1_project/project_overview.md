@@ -10,7 +10,7 @@ A curated collection of standalone shell scripts for everyday terminal use, dist
 |---|---|---|---|
 | Scripts (primary) | Bash / Zsh | system | — |
 | Scripts (secondary) | Python 3 | system | — |
-| Character conversion | AWK | system | `tools/system_utilities/char-converter/` |
+| File renaming | AWK / sed | system | `tools/system_utilities/rename/` |
 | Docs framework | VitePress | 1.6.4 | `package-lock.json:node_modules/vitepress` |
 | Docs runtime | Node.js | 20 (CI), 24.16.0 (local) | `.github/workflows/deploy.yml:node-version`, `mise current` |
 | Package manager | npm | — | `.github/workflows/deploy.yml:npm ci` |
