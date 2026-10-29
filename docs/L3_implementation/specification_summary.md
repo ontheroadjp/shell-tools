@@ -27,33 +27,35 @@ Each tool starts with `#!/bin/bash` (or `#!/bin/zsh`, `#!/usr/bin/env python3`) 
 Zsh function libraries — sourced by the main `.sh` but not installed as standalone commands. Pattern: `tools/<name>/<name>.fnc` loaded in `<name>.sh`.
 
 ### `.awk` files
-AWK engine files — used with `awk -f <file>`. Not installed. Pattern used in `char-converter/`.
+AWK engine files — used with `awk -f <file>`. Not installed. Pattern used in `rename/`.
 
 ### `.conf` files
-Plain-text rule files for sed-based substitution. Format: `pattern,replacement` per line; `#` for comments. Used in `char-converter/specific_words.conf`.
+Plain-text rule files for sed-based substitution. Format: `pattern,replacement` per line; `#` for comments. Used in `rename/specific_words.conf`.
 
-## Character Conversion (`char-converter`)
+## File Renaming (`rename`)
 
-**Location**: `tools/system_utilities/char-converter/`
+**Location**: `tools/system_utilities/rename/`
 
-**Command**: `converter`
+**Command**: `rename`
+
+**Default conversions (all on)**: full-width → half-width (AWK engine: `_zen2han.awk`), spaces → underscores (`sed`), `specific_words.conf` substitutions (`sed`).
 
 **Options**:
 | Option | Action |
 |---|---|
-| `-z` / `--zen` | Full-width → half-width (AWK engine: `_zen2han.awk`) |
-| `-h` / `--han` | Half-width → full-width (AWK engine: `_han2zen.awk`) |
-| `-s` / `--space` | Spaces (half/full-width) → underscores (`sed`) |
-| `-w` / `--words` | Apply `specific_words.conf` substitutions (`sed`) |
-| `--rename` | Apply to filenames via `mv`; default: transform file contents to stdout |
+| `--han` | Half-width → full-width instead of the default full → half (AWK engine: `_han2zen.awk`) |
+| `--no-zen` | Skip full-width → half-width |
+| `--no-space` | Skip spaces → underscores |
+| `--no-words` | Skip `specific_words.conf` substitutions |
+| `-r` / `--recursive` | Include all subdirectories (default: only entries directly under the given directory) |
+| `--dry-run` | Print the planned renames and exit without changing anything |
 
-**Modes**:
-- Without `--rename`: reads stdin or file args, writes converted text to stdout
-- With `--rename`: renames files; accepts file args, directory (recursive), or stdin paths (one per line)
+**Behavior**:
+- Accepts file or directory args (relative to the current directory), or stdin paths (one per line)
+- A directory expands to its entries (files and directories); only the base name is converted, never the parent path
+- Renames deepest entries first; shows a preview, asks `Proceed? [Y/n]`, and uses `mv -n` (existing files are not overwritten)
 
 **AWK engines** (`_zen2han.awk`, `_han2zen.awk`): byte-level UTF-8 scanning; not installed as commands; loaded via `awk -f "$SCRIPT_DIR/_zen2han.awk"`.
-
-**`-z` and `-h` are mutually exclusive** (`converter.sh`).
 
 ## Data Storage (XDG)
 
