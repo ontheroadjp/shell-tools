@@ -109,3 +109,7 @@ Done.
 - The source file's modification time is kept as the recording time: embedded as `creation_time` metadata and applied to the output file's mtime.
 - Existing output files are skipped (only their mtime is re-synced). Conversion writes to a `.part.mp4` temp file first, so interrupted runs leave no broken output.
 - A failed file prints `ERROR: <file>` to stderr and the remaining files are still processed. Subdirectories are not processed.
+
+## wmv_to_mp4_vaapi
+
+`wmv_to_mp4_vaapi <file_or_directory>` converts a WMV file or recursively converts WMV files in a directory to MP4 using ffmpeg and a VAAPI device. Existing MP4 outputs are skipped. If a conversion fails, processing continues; the final summary reports attempted, successful, failed, and skipped counts and lists failed inputs. Skipped files are excluded from the attempted count.
