@@ -9,6 +9,9 @@ fi
 
 TARGET="$1"
 VAAPI_DEV="/dev/dri/renderD128"
+SUCCESS=0
+SKIPPED=0
+FAILED_FILES=()
 
 # 依存コマンドの確認
 if ! command -v ffmpeg &> /dev/null; then
@@ -29,6 +32,7 @@ convert_file() {
 
   if [ -f "$output" ]; then
     echo "[スキップ] 既に存在します: $output"
+    SKIPPED=$((SKIPPED + 1))
     return 0
   fi
 
@@ -52,9 +56,13 @@ convert_file() {
     -movflags +faststart \
     "$output" < /dev/null; then
     echo -e "\n[完了] $output"
+    SUCCESS=$((SUCCESS + 1))
   else
     echo -e "\n[失敗] 変換に失敗しました: $input" >&2
-    [ -f "$output" ] && rm -f "$output"
+    FAILED_FILES+=("$input")
+    if [ -f "$output" ]; then
+      rm -f "$output" || echo "エラー: 不完全な出力を削除できません: $output" >&2
+    fi
   fi
 }
 
@@ -76,7 +84,6 @@ elif [ -d "$TARGET" ]; then
 
   if [ "$TOTAL" -eq 0 ]; then
     echo "対象の .wmv ファイルが見つかりませんでした。"
-    exit 0
   fi
 
   COUNT=0
@@ -93,3 +100,9 @@ fi
 
 echo "========================================"
 echo "すべての処理が終了しました。"
+echo "変換を試みたファイル数: $((SUCCESS + ${#FAILED_FILES[@]})) 件"
+echo "成功: ${SUCCESS} 件 / 失敗: ${#FAILED_FILES[@]} 件 / スキップ: ${SKIPPED} 件"
+if [ "${#FAILED_FILES[@]}" -gt 0 ]; then
+  echo "失敗した動画ファイル:"
+  printf '  %s\n' "${FAILED_FILES[@]}"
+fi
